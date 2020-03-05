@@ -2,9 +2,113 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e63de133-eb25-4588-aa8f-c5e49de9be91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/decorators.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/web/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/decorators/admin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/decorators/web.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/401.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/demo/chart-area-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/demo/chart-bar-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/demo/chart-pie-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/demo/datatables-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/img/error-404-monochrome.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/charts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/layout-sidenav-light.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/layout-static.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/tables.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/build-assets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/build-pug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/build-scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/build-scss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/clean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/render-assets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/render-pug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/render-scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/render-scss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/sb-watch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/start-debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/start.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/demo/chart-area-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/demo/chart-bar-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/demo/chart-pie-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/demo/datatables-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/img/error-404-monochrome.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/authentication.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/dashboard.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/error.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/footer.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/head/css.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/head/icons.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/head/meta.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/head/title.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/navigation/sidenav.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/navigation/topnav.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/scripts.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/401.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/404.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/500.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/charts.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/includes/datatable.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/includes/page-header.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/index.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/layout-sidenav-light.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/layout-static.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/login.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/password.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/register.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/tables.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/_global.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/layout/_authentication.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/layout/_dashboard-default.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/layout/_dashboard-fixed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/layout/_error.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/_topnav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/sidenav/_sidenav-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/sidenav/_sidenav-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/sidenav/_sidenav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/variables/_navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/variables/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/css/small-business.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.slim.min.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hello.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +134,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -42,7 +147,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Yh0HrQOmJkFUt9rCLvLcqEMgYX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -53,10 +160,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/views/web" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.2075" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/views/web" />
+      <recent name="$PROJECT_DIR$/web/temple/admin" />
+      <recent name="$PROJECT_DIR$/web/temple/web/css" />
+      <recent name="$PROJECT_DIR$/web/temple/web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/web/temple/web/vendor" />
+      <recent name="$PROJECT_DIR$/web" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.31" ALTERNATIVE_JRE_ENABLED="false">
