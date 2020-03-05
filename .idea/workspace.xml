@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e63de133-eb25-4588-aa8f-c5e49de9be91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Hello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Group1.java" beforeDir="false" />
-    </list>
+    <list default="true" id="e63de133-eb25-4588-aa8f-c5e49de9be91" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583379433469</updated>
       <workItem from="1583379437877" duration="895000" />
-      <workItem from="1583383891328" duration="287000" />
+      <workItem from="1583383891328" duration="974000" />
     </task>
     <servers />
   </component>
@@ -106,5 +103,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583379575992" />
+    <state x="376" y="203" key="com.intellij.ide.util.TipDialog" timestamp="1583389986783">
+      <screen x="0" y="27" width="1366" height="697" />
+    </state>
+    <state x="376" y="203" key="com.intellij.ide.util.TipDialog/0.27.1366.697@0.27.1366.697" timestamp="1583389986783" />
   </component>
 </project>
