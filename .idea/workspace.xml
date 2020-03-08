@@ -1,8 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CaseStudyModule3_GOURP1:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e63de133-eb25-4588-aa8f-c5e49de9be91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_19.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EditForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Controler/AdminServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Controler/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/BookServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/I_BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/SQLConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/NewCss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/Login2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/Nav_NavBar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/Signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/Signup2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/404_Error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Admin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/DeleteBookPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/EditBookPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/EditIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/LoginForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/Login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/sb-admin-2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/sb-admin-2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/editicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/undraw_posting_photo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/demo/chart-area-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/demo/chart-bar-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/demo/chart-pie-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/demo/datatables-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/sb-admin-2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/sb-admin-2.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/CaseStudyModule3_GOURP1_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/CaseStudyModule3_GOURP1_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/taglibs_standard_impl_1_2_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/taglibs_standard_impl_1_2_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudyModule3_GOURP1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudyModule3_GOURP1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/editForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +94,29 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="JavaFXApplication" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="TienCG" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1Yh0HrQOmJkFUt9rCLvLcqEMgYX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -43,15 +127,73 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JDBCConnection" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.2075" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.46677214" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/img" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/Theme" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.31">
+    <configuration name="indexTien.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/LibrianManager/indexTien.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="Admin.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.31" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Admin.jsp" />
+      <deployment>
+        <artifact name="CaseStudyModule3_GOURP1:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/CaseStudyModule3_GOURP1_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Admin_jsp_CaseStudyModule3_Group1" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="CaseStudyModule3_GOURP1:war exploded" />
+        </option>
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.31" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="CaseStudyModule3_GOURP1:war exploded">
@@ -60,12 +202,47 @@
           </settings>
         </artifact>
       </deployment>
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_31_CaseStudyModule3_Group1" />
+      </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="46277" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -73,6 +250,34 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.indexTien.html" />
+        <item itemvalue="Tomcat Server.Admin.jsp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -88,6 +293,21 @@
       <workItem from="1583383891328" duration="974000" />
       <workItem from="1583389987835" duration="46000" />
       <workItem from="1583395070641" duration="79000" />
+      <workItem from="1583468678590" duration="16205000" />
+      <workItem from="1583499050879" duration="6640000" />
+      <workItem from="1583505744202" duration="5372000" />
+      <workItem from="1583512804488" duration="1886000" />
+      <workItem from="1583514735167" duration="833000" />
+      <workItem from="1583541078112" duration="5061000" />
+      <workItem from="1583546639684" duration="13960000" />
+      <workItem from="1583564669059" duration="740000" />
+      <workItem from="1583565475085" duration="6904000" />
+      <workItem from="1583572510989" duration="834000" />
+      <workItem from="1583573522629" duration="8146000" />
+      <workItem from="1583593833864" duration="4398000" />
+      <workItem from="1583599192825" duration="598000" />
+      <workItem from="1583628816493" duration="14930000" />
+      <workItem from="1583647433312" duration="10185000" />
     </task>
     <task id="LOCAL-00001" summary="sad">
       <created>1583390030024</created>
@@ -102,30 +322,128 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sad" />
     <option name="LAST_COMMIT_MESSAGE" value="sad" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1583379582803">
+    <state x="588" y="214" width="800" height="677" key="#Inspections" timestamp="1583632257574">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="214" width="800" height="677" key="#Project_Structure/67.27.1853.1053@67.27.1853.1053" timestamp="1583379582803" />
-    <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583379545898">
+    <state x="588" y="214" width="800" height="677" key="#Inspections/67.27.1853.1053@67.27.1853.1053" timestamp="1583632257574" />
+    <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1583544029971">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583379545898" />
+    <state x="588" y="214" width="800" height="677" key="#Project_Structure/67.27.1853.1053@67.27.1853.1053" timestamp="1583544029971" />
+    <state x="588" y="214" width="800" height="677" key="#Template_Data_Languages" timestamp="1583563102680">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="214" width="800" height="677" key="#Template_Data_Languages/67.27.1853.1053@67.27.1853.1053" timestamp="1583563102680" />
+    <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583492552882">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583492552882" />
+    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1583595923219">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1583595923219" />
     <state x="297" y="27" width="761" height="697" key="CommitChangelistDialog2" timestamp="1583390029655">
       <screen x="0" y="27" width="1366" height="697" />
     </state>
     <state x="297" y="27" width="761" height="697" key="CommitChangelistDialog2/0.27.1366.697@0.27.1366.697" timestamp="1583390029655" />
-    <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl" timestamp="1583379575992">
+    <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl" timestamp="1583656162918">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583379575992" />
-    <state x="376" y="203" key="com.intellij.ide.util.TipDialog" timestamp="1583389986783">
-      <screen x="0" y="27" width="1366" height="697" />
+    <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583656162918" />
+    <state width="1244" height="61" key="GridCell.Tab.0.bottom" timestamp="1583660216935">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216935" />
+    <state width="1244" height="61" key="GridCell.Tab.0.center" timestamp="1583660216933">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216933" />
+    <state width="1244" height="61" key="GridCell.Tab.0.left" timestamp="1583660216933">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216933" />
+    <state width="1244" height="61" key="GridCell.Tab.0.right" timestamp="1583660216934">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216934" />
+    <state width="1244" height="61" key="GridCell.Tab.1.bottom" timestamp="1583660216938">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216938" />
+    <state width="1244" height="61" key="GridCell.Tab.1.center" timestamp="1583660216937">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216937" />
+    <state width="1244" height="61" key="GridCell.Tab.1.left" timestamp="1583660216936">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216936" />
+    <state width="1244" height="61" key="GridCell.Tab.1.right" timestamp="1583660216937">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216937" />
+    <state width="1244" height="61" key="GridCell.Tab.2.bottom" timestamp="1583660216941">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216941" />
+    <state width="1244" height="61" key="GridCell.Tab.2.center" timestamp="1583660216940">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216940" />
+    <state width="1244" height="61" key="GridCell.Tab.2.left" timestamp="1583660216939">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216939" />
+    <state width="1244" height="61" key="GridCell.Tab.2.right" timestamp="1583660216940">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="61" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583660216940" />
+    <state x="242" y="116" width="1482" height="872" key="MergeDialog" timestamp="1583397597477">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="242" y="116" width="1482" height="872" key="MergeDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583397597477" />
+    <state x="698" y="270" width="580" height="564" key="MultipleFileMergeDialog" timestamp="1583397597479">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="698" y="270" width="580" height="564" key="MultipleFileMergeDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583397597479" />
+    <state x="577" y="293" key="com.intellij.ide.util.TipDialog" timestamp="1583593833331">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="376" y="203" key="com.intellij.ide.util.TipDialog/0.27.1366.697@0.27.1366.697" timestamp="1583389986783" />
+    <state x="577" y="293" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583593833331" />
+    <state x="516" y="149" width="944" height="806" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583646612957">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="516" y="149" width="944" height="806" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1583646612957" />
+    <state x="559" y="68" width="869" height="969" key="find.popup" timestamp="1583653852597">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="559" y="68" width="869" height="969" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1583653852597" />
+    <state x="302" y="115" width="1372" height="874" key="new project wizard" timestamp="1583508255622">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="302" y="115" width="1372" height="874" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1583508255622" />
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1583659282057">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1583659282057" />
   </component>
 </project>

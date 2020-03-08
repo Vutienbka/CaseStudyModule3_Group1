@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Gamja+Flower');
+.navbar{
+    margin: 0;
+    padding: 0;
+}
+.nav-item {
+    float: left;
+    width: 120px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-link:hover {
+    font-weight: bolder;
+    color: #fff;
+}sud
