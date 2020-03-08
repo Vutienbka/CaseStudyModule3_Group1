@@ -26,7 +26,6 @@
             display: none;
         }
     </style>
-
 </head>
 <body>
 <!--Ta Edit Form -->
@@ -89,6 +88,9 @@
 <div class="container-fluid">
 <p style="position:relative;top: 10px; font-size: 20px; color: #00aced;text-decoration: #00aced ">
     <a href="book"> Back to Home Page << </a>
+    <span style="color: #00aced; font-size: 30px">
+        ${message}
+    </span>
 </p>
 <div class="card mb-4">
     <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1"></i >Books Information</div>
@@ -131,7 +133,7 @@
                         <td><c:out value="${book.getBookName()}"></c:out></td>
                         <td><c:out value="${book.getTypeOfBook()}"></c:out></td>
                         <td><c:out value="${book.getAuthor()}"></c:out></td>
-                        <td><c:out value="${book.getQuality()}"></c:out></td>
+                        <td><c:out value="${book.getQuantity()}"></c:out></td>
                         <td><c:out value="${book.getPrice()}"></c:out></td>
                         <td><c:out value="${book.getLanguage()}"></c:out></td>
                         <td><c:out value="${book.getStatus()}"></c:out></td>
@@ -147,5 +149,9 @@
     </div>
 </div>
 </div>
+<script type="text/javascript">
+    var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+    myWindow.document.write("<p>Greetings. Welcome window'. I am 200px wide and 100px tall!</p>");
+</script>
 </body>
 </html>

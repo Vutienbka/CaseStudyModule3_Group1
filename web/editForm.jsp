@@ -48,7 +48,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Quality</label>
-                        <input type="text" name="quality" id = "${book.getQuality()}" value="${book.getQuality()}" class="form-control" placeholder="Quality">
+                        <input type="text" name="quality" id = "${book.getQuantity()}" value="${book.getQuantity()}" class="form-control" placeholder="Quality">
                     </div>
                     <div class="form-group">
                         <label class="control-label">Price</label>

@@ -6,6 +6,7 @@ import LibraryManagement.Service.SQLConnection;
 import jdk.nashorn.internal.ir.RuntimeNode;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,6 @@ public class AdminServlet extends HttpServlet {
     SQLConnection connection = new SQLConnection();
     BookServices bookService = new BookServices();
     ArrayList<Book> bookList = bookService.selectAllBook();
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if(action==null)
@@ -31,9 +31,8 @@ public class AdminServlet extends HttpServlet {
                 break;
             case "view":
                 break;
-
             case "editForm":
-                editFrom(request,response);
+                editForm(request,response);
                 break;
             case "deletePage":
                 break;
@@ -79,7 +78,13 @@ public class AdminServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
     public void listBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int issuedBookQuantity = bookService.viewIssuedBookQuantity();
+        int loanedBookQuantity = bookService.viewLoanedBookQuantity();
+        int availableBookQuantity = issuedBookQuantity - loanedBookQuantity;
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin.jsp");
+        request.setAttribute("issuedBookQuantity",issuedBookQuantity);
+        request.setAttribute("loanedBookQuantity",loanedBookQuantity);
+        request.setAttribute("availableBookQuantity",availableBookQuantity);
         request.setAttribute("bookList",bookList);
         dispatcher.forward(request,response);
     }
@@ -89,19 +94,38 @@ public class AdminServlet extends HttpServlet {
         request.setAttribute("bookList",bookList);
         dispatcher.forward(request,response);
     }
-    public void editFrom(HttpServletRequest request, HttpServletResponse response){
-        int bookId = Integer.parseInt(request.getParameter("bookId"));
+    public void editForm(HttpServletRequest request, HttpServletResponse response) {
+        int bookId = Integer.parseInt(request.getParameter("Id"));
         String bookName = request.getParameter("bookName");
-        String typeOfBooks = request.getParameter("typeOfBooks");
+        String typeOfBook = request.getParameter("typeOfBook");
         String author = request.getParameter("author");
-        int quality = Integer.parseInt(request.getParameter("quality"));
+        int quantity = Integer.parseInt(request.getParameter("quality"));
         int price = Integer.parseInt(request.getParameter("price"));
         String language = request.getParameter("language");
         boolean status = Boolean.getBoolean(request.getParameter("status"));
         String situation = request.getParameter("situation");
-        
 
+        Book book = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation);
 
+        RequestDispatcher dispatcher;
+
+        if (book == null) {
+            dispatcher = request.getRequestDispatcher("MVC_error_404.jsp");
+        } else {
+            boolean check = bookService.saveBook(book);
+            bookList=bookService.selectAllBook();
+            if (check) {
+                request.setAttribute("message", "Book information was updated");
+                request.setAttribute("bookList", bookList);
+            } else request.setAttribute("message", "Book information not Updated");
+            try {
+                dispatcher = request.getRequestDispatcher("EditBookPage.jsp");
+                dispatcher.forward(request, response);
+
+            } catch (IOException | ServletException e) {
+                e.printStackTrace();
+            }
+        }
     }
     public void showEditForm(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         int bookId = Integer.parseInt(request.getParameter("Id"));
@@ -122,4 +146,5 @@ public class AdminServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
 }

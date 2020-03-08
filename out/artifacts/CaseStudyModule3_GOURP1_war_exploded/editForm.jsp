@@ -32,40 +32,40 @@
                 <form class="form-horizontal" method="post">
                     <div class="form-group">
                         <label class="control-label"  >BookId:</label>
-                        <input type="text" id = "${book.getBookId()}" value="${book.getBookId()}" class="form-control"  placeholder="BookId">
+                        <input type="text" name="bookId" id = "${book.getBookId()}" value="${book.getBookId()}" class="form-control"  placeholder="BookId">
                     </div>
                     <div class="form-group">
                         <label class="control-label">BookName</label>
-                        <input type="text" id = "${book.getBookName()}" value="${book.getBookName()}" class="form-control" placeholder="Book Name" >
+                        <input type="text" name="bookName" id = "${book.getBookName()}" value="${book.getBookName()}" class="form-control" placeholder="Book Name" >
                     </div>
                     <div class="form-group">
                         <label class="control-label"  >Type Of Book</label>
-                        <input type="text" id = "${book.getTypeOfBook()}" value="${book.getTypeOfBook()}" class="form-control"  placeholder="Type Of Book">
+                        <input type="text" name="typeOfBook" id = "${book.getTypeOfBook()}" value="${book.getTypeOfBook()}" class="form-control"  placeholder="Type Of Book">
                     </div>
                     <div class="form-group">
                         <label class="control-label">Author</label>
-                        <input type="text" id = "${book.getAuthor()}" value="${book.getAuthor()}" class="form-control" placeholder="Author" >
+                        <input type="text" name = "author" id = "${book.getAuthor()}" value="${book.getAuthor()}" class="form-control" placeholder="Author" >
                     </div>
                     <div class="form-group">
                         <label class="control-label">Quality</label>
-                        <input type="text" id = "${book.getQuality()}" value="${book.getQuality()}" class="form-control" placeholder="Quality">
+                        <input type="text" name="quality" id = "${book.getQuantity()}" value="${book.getQuantity()}" class="form-control" placeholder="Quality">
                     </div>
                     <div class="form-group">
                         <label class="control-label">Price</label>
-                        <input type="text"  id = "${book.getPrice()}" value="${book.getPrice()}" class="form-control" placeholder="Price" >
+                        <input type="text"  name="price" id = "${book.getPrice()}" value="${book.getPrice()}" class="form-control" placeholder="Price" >
                     </div>
 
                     <div class="form-group">
                         <label class="control-label">Language</label>
-                        <input type="text"  id = "${book.getLanguage()}" value="${book.getLanguage()}" class="form-control" placeholder="Price" >
+                        <input type="text"  name="language" id = "${book.getLanguage()}" value="${book.getLanguage()}" class="form-control" placeholder="Price" >
                     </div>
                     <div class="form-group">
                         <label class="control-label">Status</label>
-                        <input type="text"  id = "${book.getStatus()}" value="${book.getStatus()}" class="form-control" placeholder="Status" >
+                        <input type="text"  name="status" id = "${book.getStatus()}" value="${book.getStatus()}" class="form-control" placeholder="Status" >
                     </div>
                     <div class="form-group">
                         <label class="control-label">Situation</label>
-                        <input type="text"  id = "${book.getSituation()}" value="${book.getSituation()}" class="form-control" placeholder="Situation" >
+                        <input type="text" name="situation" id = "${book.getSituation()}" value="${book.getSituation()}" class="form-control" placeholder="Situation" >
                     </div>
                     <div class="form-group">
                         <button type="submit" id="save" class="btn btn-success" style="width: 120px">Save</button>

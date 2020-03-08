@@ -5,7 +5,7 @@ public class Book {
     private String bookName;
     private String typeOfBook;
     private String Author;
-    private int quality;
+    private int quantity;
     private int price;
     private String language;
     private boolean status;
@@ -14,12 +14,12 @@ public class Book {
     public Book() {
     }
 
-    public Book(int bookId, String bookName, String typeOfBook, String author, int quality, int price, String language, boolean status, String situation) {
+    public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, int price, String language, boolean status, String situation) {
         this.bookId = bookId;
         this.bookName = bookName;
         this.typeOfBook = typeOfBook;
         this.Author = author;
-        this.quality = quality;
+        this.quantity = quantity;
         this.price = price;
         this.language = language;
         this.status = status;
@@ -58,12 +58,12 @@ public class Book {
         Author = author;
     }
 
-    public int getQuality() {
-        return quality;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuality(int quality) {
-        this.quality = quality;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getPrice() {

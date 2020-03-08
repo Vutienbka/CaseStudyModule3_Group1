@@ -1,13 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: vutienbka
-  Date: 3/6/20
-  Time: 4:43 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,36 +148,36 @@
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-primary text-white mb-4">
                     <div class="card-body">Issued Books</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Details</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="text-white" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px"><c:out value="${issuedBookQuantity}"></c:out></div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-warning text-white mb-4">
                     <div class="card-body">Readers Quantity</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Details</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="small text-white stretched-link" href="#" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px"><c:out value="${readerQuantity}"></c:out> </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-success text-white mb-4">
                     <div class="card-body">Loanded Books</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Details</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="small text-white stretched-link" href="#" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px"><c:out value="${loanedBookQuantity}"></c:out> </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-danger text-white mb-4">
                     <div class="card-body">Available Books</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">View Details</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <div class="card-footer d-flex align-items-center" >
+                        <a class="small text-white stretched-link" href="#" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px"><c:out value="${availableBookQuantity}"></c:out> </div>
                     </div>
                 </div>
             </div>
@@ -193,7 +186,9 @@
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-chart-area mr-1"></i>Area Chart Example</div>
-                    <div class="card-body" ><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                    <div class="card-body" >
+                        <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                    </div>
                 </div>
             </div>
             <div class="col-xl-6">
@@ -242,7 +237,7 @@
                                 <td><c:out value="${book.getBookName()}"></c:out></td>
                                 <td><c:out value="${book.getTypeOfBook()}"></c:out></td>
                                 <td><c:out value="${book.getAuthor()}"></c:out></td>
-                                <td><c:out value="${book.getQuality()}"></c:out></td>
+                                <td><c:out value="${book.getQuantity()}"></c:out></td>
                                 <td><c:out value="${book.getPrice()}"></c:out></td>
                                 <td><c:out value="${book.getLanguage()}"></c:out></td>
                                 <td><c:out value="${book.getStatus()}"></c:out></td>
@@ -257,7 +252,6 @@
     </div>
 </section>
 
-
 <footer class="py-4 bg-light mt-auto" style="clear: both">
     <div class="container-fluid">
         <div class="d-flex align-items-center justify-content-between small">
@@ -270,6 +264,6 @@
         </div>
     </div>
 </footer>
-
 </body>
+
 </html>
