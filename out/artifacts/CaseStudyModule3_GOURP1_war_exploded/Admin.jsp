@@ -1,6 +1,29 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.io.*" %>
+<%@ page import="java.util.*" %>
 
+<%!
+    // --- String Join Function converts from Java array to javascript string.
+    public String join(ArrayList<?> arr, String del)
+    {
+
+        StringBuilder output = new StringBuilder();
+
+        for (int i = 0; i < arr.size(); i++)
+        {
+
+            if (i > 0) output.append(del);
+
+            // --- Quote strings, only, for JS syntax
+            if (arr.get(i) instanceof String) output.append("\"");
+            output.append(arr.get(i));
+            if (arr.get(i) instanceof String) output.append("\"");
+        }
+
+        return output.toString();
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +33,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard - SB Admin</title>
+    <script type="text/javascript" src="https://cdn.zingchart.com/zingchart.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
@@ -30,6 +54,25 @@
     </style>
 </head>
 <body class="sb-nav-fixed">
+<script>
+    <%
+       // --- Create two Java Arrays
+        ArrayList<String> months = new ArrayList<String>();
+        ArrayList<Integer> users = new ArrayList<Integer>();
+        String[] monthName = {"January", "February","March","April","May","June","July","August","September","October","November","December"};
+        for(int i = 0; i<monthName.length;i++){
+            months.add(monthName[i]);
+            users.add(i);
+        }
+    %>
+
+    // --- add a comma after each value in the array and convert to javascript string representing an array
+    var monthData1 = [<%= join(months, ",") %>];
+    var userData1 = [<%= join(users, ",") %>];
+    var monthData2 = [<%= join(months, ",") %>];
+    var userData2 = [<%= join(users, ",") %>];
+
+</script>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html">Library Online</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
 ><!-- Navbar Search-->
@@ -185,16 +228,18 @@
         <div class="row">
             <div class="col-xl-6">
                 <div class="card mb-4">
-                    <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-chart-area mr-1"></i>Area Chart Example</div>
+                    <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-chart-area mr-1"></i>Book Chart</div>
                     <div class="card-body" >
                         <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                        <div id="myBookChart"></div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-6">
                 <div class="card mb-4">
-                    <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-chart-bar mr-1"></i>Bar Chart Example</div>
+                    <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-chart-bar mr-1"></i>Reader Chart</div>
                     <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                    <div id="myReaderChart"></div>
                 </div>
             </div>
         </div>
@@ -264,6 +309,54 @@
         </div>
     </div>
 </footer>
+<script>
+    window.onload = function() {
+        zingchart.render({
+            id: "myBookChart",
+            width: "100%",
+            height: 400,
+            background: "cyan",
+            data: {
+                "type": "bar",
+                "title": {
+                    "text": "Loaned Book by Month"
+                },
+                "scale-x": {
+                    "labels": monthData1
+                },
+                "plot": {
+                    "line-width": 1
+                },
+                "series": [{
+                    "values": userData1
+                }]
+            }
+        });
+        zingchart.render({
+            id: "myReaderChart",
+            width: "100%",
+            height: 400,
+            data: {
+                "type": "bar",
+                "title": {
+                    "text": "Reader By Month"
+                },
+                "scale-x": {
+                    "labels": monthData2
+                },
+                "plot": {
+                    "line-width": 1
+                },
+                "series": [{
+                    "values": userData2
+                }]
+            }
+        });
+    };
+
+</script>
+
+
 </body>
 
 </html>
