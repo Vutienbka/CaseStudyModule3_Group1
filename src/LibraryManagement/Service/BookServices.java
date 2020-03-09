@@ -2,6 +2,7 @@ package LibraryManagement.Service;
 
 import LibraryManagement.Model.Book;
 
+import javax.servlet.RequestDispatcher;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,6 +21,7 @@ public class BookServices implements I_BookService{
     final static String VIEW_LOANED_BOOK_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
     final static String VIEW_READER_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
     final static String ADD_NEW_BOOK = "INSERT INTO Book VALUES (?,?,?,?,?,?,?,?,?)";
+    final static String DELETE_BOOK = "DELETE FROM Book WHERE bookId= ?";
     private static List<Book> bookList ;
     static {
         bookList = new ArrayList<>();
@@ -151,8 +153,19 @@ public class BookServices implements I_BookService{
     }
 
     @Override
-    public void removeBook(int Id) {
-
+    public boolean removeBook(int Id) {
+        Connection conn = connection.getConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement(DELETE_BOOK);
+            ps.setInt(1,Id);
+           int rows = ps.executeUpdate();
+           if(rows > 0)
+               System.out.println("Delete" + rows);
+               return true;
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return false;
     }
     public int viewIssuedBookQuantity(){
         Connection conn = connection.getConnection();

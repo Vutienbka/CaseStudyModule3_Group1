@@ -86,7 +86,8 @@
                             <td><c:out value="${book.getSituation()}"></c:out></td>
                             <td>
                                 <button class="btn btn-primary"><a style="color: white"
-                                                                   href="${pageContext.request.contextPath}?action=deleteBook&Id=${book.getBookId()}" >Delete Book</a></button>
+                               href="${pageContext.request.contextPath}?action=deleteForm&Id=${book.getBookId()}" >Delete Book
+                                </a></button>
                             </td>
                         </tr>
                     </c:forEach>

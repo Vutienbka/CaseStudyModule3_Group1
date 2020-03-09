@@ -11,5 +11,5 @@ public interface I_BookService {
     boolean saveBook(Book book);
     Book findById(int Id);
     boolean addNewBook(Book book);
-    void removeBook(int Id);
+    boolean removeBook(int Id);
 }
