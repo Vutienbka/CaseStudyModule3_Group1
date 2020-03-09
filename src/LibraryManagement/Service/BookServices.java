@@ -12,7 +12,6 @@ import java.util.List;
 public class BookServices implements I_BookService{
 
     SQLConnection connection = new SQLConnection();
-    final static String INSERT_STUDENT_INTO_SQL = "INSERT INTO Book VALUES (?,?,?,?,?,?);";
     final static String SELECT_ALL_BOOKS = "SELECT * FROM Book";
     final static String SELECT_ONE_BOOK = "SELECT * FROM Book WHERE bookId=?";
     final static String UPDATE_BOOK = "UPDATE  Book SET bookName=? ,typeOfBook=?,author=?, quantity=?, " +
@@ -20,6 +19,7 @@ public class BookServices implements I_BookService{
     final static String VIEW_ISSUED_BOOK_QUANTITY = "SELECT quantity FROM Book";
     final static String VIEW_LOANED_BOOK_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
     final static String VIEW_READER_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
+    final static String ADD_NEW_BOOK = "INSERT INTO Book VALUES (?,?,?,?,?,?,?,?,?)";
     private static List<Book> bookList ;
     static {
         bookList = new ArrayList<>();
@@ -126,7 +126,27 @@ public class BookServices implements I_BookService{
     }
 
     @Override
-    public boolean addNewBook(int Id, Book book) {
+    public boolean addNewBook(Book book) {
+        Connection conn = connection.getConnection();
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(ADD_NEW_BOOK);
+            ps.setInt(1,book.getBookId());
+            ps.setString(2,book.getBookName());
+            ps.setString(3,book.getTypeOfBook());
+            ps.setString(4,book.getAuthor());
+            ps.setInt(5,book.getQuantity());
+            ps.setInt(6,book.getPrice());
+            ps.setString(7,book.getLanguage());
+            ps.setBoolean(8,book.getStatus());
+            ps.setString(9,book.getSituation());
+            int rows = ps.executeUpdate();
+            System.out.println("row" + rows);
+            if(rows>0)
+                return true;
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
         return false;
     }
 

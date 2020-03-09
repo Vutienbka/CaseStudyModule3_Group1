@@ -26,6 +26,12 @@
             display: none;
         }
     </style>
+    <script>
+        let hide = document.getElementById("message");
+        function hideMessage() {
+            hide.style.display="none";
+        }
+    </script>
 </head>
 <body>
 <!--Ta Edit Form -->
@@ -75,7 +81,7 @@
                         <input type="text"  id="situation" class="form-control" placeholder="Situation" >
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success" style="width: 120px">Save</button>
+                        <button id ="save" type="submit" class="btn btn-success" style="width: 120px"> Save </button>
                         <button id="close" class="btn btn-primary" style="width: 120px">Close</button>
                     </div>
                 </form>
@@ -88,7 +94,7 @@
 <div class="container-fluid">
 <p style="position:relative;top: 10px; font-size: 20px; color: #00aced;text-decoration: #00aced ">
     <a href="book"> Back to Home Page << </a>
-    <span style="color: #00aced; font-size: 30px">
+    <span style="color: green; font-size: 20px" id="message" onclick="hideMessage()">
         ${message}
     </span>
 </p>
@@ -139,7 +145,8 @@
                         <td><c:out value="${book.getStatus()}"></c:out></td>
                         <td><c:out value="${book.getSituation()}"></c:out></td>
                         <td>
-                            <button class="btn btn-primary"><a style="color: white" href="${pageContext.request.contextPath}?action=editForm&Id=${book.getBookId()}">Edit Infor</a></button>
+                            <button class="btn btn-primary"><a style="color: white"
+                                   href="${pageContext.request.contextPath}?action=editForm&Id=${book.getBookId()}" >Edit Infor</a></button>
                         </td>
                     </tr>
                 </c:forEach>
@@ -149,9 +156,5 @@
     </div>
 </div>
 </div>
-<script type="text/javascript">
-    var myWindow = window.open("", "MsgWindow", "width=200,height=100");
-    myWindow.document.write("<p>Greetings. Welcome window'. I am 200px wide and 100px tall!</p>");
-</script>
 </body>
 </html>

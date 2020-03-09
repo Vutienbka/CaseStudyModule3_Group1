@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: vutienbka
-  Date: 3/7/20
-  Time: 10:17 AM
+  Date: 3/9/20
+  Time: 11:55 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,7 +10,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
-    <title>Delete Book Page</title>
+    <title>Add Book</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
@@ -38,6 +38,9 @@
             ${message}
         </span>
     </p>
+    <div><button class="btn btn-primary"><a style="color: white"
+                href="${pageContext.request.contextPath}?action=addForm&Id=${book.getBookId()}"> Add Book</a>
+   </button></div>
     <div class="card mb-4">
         <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1"></i >Books Information</div>
         <div class="card-body">
@@ -54,7 +57,6 @@
                         <th>Language</th>
                         <th>Status</th>
                         <th>Situation</th>
-                        <th>Action</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -68,7 +70,6 @@
                         <th>Language</th>
                         <th>Status</th>
                         <th>Situation</th>
-                        <th>Action</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -84,10 +85,6 @@
                             <td><c:out value="${book.getLanguage()}"></c:out></td>
                             <td><c:out value="${book.getStatus()}"></c:out></td>
                             <td><c:out value="${book.getSituation()}"></c:out></td>
-                            <td>
-                                <button class="btn btn-primary"><a style="color: white"
-                                                                   href="${pageContext.request.contextPath}?action=deleteBook&Id=${book.getBookId()}" >Delete Book</a></button>
-                            </td>
                         </tr>
                     </c:forEach>
                     </tbody>

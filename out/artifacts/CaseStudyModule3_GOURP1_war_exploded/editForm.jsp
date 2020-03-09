@@ -26,7 +26,7 @@
     <div class="panel-group" style="margin: 0 auto">
         <div class="panel panel-primary"  >
             <div class="panel-heading" >
-                <h3 class="panel-title" style="text-align: center;">Edit Form</h3>
+                <h3 class="panel-title" style="text-align: center; margin-top: 20px; color: blue">Edit Form</h3>
             </div>
             <div class="panel-body">
                 <form class="form-horizontal" method="post">

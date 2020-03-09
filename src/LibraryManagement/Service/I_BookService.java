@@ -10,6 +10,6 @@ public interface I_BookService {
     ArrayList<Book> selectAllBook();
     boolean saveBook(Book book);
     Book findById(int Id);
-    boolean addNewBook(int Id, Book book);
+    boolean addNewBook(Book book);
     void removeBook(int Id);
 }

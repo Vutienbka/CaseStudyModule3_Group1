@@ -27,14 +27,15 @@ public class AdminServlet extends HttpServlet {
             action="";
         }
         switch (action) {
-            case "create":
+            case "addForm":
+                addBook(request,response);
                 break;
             case "view":
                 break;
             case "editForm":
                 editForm(request,response);
                 break;
-            case "deletePage":
+            case "deleteBook":
                 break;
 
             case "deleteForm":
@@ -52,7 +53,11 @@ public class AdminServlet extends HttpServlet {
             action="";
         }
         switch (action) {
-            case "create":
+            case "addPage":
+                showAddPage(request,response);
+                break;
+            case "addForm":
+                showAddForm(request,response);
                 break;
             case "view":
                 break;
@@ -61,9 +66,9 @@ public class AdminServlet extends HttpServlet {
                 break;
             case "editForm":
                 showEditForm(request,response);
-                System.out.println("Hello da vao nha");
                 break;
             case "deletePage":
+                showDeletePage(request,response);
                 break;
 
             case "deleteForm":
@@ -88,6 +93,59 @@ public class AdminServlet extends HttpServlet {
         request.setAttribute("bookList",bookList);
         dispatcher.forward(request,response);
     }
+    public void showAddPage(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        ArrayList<Book> bookList = bookService.selectAllBook();
+        RequestDispatcher dispatcher = request.getRequestDispatcher("AddBookPage.jsp");
+        request.setAttribute("bookList",bookList);
+        dispatcher.forward(request,response);
+    }
+    public void addBook(HttpServletRequest request,HttpServletResponse response) {
+        int bookId = Integer.parseInt(request.getParameter("bookId"));
+        System.out.println("bookId"+bookId);
+        String bookName = request.getParameter("bookName");
+        String typeOfBook = request.getParameter("typeOfBook");
+        String author = request.getParameter("author");
+        int quantity = Integer.parseInt(request.getParameter("quality"));
+        int price = Integer.parseInt(request.getParameter("price"));
+        String language = request.getParameter("language");
+        boolean status = Boolean.getBoolean(request.getParameter("status"));
+        String situation = request.getParameter("situation");
+
+        Book book = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation);
+
+        RequestDispatcher dispatcher;
+        if (book == null) {
+            dispatcher = request.getRequestDispatcher("MVC_error_404.jsp");
+        } else {
+            boolean check = bookService.addNewBook(book);
+            bookList= bookService.selectAllBook();
+            if (check) {
+                request.setAttribute("message", "New book was Added");
+                request.setAttribute("bookList", bookList);
+            } else{
+                request.setAttribute("message", "New Book not Added");
+                request.setAttribute("bookList", bookList);
+            }
+            try {
+                dispatcher = request.getRequestDispatcher("AddBookPage.jsp");
+                dispatcher.forward(request, response);
+
+            } catch (IOException | ServletException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void showAddForm(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher;
+        dispatcher = request.getRequestDispatcher("addForm.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void showEditPage(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Book> bookList = bookService.selectAllBook();
         RequestDispatcher dispatcher = request.getRequestDispatcher("EditBookPage.jsp");
@@ -104,7 +162,6 @@ public class AdminServlet extends HttpServlet {
         String language = request.getParameter("language");
         boolean status = Boolean.getBoolean(request.getParameter("status"));
         String situation = request.getParameter("situation");
-
         Book book = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation);
 
         RequestDispatcher dispatcher;
@@ -146,5 +203,10 @@ public class AdminServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-
+    public void showDeletePage(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        ArrayList<Book> bookList = bookService.selectAllBook();
+        RequestDispatcher dispatcher = request.getRequestDispatcher("DeleteBookPage.jsp");
+        request.setAttribute("bookList",bookList);
+        dispatcher.forward(request,response);
+    }
 }
