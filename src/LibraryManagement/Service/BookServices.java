@@ -1,6 +1,7 @@
 package LibraryManagement.Service;
 
 import LibraryManagement.Model.Book;
+import LibraryManagement.Model.RegisterForm;
 
 import javax.servlet.RequestDispatcher;
 import java.sql.Connection;
@@ -8,21 +9,42 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class BookServices implements I_BookService{
-
+    RegisterService registerService = new RegisterService();
     SQLConnection connection = new SQLConnection();
-    final static String SELECT_ALL_BOOKS = "SELECT * FROM Book";
-    final static String SELECT_ONE_BOOK = "SELECT * FROM Book WHERE bookId=?";
-    final static String UPDATE_BOOK = "UPDATE  Book SET bookName=? ,typeOfBook=?,author=?, quantity=?, " +
+    final static String SELECT_ALL_BOOKS = "SELECT * FROM bookDetailView";
+    final static String SELECT_ONE_BOOK = "SELECT * FROM bookDetailView WHERE bookId=?";
+    final static String UPDATE_BOOK = "UPDATE  bookDetailView SET bookName=? ,typeOfBook=?,author=?, quantity=?, " +
             "price=?, language=?, status=?, situation=? WHERE bookId=?";
-    final static String VIEW_ISSUED_BOOK_QUANTITY = "SELECT quantity FROM Book";
-    final static String VIEW_LOANED_BOOK_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
+    final static String VIEW_ISSUED_BOOK_QUANTITY = "SELECT quantity FROM bookDetailView";
+    final static String VIEW_LOANED_BOOK_QUANTITY = "SELECT quantity FROM bookDetailView WHERE status = true";
     final static String VIEW_READER_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
-    final static String ADD_NEW_BOOK = "INSERT INTO Book VALUES (?,?,?,?,?,?,?,?,?)";
-    final static String DELETE_BOOK = "DELETE FROM Book WHERE bookId= ?";
+    final static String ADD_NEW_BOOK = "INSERT INTO bookDetailView VALUES (?,?,?,?,?,?,?,?,?)";
+    final static String DELETE_BOOK = "DELETE FROM bookDetailView WHERE bookId= ?";
     private static List<Book> bookList ;
+    private Date loanDate = null;
+    private Date receiveDate = null;
+
+    public Date getLoanDate() {
+        return loanDate;
+    }
+
+    public void setLoanDate(Date loanDate) {
+        this.loanDate = loanDate;
+    }
+
+    public Date getReceiveDate() {
+        return receiveDate;
+    }
+
+    public void setReceiveDate(Date receiveDate) {
+        this.receiveDate = receiveDate;
+    }
+
+    List<RegisterForm> registerList = registerService.initRegisterList();
     static {
         bookList = new ArrayList<>();
     }
@@ -76,7 +98,6 @@ public class BookServices implements I_BookService{
         }
         return bookList;
     }
-
     @Override
     public boolean saveBook(Book book) {
         Connection conn = connection.getConnection();
@@ -91,7 +112,6 @@ public class BookServices implements I_BookService{
             ps.setBoolean(7,book.getStatus());
             ps.setString(8,book.getSituation());
             ps.setInt(9,book.getBookId());
-
             int rows = ps.executeUpdate();
             if(rows>0)
                 return true;
@@ -100,7 +120,6 @@ public class BookServices implements I_BookService{
         }
         return false;
     }
-
     @Override
     public Book findById(int bookId) {
         Connection conn = connection.getConnection();

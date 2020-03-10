@@ -7,35 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e63de133-eb25-4588-aa8f-c5e49de9be91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/Admin/deleteForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Model/Reader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Model/RegisterForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/RegisterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/404_Error.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/AddBookPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/DeleteBookPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/EditBookPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/EditIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/LoginForm.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Controler/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Controler/AdminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Model/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/BookServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/BookServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/I_BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/I_BookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/addForm.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/editForm.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Controler/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Controler/AdminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/SQLConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/SQLConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Model/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/BookServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/BookServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/I_BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/I_BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/SQLConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/SQLConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Controler/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Controler/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Model/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Service/BookServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/BookServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Service/I_BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/I_BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/404_Error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/404_Error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AddBookPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/AddBookPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/DeleteBookPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/DeleteBookPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/EditBookPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/EditBookPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/EditIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/EditIcon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/LoginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/LoginForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/addForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/addForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/editForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/editForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Service/SQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/SQLConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Admin/Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Admin/EditBookPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/EditBookPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Admin/editForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/editForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +52,8 @@
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -98,7 +86,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -279,7 +267,8 @@
       <workItem from="1583647433312" duration="25775000" />
       <workItem from="1583682793893" duration="1156000" />
       <workItem from="1583684019955" duration="1197000" />
-      <workItem from="1583723093786" duration="24974000" />
+      <workItem from="1583723093786" duration="28466000" />
+      <workItem from="1583821660242" duration="15505000" />
     </task>
     <task id="LOCAL-00001" summary="sad">
       <created>1583390030024</created>
@@ -328,10 +317,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583492552882" />
-    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1583595923219">
+    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1583848408085">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1583595923219" />
+    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1583848408085" />
     <state x="297" y="27" width="761" height="697" key="CommitChangelistDialog2" timestamp="1583390029655">
       <screen x="0" y="27" width="1366" height="697" />
     </state>
@@ -340,54 +329,54 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583723919443" />
-    <state width="1244" height="2" key="GridCell.Tab.0.bottom" timestamp="1583752179161">
+    <state width="1244" height="872" key="GridCell.Tab.0.bottom" timestamp="1583850484577">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179161" />
-    <state width="1244" height="2" key="GridCell.Tab.0.center" timestamp="1583752179160">
+    <state width="1244" height="872" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484577" />
+    <state width="1244" height="872" key="GridCell.Tab.0.center" timestamp="1583850484576">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179160" />
-    <state width="1244" height="2" key="GridCell.Tab.0.left" timestamp="1583752179159">
+    <state width="1244" height="872" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484576" />
+    <state width="1244" height="872" key="GridCell.Tab.0.left" timestamp="1583850484575">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179159" />
-    <state width="1244" height="2" key="GridCell.Tab.0.right" timestamp="1583752179160">
+    <state width="1244" height="872" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484575" />
+    <state width="1244" height="872" key="GridCell.Tab.0.right" timestamp="1583850484576">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179160" />
-    <state width="1244" height="2" key="GridCell.Tab.1.bottom" timestamp="1583752179052">
+    <state width="1244" height="872" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484576" />
+    <state width="1244" height="872" key="GridCell.Tab.1.bottom" timestamp="1583850484578">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179052" />
-    <state width="1244" height="2" key="GridCell.Tab.1.center" timestamp="1583752179051">
+    <state width="1244" height="872" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484578" />
+    <state width="1244" height="872" key="GridCell.Tab.1.center" timestamp="1583850484577">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179051" />
-    <state width="1244" height="2" key="GridCell.Tab.1.left" timestamp="1583752179050">
+    <state width="1244" height="872" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484577" />
+    <state width="1244" height="872" key="GridCell.Tab.1.left" timestamp="1583850484577">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179050" />
-    <state width="1244" height="2" key="GridCell.Tab.1.right" timestamp="1583752179052">
+    <state width="1244" height="872" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484577" />
+    <state width="1244" height="872" key="GridCell.Tab.1.right" timestamp="1583850484578">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179052" />
-    <state width="1244" height="2" key="GridCell.Tab.2.bottom" timestamp="1583752179050">
+    <state width="1244" height="872" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484578" />
+    <state width="1244" height="872" key="GridCell.Tab.2.bottom" timestamp="1583850484580">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179050" />
-    <state width="1244" height="2" key="GridCell.Tab.2.center" timestamp="1583752179047">
+    <state width="1244" height="872" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484580" />
+    <state width="1244" height="872" key="GridCell.Tab.2.center" timestamp="1583850484579">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179047" />
-    <state width="1244" height="2" key="GridCell.Tab.2.left" timestamp="1583752179046">
+    <state width="1244" height="872" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484579" />
+    <state width="1244" height="872" key="GridCell.Tab.2.left" timestamp="1583850484578">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179046" />
-    <state width="1244" height="2" key="GridCell.Tab.2.right" timestamp="1583752179049">
+    <state width="1244" height="872" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484578" />
+    <state width="1244" height="872" key="GridCell.Tab.2.right" timestamp="1583850484579">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="2" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583752179049" />
+    <state width="1244" height="872" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583850484579" />
     <state x="242" y="116" width="1482" height="872" key="MergeDialog" timestamp="1583662093510">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

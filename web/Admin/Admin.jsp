@@ -259,6 +259,8 @@
                             <th>Language</th>
                             <th>Status</th>
                             <th>Situation</th>
+                            <th>Loaned date</th>
+                            <th>Receive Date</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -272,6 +274,8 @@
                             <th>Language</th>
                             <th>Status</th>
                             <th>Situation</th>
+                            <th>Loaned date</th>
+                            <th>Receive Date</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -287,6 +291,8 @@
                                 <td><c:out value="${book.getLanguage()}"></c:out></td>
                                 <td><c:out value="${book.getStatus()}"></c:out></td>
                                 <td><c:out value="${book.getSituation()}"></c:out></td>
+                                <td><c:out value="${book.getLoanDate()}"></c:out></td>
+                                <td><c:out value="${book.getReceiveDate()}"></c:out></td>
                             </tr>
                         </c:forEach>
                         </tbody>

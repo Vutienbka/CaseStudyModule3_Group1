@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 @WebServlet(name = "AdminServlet",urlPatterns = {"/"})
 public class AdminServlet extends HttpServlet {
@@ -31,7 +34,11 @@ public class AdminServlet extends HttpServlet {
             case "view":
                 break;
             case "editForm":
-                editBook(request,response);
+                try {
+                    editBook(request,response);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 break;
             case "deleteForm":
                 deleteBook(request,response);
@@ -78,6 +85,7 @@ public class AdminServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
     public void listBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         int issuedBookQuantity = bookService.viewIssuedBookQuantity();
         int loanedBookQuantity = bookService.viewLoanedBookQuantity();
         int availableBookQuantity = issuedBookQuantity - loanedBookQuantity;
@@ -160,7 +168,7 @@ public class AdminServlet extends HttpServlet {
         request.setAttribute("bookList",bookList);
         dispatcher.forward(request,response);
     }
-    public void editBook(HttpServletRequest request, HttpServletResponse response) {
+    public void editBook(HttpServletRequest request, HttpServletResponse response) throws ParseException {
         int bookId = Integer.parseInt(request.getParameter("Id"));
         String bookName = request.getParameter("bookName");
         String typeOfBook = request.getParameter("typeOfBook");
@@ -170,7 +178,9 @@ public class AdminServlet extends HttpServlet {
         String language = request.getParameter("language");
         boolean status = Boolean.getBoolean(request.getParameter("status"));
         String situation = request.getParameter("situation");
-        Book book = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation);
+        Date loanDate = (new SimpleDateFormat("yyyy-mm-dd")).parse(request.getParameter("loanDate"));
+        Date receiveDate = (new SimpleDateFormat("yyyy-mm-dd")).parse(request.getParameter("receiveDate"));
+        Book book = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation, loanDate,receiveDate);
 
         RequestDispatcher dispatcher;
 
@@ -179,6 +189,8 @@ public class AdminServlet extends HttpServlet {
         } else {
             boolean check = bookService.saveBook(book);
             bookList=bookService.selectAllBook();
+            bookService.setLoanDate(loanDate);
+            bookService.setReceiveDate(receiveDate);
             if (check) {
                 request.setAttribute("message", "Book information was updated");
                 request.setAttribute("bookList", bookList);
@@ -192,6 +204,7 @@ public class AdminServlet extends HttpServlet {
             }
         }
     }
+
     public void showEditForm(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         int bookId = Integer.parseInt(request.getParameter("Id"));
         Book book = this.bookService.findById(bookId);
@@ -223,8 +236,6 @@ public class AdminServlet extends HttpServlet {
         if(book == null){
             dispatcher = request.getRequestDispatcher("Admin/404_Error.jsp");
         } else {
-            System.out.println("Da tim thay book");
-            System.out.println("ten sach"+book.getBookName());
             dispatcher = request.getRequestDispatcher("Admin/deleteForm.jsp");
             request.setAttribute("book", book);
             dispatcher.forward(request,response);

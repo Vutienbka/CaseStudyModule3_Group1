@@ -1,5 +1,7 @@
 package LibraryManagement.Model;
 
+import java.util.Date;
+
 public class Book {
     private int bookId;
     private String bookName;
@@ -10,7 +12,9 @@ public class Book {
     private String language;
     private boolean status;
     private String situation;
-
+    private Date loanDate;
+    private Date receiveDate;
+    private String place;
     public Book() {
     }
 
@@ -24,6 +28,33 @@ public class Book {
         this.language = language;
         this.status = status;
         this.situation = situation;
+    }
+
+    public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, int price, String language, boolean status, String situation, String place) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.typeOfBook = typeOfBook;
+        Author = author;
+        this.quantity = quantity;
+        this.price = price;
+        this.language = language;
+        this.status = status;
+        this.situation = situation;
+        this.place = place;
+    }
+
+    public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, int price, String language, boolean status, String situation, Date loanDate, Date receiveDate) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.typeOfBook = typeOfBook;
+        Author = author;
+        this.quantity = quantity;
+        this.price = price;
+        this.language = language;
+        this.status = status;
+        this.situation = situation;
+        this.loanDate = loanDate;
+        this.receiveDate = receiveDate;
     }
 
     public int getBookId() {
@@ -96,5 +127,33 @@ public class Book {
 
     public void setSituation(String situation) {
         this.situation = situation;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public Date getLoanDate() {
+        return loanDate;
+    }
+
+    public void setLoanDate(Date loanDate) {
+        this.loanDate = loanDate;
+    }
+
+    public Date getReceiveDate() {
+        return receiveDate;
+    }
+
+    public void setReceiveDate(Date receiveDate) {
+        this.receiveDate = receiveDate;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 }

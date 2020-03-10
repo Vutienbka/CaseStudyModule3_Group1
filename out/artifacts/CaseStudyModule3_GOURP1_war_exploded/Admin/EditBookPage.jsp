@@ -114,6 +114,8 @@
                     <th>Language</th>
                     <th>Status</th>
                     <th>Situation</th>
+                    <th>Loaned date</th>
+                    <th>Receive Date</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -128,6 +130,8 @@
                     <th>Language</th>
                     <th>Status</th>
                     <th>Situation</th>
+                    <th>Loaned date</th>
+                    <th>Receive Date</th>
                     <th>Action</th>
                 </tr>
                 </tfoot>
@@ -144,6 +148,8 @@
                         <td><c:out value="${book.getLanguage()}"></c:out></td>
                         <td><c:out value="${book.getStatus()}"></c:out></td>
                         <td><c:out value="${book.getSituation()}"></c:out></td>
+                        <td><c:out value="${book.getLoanDate()}"></c:out></td>
+                        <td><c:out value="${book.getReceiveDate()}"></c:out></td>
                         <td>
                             <button class="btn btn-primary"><a style="color: white"
                                    href="${pageContext.request.contextPath}?action=editForm&Id=${book.getBookId()}" >Edit Infor</a></button>
