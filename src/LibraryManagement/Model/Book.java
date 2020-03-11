@@ -52,6 +52,16 @@ public class Book {
         this.place = place;
     }
 
+
+    public Book(String bookName, String typeOfBook, String author, int quantity, int price, String language) {
+        this.bookName = bookName;
+        this.typeOfBook = typeOfBook;
+        Author = author;
+        this.quantity = quantity;
+        this.price = price;
+        this.language = language;
+    }
+
     public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, int price, String language, boolean status, String situation, Date loanDate, Date receiveDate) {
         this.bookId = bookId;
         this.bookName = bookName;

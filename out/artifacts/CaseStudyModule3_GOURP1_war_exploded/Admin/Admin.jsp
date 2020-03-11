@@ -139,7 +139,7 @@
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
 
                         <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
-                           aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
+                           aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewAllBooks">
                             All Books </a>
 
                         <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"

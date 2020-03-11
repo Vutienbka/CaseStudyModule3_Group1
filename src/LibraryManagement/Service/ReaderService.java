@@ -36,7 +36,6 @@ public class ReaderService {
     }
     public int viewReaderQuantity(){
         ArrayList<Reader> readerList =selectAllReader();
-        System.out.println("Kich thuoc: " +readerList.size());
         return readerList.size();
     }
 }

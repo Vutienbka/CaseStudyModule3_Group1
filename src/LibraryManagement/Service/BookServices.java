@@ -1,9 +1,6 @@
 package LibraryManagement.Service;
 
-import LibraryManagement.Model.Book;
-import LibraryManagement.Model.LoanedBook;
-import LibraryManagement.Model.RegisterForm;
-import LibraryManagement.Model.ReturnedBook;
+import LibraryManagement.Model.*;
 
 import javax.servlet.RequestDispatcher;
 import java.sql.Connection;
@@ -11,40 +8,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class BookServices implements I_BookService{
     RegisterService registerService = new RegisterService();
     SQLConnection connection = new SQLConnection();
     final static String SELECT_ALL_BOOKS = "SELECT * FROM bookDetail";
+    final static String SELECT_ALL_BOOK_FOR_VIEWING = "SELECT * FROM bookOverview";
+    final static String VIEW_READER_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
     final static String SELECT_ONE_BOOK = "SELECT * FROM bookDetail WHERE bookId=?";
     final static String UPDATE_BOOK = "UPDATE  bookDetail SET bookName=? ,typeOfBook=?,author=?, quantity=?, " +
             "price=?, language=?, status=?, situation=? WHERE bookId=?";
     final static String VIEW_ISSUED_BOOK_QUANTITY = "SELECT quantity FROM bookDetail";
-    final static String VIEW_LOANED_BOOK_QUANTITY = "SELECT quantity FROM bookDetail WHERE status = true";
-    final static String VIEW_READER_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
     final static String ADD_NEW_BOOK = "INSERT INTO bookDetail VALUES (?,?,?,?,?,?,?,?,?)";
     final static String DELETE_BOOK = "DELETE FROM bookDetail WHERE bookId= ?";
     private static List<Book> bookList ;
-    private Date loanDate = null;
-    private Date receiveDate = null;
-
-    public Date getLoanDate() {
-        return loanDate;
-    }
-
-    public void setLoanDate(Date loanDate) {
-        this.loanDate = loanDate;
-    }
-
-    public Date getReceiveDate() {
-        return receiveDate;
-    }
-
-    public void setReceiveDate(Date receiveDate) {
-        this.receiveDate = receiveDate;
-    }
 
     List<RegisterForm> registerList = registerService.initRegisterList();
     static {
@@ -75,7 +53,38 @@ public class BookServices implements I_BookService{
             e.printStackTrace();
         }
     }
+    public ArrayList<BookView> viewAllBook() {
+        ArrayList<BookView> bookList = new ArrayList<>();
+        ArrayList<LoanedBook> loanedBookList = viewLoanedBookInfo();
 
+        Connection conn = connection.getConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement(SELECT_ALL_BOOK_FOR_VIEWING);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                String bookName = rs.getString("bookName");
+                String typeOfBook = rs.getString("typeOfBook");
+                String author = rs.getString("author");
+                int quantity = rs.getInt("quantity");
+                int price = rs.getInt("price");
+                String language = rs.getString("language");
+                int loanedQuantity = 0;
+                int availableQuantity;
+
+                for(LoanedBook book : loanedBookList){
+                    if(book.getBookName().equalsIgnoreCase(bookName)){
+                        loanedQuantity+= book.getQuantity();
+                    }
+                }
+                availableQuantity = quantity - loanedQuantity;
+
+                bookList.add(new BookView(bookName,typeOfBook,author,quantity,price,language,loanedQuantity,availableQuantity));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bookList;
+    }
     @Override
     public ArrayList<Book> selectAllBook() {
         ArrayList<Book> bookList = new ArrayList<>();

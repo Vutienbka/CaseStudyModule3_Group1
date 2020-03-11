@@ -1,9 +1,6 @@
 package LibraryManagement.Controler;
 
-import LibraryManagement.Model.Book;
-import LibraryManagement.Model.LoanedBook;
-import LibraryManagement.Model.Reader;
-import LibraryManagement.Model.ReturnedBook;
+import LibraryManagement.Model.*;
 import LibraryManagement.Service.BookServices;
 import LibraryManagement.Service.ReaderService;
 import LibraryManagement.Service.SQLConnection;
@@ -75,7 +72,8 @@ public class AdminServlet extends HttpServlet {
             case "viewReturnedBooks":
                 viewReturnedBooks(request,response);
                 break;
-
+            case "viewAllBooks":
+                viewAllBooks(request,response);
             case "editPage":
                 showEditPage(request,response);
                 break;
@@ -320,6 +318,24 @@ public class AdminServlet extends HttpServlet {
         }
 
     }
+    public void viewAllBooks(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ArrayList<BookView> bookList = bookService.viewAllBook();
+        RequestDispatcher dispatcher;
+
+        if(bookList==null){
+            String message = "Book List is empty";
+            dispatcher = request.getRequestDispatcher("Admin/Book/viewAllBooks.jsp");
+            request.setAttribute("message", message);
+            dispatcher.forward(request, response);
+        }
+        else {
+            dispatcher = request.getRequestDispatcher("Admin/Book/viewAllBooks.jsp");
+            request.setAttribute("bookList", bookList);
+            dispatcher.forward(request, response);
+        }
+
+    }
+
     /*-----------------------------------------------READER--------------------------------------------------------------------*/
     public void showEditReaderPage(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Reader> readerList = readerService.selectAllReader();
