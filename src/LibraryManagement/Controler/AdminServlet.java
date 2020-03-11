@@ -50,7 +50,7 @@ public class AdminServlet extends HttpServlet {
                 deleteBook(request,response);
                 break;
             /*----------------READER---------------------*/
-            default:listBook(request,response);
+            default:showHomePage(request,response);
                 break;
         }
     }
@@ -92,8 +92,10 @@ public class AdminServlet extends HttpServlet {
             case "editReaderPage":
                 showEditReaderPage(request,response);
                 break;
-            default:listBook(request,response);
+            default: {
+                showHomePage(request, response);
                 break;
+            }
         }
     }
     public void loginForm(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
@@ -101,18 +103,20 @@ public class AdminServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
     /*-------------------------------------BOOK------------------------------------------------------------------------------*/
-    public void listBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    public void showHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int issuedBookQuantity = bookService.viewIssuedBookQuantity();
         int loanedBookQuantity = bookService.viewLoanedBookQuantity();
+        int readerQuantity = readerService.viewReaderQuantity();
         int availableBookQuantity = issuedBookQuantity - loanedBookQuantity;
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/Admin.jsp");
         request.setAttribute("issuedBookQuantity",issuedBookQuantity);
         request.setAttribute("loanedBookQuantity",loanedBookQuantity);
         request.setAttribute("availableBookQuantity",availableBookQuantity);
+        request.setAttribute("readerQuantity",readerQuantity);
         request.setAttribute("bookList",bookList);
         dispatcher.forward(request,response);
     }
+
     public void showAddPage(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Book> bookList = bookService.selectAllBook();
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/Book/AddBookPage.jsp");

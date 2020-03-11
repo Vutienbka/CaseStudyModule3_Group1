@@ -12,10 +12,6 @@ public class ReaderService {
     SQLConnection connection = new SQLConnection();
     final static String SELECT_ALL_READER = "SELECT * FROM Reader";
 
-    public ReaderService() {
-        selectAllReader();
-    }
-
     public ArrayList<Reader> selectAllReader(){
         ArrayList<Reader> readerList = new ArrayList<>();
         Connection conn = connection.getConnection();
@@ -37,5 +33,10 @@ public class ReaderService {
             e.printStackTrace();
         }
         return readerList;
+    }
+    public int viewReaderQuantity(){
+        ArrayList<Reader> readerList =selectAllReader();
+        System.out.println("Kich thuoc: " +readerList.size());
+        return readerList.size();
     }
 }

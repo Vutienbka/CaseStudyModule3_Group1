@@ -214,34 +214,8 @@ public class BookServices implements I_BookService{
         return count;
     }
     public int viewLoanedBookQuantity(){
-        Connection conn = connection.getConnection();
-        int count = 0;
-        try {
-            PreparedStatement ps = conn.prepareStatement(VIEW_LOANED_BOOK_QUANTITY);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                int quantity = rs.getInt("quantity");
-                count+=quantity;
-            }
-        } catch(SQLException e){
-            e.printStackTrace();
-        }
-        return count;
-    }
-    public int viewReaderQuantity(){
-        Connection conn = connection.getConnection();
-        int count = 0;
-        try {
-            PreparedStatement ps = conn.prepareStatement(VIEW_LOANED_BOOK_QUANTITY);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                int quantity = rs.getInt("quantity");
-                count+=quantity;
-            }
-        } catch(SQLException e){
-            e.printStackTrace();
-        }
-        return count;
+        ArrayList<LoanedBook> bookList = viewLoanedBookInfo();
+        return bookList.size();
     }
     public ArrayList<LoanedBook> viewLoanedBookInfo(){
         ArrayList<Book> bookList = selectAllBook();
