@@ -140,16 +140,15 @@
 
                         <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
                            aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
-                            All Books</a>
+                            All Books </a>
 
-                        <a class="nav-link collapsed"
-                           data-toggle="collapse" data-target="#pagesCollapseAuth"
+                        <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
                            aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
-                            Loaned Books</a>
+                            Loaned Books </a>
 
-                        <a class="nav-link collapsed" data-toggle="collapse" data-target="#pagesCollapseError"
-                           aria-expanded="false" aria-controls="pagesCollapseError" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
-                            Received Books</a>
+                        <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
+                           aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewReturnedBooks">
+                            returned Books</a>
                     </nav>
 
                 </div>

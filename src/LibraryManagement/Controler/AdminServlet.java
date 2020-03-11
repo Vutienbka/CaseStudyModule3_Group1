@@ -3,6 +3,7 @@ package LibraryManagement.Controler;
 import LibraryManagement.Model.Book;
 import LibraryManagement.Model.LoanedBook;
 import LibraryManagement.Model.Reader;
+import LibraryManagement.Model.ReturnedBook;
 import LibraryManagement.Service.BookServices;
 import LibraryManagement.Service.ReaderService;
 import LibraryManagement.Service.SQLConnection;
@@ -71,6 +72,10 @@ public class AdminServlet extends HttpServlet {
             case "viewLoanedBooks":
                 viewLoanedBook(request,response);
                 break;
+            case "viewReturnedBooks":
+                viewReturnedBooks(request,response);
+                break;
+
             case "editPage":
                 showEditPage(request,response);
                 break;
@@ -283,16 +288,30 @@ public class AdminServlet extends HttpServlet {
         ArrayList<LoanedBook> loanedBookList = bookService.viewLoanedBookInfo();
         RequestDispatcher dispatcher;
         if(loanedBookList==null){
-            System.out.println("danh sach rong");
-            String message = "reader is empty";
+            String message = "Loaned Books is empty";
             dispatcher = request.getRequestDispatcher("Admin/Book/LoanedBookPage.jsp");
             request.setAttribute("message", message);
             dispatcher.forward(request, response);
         }
         else {
-            System.out.println("danh sach rong");
             dispatcher = request.getRequestDispatcher("Admin/Book/LoanedBookPage.jsp");
             request.setAttribute("loanedBookList", loanedBookList);
+            dispatcher.forward(request, response);
+        }
+
+    }
+    public void viewReturnedBooks(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ArrayList<ReturnedBook> returnedBookList = bookService.viewReturnedBookInfo();
+        RequestDispatcher dispatcher;
+        if(returnedBookList==null){
+            String message = "Returned Book List is empty";
+            dispatcher = request.getRequestDispatcher("Admin/Book/ReturnedBookPage.jsp");
+            request.setAttribute("message", message);
+            dispatcher.forward(request, response);
+        }
+        else {
+            dispatcher = request.getRequestDispatcher("Admin/Book/ReturnedBookPage.jsp");
+            request.setAttribute("returnedBookList", returnedBookList);
             dispatcher.forward(request, response);
         }
 

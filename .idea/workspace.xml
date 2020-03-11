@@ -7,72 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e63de133-eb25-4588-aa8f-c5e49de9be91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Model/LoanedBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/ReaderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Admin/Book/LoanedBookPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Admin/Reader/EditReaderPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LibraryManagement/Model/ReturnedBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Admin/Book/ReturnedBookPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/AddBookPage.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/Admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/DeleteBookPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/EditBookPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/EditIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/LoginForm.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/addForm.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/deleteForm.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/Admin/editForm.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Controler/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Controler/AdminServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Model/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Model/Reader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Model/Reader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/BookServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/BookServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/css/NewCss.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/css/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/css/sb-admin-2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/css/sb-admin-2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/img/editicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/img/undraw_posting_photo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/js/demo/chart-area-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/js/demo/chart-bar-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/js/demo/chart-pie-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/js/demo/datatables-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/js/sb-admin-2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/js/sb-admin-2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CaseStudyModule3_GOURP1_war_exploded/WEB-INF/classes/LibraryManagement/Service/RegisterService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Controler/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Controler/AdminServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Model/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Model/Reader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Model/Reader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/BookServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/BookServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/css/NewCss.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudyModule3_GOURP1/LibraryManagement/Service/RegisterService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Controler/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Controler/AdminServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Model/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Model/Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Service/BookServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/BookServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/NewCss.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin/AddBookPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Book/AddBookPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryManagement/Service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryManagement/Service/RegisterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Admin/Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin/DeleteBookPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Book/DeleteBookPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin/EditBookPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Book/EditBookPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin/EditIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin/LoginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Book/LoginForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin/addForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Book/addForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin/deleteForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Book/deleteForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin/editForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Book/editForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Dashboard - SB Admin_files/all.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Dashboard - SB Admin_files/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Dashboard - SB Admin_files/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Dashboard - SB Admin_files/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Dashboard - SB Admin_files/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Dashboard - SB Admin_files/zingchart.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/sb-admin-2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/sb-admin-2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img/editicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img/undraw_posting_photo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/demo/chart-area-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/demo/chart-bar-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/demo/chart-pie-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/demo/datatables-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/sb-admin-2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/sb-admin-2.min.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,8 +49,8 @@
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -277,7 +225,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -319,6 +267,7 @@
       <workItem from="1583684019955" duration="1197000" />
       <workItem from="1583723093786" duration="28466000" />
       <workItem from="1583821660242" duration="15505000" />
+      <workItem from="1583931604024" duration="3909000" />
     </task>
     <task id="LOCAL-00001" summary="sad">
       <created>1583390030024</created>
@@ -371,6 +320,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1583920959512" />
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1583935489867">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583935489867" />
     <state x="297" y="27" width="761" height="697" key="CommitChangelistDialog2" timestamp="1583390029655">
       <screen x="0" y="27" width="1366" height="697" />
     </state>
@@ -379,54 +332,54 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583896640167" />
-    <state width="1244" height="656" key="GridCell.Tab.0.bottom" timestamp="1583923316006">
+    <state width="1244" height="656" key="GridCell.Tab.0.bottom" timestamp="1583935561700">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316006" />
-    <state width="1244" height="656" key="GridCell.Tab.0.center" timestamp="1583923316005">
+    <state width="1244" height="656" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561700" />
+    <state width="1244" height="656" key="GridCell.Tab.0.center" timestamp="1583935561699">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316005" />
-    <state width="1244" height="656" key="GridCell.Tab.0.left" timestamp="1583923316003">
+    <state width="1244" height="656" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561699" />
+    <state width="1244" height="656" key="GridCell.Tab.0.left" timestamp="1583935561698">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316003" />
-    <state width="1244" height="656" key="GridCell.Tab.0.right" timestamp="1583923316005">
+    <state width="1244" height="656" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561698" />
+    <state width="1244" height="656" key="GridCell.Tab.0.right" timestamp="1583935561700">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316005" />
-    <state width="1244" height="656" key="GridCell.Tab.1.bottom" timestamp="1583923316008">
+    <state width="1244" height="656" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561700" />
+    <state width="1244" height="656" key="GridCell.Tab.1.bottom" timestamp="1583935561704">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316008" />
-    <state width="1244" height="656" key="GridCell.Tab.1.center" timestamp="1583923316007">
+    <state width="1244" height="656" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561704" />
+    <state width="1244" height="656" key="GridCell.Tab.1.center" timestamp="1583935561703">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316007" />
-    <state width="1244" height="656" key="GridCell.Tab.1.left" timestamp="1583923316007">
+    <state width="1244" height="656" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561703" />
+    <state width="1244" height="656" key="GridCell.Tab.1.left" timestamp="1583935561703">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316007" />
-    <state width="1244" height="656" key="GridCell.Tab.1.right" timestamp="1583923316007">
+    <state width="1244" height="656" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561703" />
+    <state width="1244" height="656" key="GridCell.Tab.1.right" timestamp="1583935561704">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316007" />
-    <state width="1244" height="656" key="GridCell.Tab.2.bottom" timestamp="1583923316007">
+    <state width="1244" height="656" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561704" />
+    <state width="1244" height="656" key="GridCell.Tab.2.bottom" timestamp="1583935561702">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316007" />
-    <state width="1244" height="656" key="GridCell.Tab.2.center" timestamp="1583923316006">
+    <state width="1244" height="656" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561702" />
+    <state width="1244" height="656" key="GridCell.Tab.2.center" timestamp="1583935561701">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316006" />
-    <state width="1244" height="656" key="GridCell.Tab.2.left" timestamp="1583923316006">
+    <state width="1244" height="656" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561701" />
+    <state width="1244" height="656" key="GridCell.Tab.2.left" timestamp="1583935561701">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316006" />
-    <state width="1244" height="656" key="GridCell.Tab.2.right" timestamp="1583923316006">
+    <state width="1244" height="656" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561701" />
+    <state width="1244" height="656" key="GridCell.Tab.2.right" timestamp="1583935561702">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="656" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583923316006" />
+    <state width="1244" height="656" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583935561702" />
     <state x="242" y="116" width="1482" height="872" key="MergeDialog" timestamp="1583662093510">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -435,11 +388,11 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="698" y="270" width="580" height="564" key="MultipleFileMergeDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583662093513" />
-    <state x="577" y="293" key="com.intellij.ide.util.TipDialog" timestamp="1583593833331">
+    <state x="577" y="293" key="com.intellij.ide.util.TipDialog" timestamp="1583931630571">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="376" y="203" key="com.intellij.ide.util.TipDialog/0.27.1366.697@0.27.1366.697" timestamp="1583389986783" />
-    <state x="577" y="293" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583593833331" />
+    <state x="577" y="293" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583931630571" />
     <state x="516" y="149" width="944" height="806" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583646612957">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

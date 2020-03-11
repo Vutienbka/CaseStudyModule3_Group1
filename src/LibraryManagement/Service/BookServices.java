@@ -3,6 +3,7 @@ package LibraryManagement.Service;
 import LibraryManagement.Model.Book;
 import LibraryManagement.Model.LoanedBook;
 import LibraryManagement.Model.RegisterForm;
+import LibraryManagement.Model.ReturnedBook;
 
 import javax.servlet.RequestDispatcher;
 import java.sql.Connection;
@@ -97,6 +98,7 @@ public class BookServices implements I_BookService{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        //kiem tra trang thai book trong danh sach da cho muon khi duoc tra lai
         for(Book book : bookList){
             for(RegisterForm registerForm : registerList){
                 if((book.getBookId() == registerForm.getBookId() && (registerForm.getReturnedDate().equalsIgnoreCase("")==false))){
@@ -245,39 +247,41 @@ public class BookServices implements I_BookService{
         ArrayList<Book> bookList = selectAllBook();
         ArrayList<LoanedBook> loanedBookList = new ArrayList<>();
         ArrayList<RegisterForm> registerList = registerService.initRegisterList();
-        int bookId;
-        String bookName;
-        String typeOfBook;
-        String loanedDate;
-        String loanSituation;
-        String dueDate;
-        String author;
-        String language;
-        int quantity;
-
-        for(RegisterForm register : registerList){
-            if((register.getReturnedDate()).equals("")){
-                bookId = register.getBookId();
-                loanSituation = register.getLoanSituation();
-                loanedDate = register.getLoanDate();
-                dueDate = register.getDueDate();
-                quantity = register.getQuantity();
-
-                for(Book book : bookList){
-                    if(book.getBookId() == register.getBookId()){
-                        bookName = book.getBookName();
-                        typeOfBook = book.getTypeOfBook();
-                        author = book.getAuthor();
-                        language = book.getLanguage();
-                        loanedBookList.add(new LoanedBook(bookId,bookName,typeOfBook,author,quantity,language,loanedDate,loanSituation,dueDate));
+        for(RegisterForm register : registerList) {
+            if ((register.getReturnedDate()).equals("")) {
+                for (Book book : bookList) {
+                    if (book.getBookId() == register.getBookId()) {
+                        loanedBookList.add(new LoanedBook( register.getBookId(), book.getBookName(), book.getTypeOfBook(),
+                                book.getAuthor(), register.getQuantity(),
+                                book.getLanguage(), register.getLoanDate(), register.getLoanSituation(), register.getDueDate()));
                         break;
-                    }else
-                        break;
+                    }
                 }
-
             }
         }
-
         return loanedBookList;
+    }
+
+
+    public ArrayList<ReturnedBook> viewReturnedBookInfo(){
+        ArrayList<Book> bookList = selectAllBook();
+        ArrayList<ReturnedBook> returnedBookList = new ArrayList<>();
+        ArrayList<RegisterForm> registerList = registerService.initRegisterList();
+        System.out.println("register: "+ registerList.size());
+
+        for(RegisterForm register : registerList) {
+            if (!((register.getReturnedDate()).equals(""))) {
+                for (Book book : bookList) {
+                    if (book.getBookId() == register.getBookId()) {
+                        returnedBookList.add(new ReturnedBook( register.getBookId(), book.getBookName(), book.getTypeOfBook(),
+                                book.getAuthor(), register.getQuantity(),
+                                book.getLanguage(), register.getLoanDate(), register.getReceiveSituation(), register.getReturnedDate()));
+                        break;
+                    }
+                }
+            }
+        }
+        System.out.println("so phan tu: loaned"+returnedBookList.size());
+        return returnedBookList;
     }
 }

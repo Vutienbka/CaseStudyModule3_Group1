@@ -15,14 +15,9 @@ public class RegisterService {
     SQLConnection connection = new SQLConnection();
     final static String SELECT_ALL_REGISTER = "SELECT * FROM registerDetail";
     private static ArrayList<RegisterForm> registerList;
-    static {
-        registerList = new ArrayList<>();
-    }
-    public RegisterService() {
-        initRegisterList();
-    }
 
     public ArrayList<RegisterForm> initRegisterList(){
+        ArrayList<RegisterForm> registerList = new ArrayList<>();
         Connection conn = connection.getConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(SELECT_ALL_REGISTER);
@@ -47,5 +42,7 @@ public class RegisterService {
         }
         return registerList;
     }
+
+
 }
 
