@@ -15,15 +15,15 @@ import java.util.List;
 public class BookServices implements I_BookService{
     RegisterService registerService = new RegisterService();
     SQLConnection connection = new SQLConnection();
-    final static String SELECT_ALL_BOOKS = "SELECT * FROM bookDetailView";
-    final static String SELECT_ONE_BOOK = "SELECT * FROM bookDetailView WHERE bookId=?";
-    final static String UPDATE_BOOK = "UPDATE  bookDetailView SET bookName=? ,typeOfBook=?,author=?, quantity=?, " +
+    final static String SELECT_ALL_BOOKS = "SELECT * FROM bookDetail";
+    final static String SELECT_ONE_BOOK = "SELECT * FROM bookDetail WHERE bookId=?";
+    final static String UPDATE_BOOK = "UPDATE  bookDetail SET bookName=? ,typeOfBook=?,author=?, quantity=?, " +
             "price=?, language=?, status=?, situation=? WHERE bookId=?";
-    final static String VIEW_ISSUED_BOOK_QUANTITY = "SELECT quantity FROM bookDetailView";
-    final static String VIEW_LOANED_BOOK_QUANTITY = "SELECT quantity FROM bookDetailView WHERE status = true";
+    final static String VIEW_ISSUED_BOOK_QUANTITY = "SELECT quantity FROM bookDetail";
+    final static String VIEW_LOANED_BOOK_QUANTITY = "SELECT quantity FROM bookDetail WHERE status = true";
     final static String VIEW_READER_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
-    final static String ADD_NEW_BOOK = "INSERT INTO bookDetailView VALUES (?,?,?,?,?,?,?,?,?)";
-    final static String DELETE_BOOK = "DELETE FROM bookDetailView WHERE bookId= ?";
+    final static String ADD_NEW_BOOK = "INSERT INTO bookDetail VALUES (?,?,?,?,?,?,?,?,?)";
+    final static String DELETE_BOOK = "DELETE FROM bookDetail WHERE bookId= ?";
     private static List<Book> bookList ;
     private Date loanDate = null;
     private Date receiveDate = null;
@@ -96,6 +96,13 @@ public class BookServices implements I_BookService{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        for(Book book : bookList){
+            for(RegisterForm registerForm : registerList){
+                if((book.getBookId() == registerForm.getBookId() && (registerForm.getReturnedDate().equalsIgnoreCase("")==false))){
+                    book.setSituation(registerForm.getReceiveSituation());
+                }
+            }
+        }
         return bookList;
     }
     @Override
@@ -112,6 +119,7 @@ public class BookServices implements I_BookService{
             ps.setBoolean(7,book.getStatus());
             ps.setString(8,book.getSituation());
             ps.setInt(9,book.getBookId());
+
             int rows = ps.executeUpdate();
             if(rows>0)
                 return true;
@@ -161,6 +169,7 @@ public class BookServices implements I_BookService{
             ps.setString(7,book.getLanguage());
             ps.setBoolean(8,book.getStatus());
             ps.setString(9,book.getSituation());
+
             int rows = ps.executeUpdate();
             System.out.println("row" + rows);
             if(rows>0)

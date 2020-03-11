@@ -8,17 +8,19 @@ public class RegisterForm {
     private int bookTypeId;
     private int bookTitleId;
     private int bookId;
-    private Date loanDate;
+    private String loanDate;
     private String loanSituation;
-    private Date receiveDate;
+    private String dueDate;
+    private String returnedDate;
     private String receiveSituation;
     private int quantity;
+
 
     public RegisterForm() {
     }
 
-    public RegisterForm(int registerId, int readerId, int bookTypeId, int bookTitleId, int bookId,
-                        Date loanDate, String loanSituation, Date receiveDate, String receiveSituation, int quantity) {
+    public RegisterForm(int registerId, int readerId, int bookTypeId, int bookTitleId, int bookId, String loanDate, String loanSituation,
+                        String dueDate, String returnedDate, String receiveSituation, int quantity) {
         this.registerId = registerId;
         this.readerId = readerId;
         this.bookTypeId = bookTypeId;
@@ -26,7 +28,8 @@ public class RegisterForm {
         this.bookId = bookId;
         this.loanDate = loanDate;
         this.loanSituation = loanSituation;
-        this.receiveDate = receiveDate;
+        this.dueDate = dueDate;
+        this.returnedDate = returnedDate;
         this.receiveSituation = receiveSituation;
         this.quantity = quantity;
     }
@@ -71,11 +74,11 @@ public class RegisterForm {
         this.bookId = bookId;
     }
 
-    public Date getLoanDate() {
+    public String getLoanDate() {
         return loanDate;
     }
 
-    public void setLoanDate(Date loanDate) {
+    public void setLoanDate(String loanDate) {
         this.loanDate = loanDate;
     }
 
@@ -87,12 +90,20 @@ public class RegisterForm {
         this.loanSituation = loanSituation;
     }
 
-    public Date getReceiveDate() {
-        return receiveDate;
+    public String getDueDate() {
+        return dueDate;
     }
 
-    public void setReceiveDate(Date receiveDate) {
-        this.receiveDate = receiveDate;
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getReturnedDate() {
+        return returnedDate;
+    }
+
+    public void setReturnedDate(String returnedDate) {
+        this.returnedDate = returnedDate;
     }
 
     public String getReceiveSituation() {
@@ -110,6 +121,4 @@ public class RegisterForm {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-
 }

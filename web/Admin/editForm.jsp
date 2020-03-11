@@ -68,14 +68,6 @@
                         <input type="text" name="situation" id = "${book.getSituation()}" value="${book.getSituation()}" class="form-control" placeholder="Situation" >
                     </div>
                     <div class="form-group">
-                        <label class="control-label">LoanDate</label>
-                        <input type="text"  name="loanDate" id = "${book.getLoanDate()}" value="${book.getLoanDate()}" class="form-control" placeholder="LoanDate" >
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">receiveDate</label>
-                        <input type="text" name="receiveDate" id = "${book.getReceiveDate()}" value="${book.getReceiveDate()}" class="form-control" placeholder="ReceiveDate" >
-                    </div>
-                    <div class="form-group">
                         <button type="submit" id="save" class="btn btn-success" style="width: 120px">Save</button>
                         <span><a href="book">Back to home page << </a></span>
                         <span style="margin: 0 10px">OR</span>

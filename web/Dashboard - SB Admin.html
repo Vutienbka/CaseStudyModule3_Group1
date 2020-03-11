@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Dashboard - SB Admin</title>
+    <script type="text/javascript" src="./Dashboard - SB Admin_files/zingchart.min.js"></script>
+    <link rel="stylesheet" href="./Dashboard - SB Admin_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Dashboard - SB Admin_files/bootstrap.css">
+    <link href="./Dashboard - SB Admin_files/all.css" rel="stylesheet">
+    <script src="./Dashboard - SB Admin_files/jquery.min.js">
+    </script>
+    <script src="./Dashboard - SB Admin_files/popper.min.js">
+    </script>
+    <script src="./Dashboard - SB Admin_files/bootstrap.min.js"></script>
+    <script src="./Dashboard - SB Admin_files/jquery.js"></script>
+    <script src="./Dashboard - SB Admin_files/bootstrap.js"></script>
+    <style>
+        a{
+            color: white;
+        }
+        a:hover{
+            color: lightcyan;
+        }
+    </style>
+<style type="text/css" data-author="zingchart"></style></head>
+<body class="sb-nav-fixed">
+<script>
+    
+
+    // --- add a comma after each value in the array and convert to javascript string representing an array
+    var monthData1 = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var userData1 = [0,1,2,3,4,5,6,7,8,9,10,11];
+    var monthData2 = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var userData2 = [0,1,2,3,4,5,6,7,8,9,10,11];
+
+</script>
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/index.html">Library Online</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button><!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Navbar-->
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="userDropdown" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#">Signup</a><a class="dropdown-item" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#">Login</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/login.html">Logout</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<aside style="width: 270px; height: 1500px; border:1px solid black; float: left; margin: 0; background: #323e52; color: white">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div style="text-align: center; font-size: 25px">Manage</div>
+            <a class="nav-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/index.html"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                Profile</a>
+            <div class="nav">
+                <a class="nav-link collapsed" style="display: block" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" data-toggle="collapse" data-target="#manageBooks" aria-expanded="false" aria-controls="collapseLayouts"><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Manage Books
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                <div class="collapse" id="manageBooks" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded?action=addPage">Add</a>
+                        <a class="nav-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded?action=editPage">Edit</a>
+                        <a class="nav-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded?action=deletePage">Delete</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Manage Readers
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion" style="">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/layout-static.html">Add</a>
+                        <a class="nav-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/layout-sidenav-light.html">Edit</a>
+                        <a class="nav-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/layout-sidenav-light.html">Delete</a></nav>
+                </div>
+                <a class="nav-link collapsed" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                    View  Books
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion" style="">
+                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a class="nav-link collapsed" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+
+                            All Books</a>
+                        <a class="nav-link collapsed" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+
+                            Issued Books</a>
+                        <a class="nav-link collapsed" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+
+                            Received Books</a>
+                    </nav>
+                </div>
+
+                <div class="collapse">
+                <a class="nav-link collapsed" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" data-toggle="collapse" data-target="#viewAllReaders" aria-expanded="false" aria-controls="collapsePages"><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                    View All Readers
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                <div class="collapse" id="viewAllReaders" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavViewAllReaders">
+                        <a class="nav-link collapsed" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">Authentication
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                    </nav>
+                </div>
+                </div>
+            </div>
+            <a class="nav-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/charts.html"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                Charts</a><a class="nav-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html"><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+            Tables</a>
+        </div>
+
+        <div class="sb-sidenav-footer">
+            <div class="small">Logged in as:</div>
+            Start Bootstrap
+        </div>
+    </nav>
+</aside>
+
+<section style="float: right; width: 1550px;height: 1500px; margin: 0; padding: 0">
+    <div class="container-fluid">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+        <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Issued Books</div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="text-white" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px">19</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">Readers Quantity</div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="small text-white stretched-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body">Loanded Books</div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="small text-white stretched-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px">0 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">Available Books</div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="small text-white stretched-link" href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px">19 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-chart-area mr-1"></i>Book Chart</div>
+                    <div class="card-body">
+                        <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                        <div id="myBookChart" style="overflow: hidden;"><div id="myBookChart-wrapper" style="white-space: nowrap; position: relative; height: 400px; width: 100%;"><div id="myBookChart-top" class="zc-rel zc-top" style="white-space: nowrap; width: 703px; height: 400px; position: absolute; overflow: hidden;"><svg xlink="http://www.w3.org/1999/xlink" version="1.1" id="myBookChart-svg" class="zc-svg" width="703" height="400" display="block"><defs id="myBookChart-defs"></defs><g id="myBookChart-main" class="zc-rel zc-main"><g id="myBookChart-main-c" class="zc-abs"></g><g id="myBookChart-objects-bottom" class="zc-abs"></g><g id="myBookChart-graphset" class="zc-abs"><g id="myBookChart-graph-id0" class="zc-abs"><g id="myBookChart-graph-id0-c" class="zc-abs zc-layer zc-persistent"><path id="myBookChart-graph-id0-path" d="M 0 0 L 703 0 L 703 400 L 0 400 L 0 0 L 0 0" fill="#ffffff" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path></g><g id="myBookChart-graph-id0-plotarea"><g id="myBookChart-graph-id0-plotarea-c" class="zc-abs zc-layer"></g></g><g id="myBookChart-graph-id0-scales-bl" clip-path="url(#myBookChart-graph-id0-clip)"><g id="myBookChart-graph-id0-scales-bl-0-c" class="zc-abs zc-layer"><path id="myBookChart-graph-id0-scale-y-guide-6-path" d="M 49.5 334.5 L 652.5 334.5 M 49.5 288.5 L 652.5 288.5 M 49.5 242.5 L 652.5 242.5 M 49.5 197.5 L 652.5 197.5 M 49.5 151.5 L 652.5 151.5 M 49.5 105.5 L 652.5 105.5 M 49.5 59.5 L 652.5 59.5" fill="none" stroke-linecap="butt" stroke-linejoin="round" stroke="#DCDCDC" stroke-width="1" stroke-opacity="1"></path></g></g><g id="myBookChart-graph-id0-plots-bl-0" clip-path="url(#myBookChart-graph-id0-clip)"><g id="myBookChart-graph-id0-plot-0-bl-0-c" class="zc-abs zc-layer zc-bl" data-clip="48,58,607,279" style="display: block;"></g></g><g id="myBookChart-graph-id0-plots-bl-1" clip-path="url(#myBookChart-graph-id0-clip)"><g id="myBookChart-graph-id0-plot-0-bl-1-c" class="zc-abs zc-layer zc-bl" data-clip="48,58,607,279" style="display: block;"><path id="myBookChart-graph-id0-plotset-plot-0-node-0-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 55 335 L 95 335 L 95 335 L 55 335 L 55 335 L 55 335" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-1-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 105 312 L 146 312 L 146 335 L 105 335 L 105 312 L 105 312" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-2-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 156 289 L 196 289 L 196 335 L 156 335 L 156 289 L 156 289" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-3-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 206 266 L 246 266 L 246 335 L 206 335 L 206 266 L 206 266" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-4-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 256 243 L 296 243 L 296 335 L 256 335 L 256 243 L 256 243" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-5-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 306 220 L 347 220 L 347 335 L 306 335 L 306 220 L 306 220" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-6-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 357 198 L 397 198 L 397 335 L 357 335 L 357 198 L 357 198" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-7-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 407 175 L 447 175 L 447 335 L 407 335 L 407 175 L 407 175" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-8-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 457 152 L 497 152 L 497 335 L 457 335 L 457 152 L 457 152" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-9-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 507 129 L 548 129 L 548 335 L 507 335 L 507 129 L 507 129" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-10-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 558 106 L 598 106 L 598 335 L 558 335 L 558 106 L 558 106" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myBookChart-graph-id0-plotset-plot-0-node-11-path" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 608 83 L 648 83 L 648 335 L 608 335 L 608 83 L 608 83" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path></g></g><g id="myBookChart-graph-id0-plots-bl-2" clip-path="url(#myBookChart-graph-id0-clip)"><g id="myBookChart-graph-id0-plot-0-bl-2-c" class="zc-abs zc-layer zc-bl" data-clip="48,58,607,279" style="display: block;"></g></g><g id="myBookChart-graph-id0-scales-ml-0-c" class="zc-abs zc-layer"><path id="myBookChart-graph-id0-scale-x-path" d="M 48.5 334.5 L 653.5 334.5 M 49.5 334.5 L 49.5 339.5 M 150.5 334.5 L 150.5 339.5 M 250.5 334.5 L 250.5 339.5 M 351.5 334.5 L 351.5 339.5 M 451.5 334.5 L 451.5 339.5 M 552.5 334.5 L 552.5 339.5 M 652.5 334.5 L 652.5 339.5" fill="none" stroke-linecap="butt" stroke-linejoin="round" stroke="#8C8C8C" stroke-width="1" stroke-opacity="1"></path><path id="myBookChart-graph-id0-scale-y-path" d="M 49.5 334.5 L 49.5 59.5" fill="none" stroke-linecap="butt" stroke-linejoin="round" stroke="#8C8C8C" stroke-width="1" stroke-opacity="1"></path><path id="myBookChart-graph-id0-scale-y-tick-6-path" d="M 49.5 334.5 L 44.5 334.5 M 49.5 288.5 L 44.5 288.5 M 49.5 242.5 L 44.5 242.5 M 49.5 197.5 L 44.5 197.5 M 49.5 151.5 L 44.5 151.5 M 49.5 105.5 L 44.5 105.5 M 49.5 59.5 L 44.5 59.5" fill="none" stroke-linecap="butt" stroke-linejoin="round" stroke="#8C8C8C" stroke-width="1" stroke-opacity="1"></path></g><g id="myBookChart-graph-id0-plots-fl-0"><g id="myBookChart-graph-id0-plot-0-fl-0-c" class="zc-abs zc-layer zc-fl" data-clip="44,54,615,287" style="display: block;"></g></g><g id="myBookChart-graph-id0-scales-fl" clip-path="url(#myBookChart-graph-id0-clip)"><g id="myBookChart-graph-id0-scales-fl-0-c" class="zc-abs zc-layer"></g></g><g id="myBookChart-graph-id0-scroll"></g><g id="myBookChart-graph-id0-plots-vb"><g id="myBookChart-graph-id0-plot-0-vb-c" class="zc-abs zc-layer zc-vb"></g></g><g id="myBookChart-graph-id0-titles"><g id="myBookChart-graph-id0-titles-c" class="zc-abs zc-layer"></g><text x="6" y="6" id="myBookChart-graph-id0-title" class="" opacity="1"><tspan x="235.42" y="27" color="#414042" fill="#414042" dy="0" style="font-weight: bold; font-style: normal; text-decoration: none; font-size: 21px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">Loaned Book by Month</tspan></text></g></g></g><g id="myBookChart-objects-maps" class="zc-abs"></g><g id="myBookChart-objects-top" class="zc-abs"></g><g id="myBookChart-hover" class="zc-abs"><g id="myBookChart-graph-id0-hover" class="zc-abs" clip-path="url(#myBookChart-graph-id0-clip-hover)"><g id="myBookChart-graph-id0-hover-c" class="zc-abs zc-layer"></g></g></g><g id="myBookChart-objects-front" class="zc-abs"></g><g id="myBookChart-text" class="zc-abs zc-text"><text x="53.77" y="342" id="myBookChart-graph-id0-scale_x-item_0" class="myBookChart-graph-id0-scale-x-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="53.77" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">January</tspan></text><text x="600.2" y="342" id="myBookChart-graph-id0-scale_x-item_11" class="myBookChart-graph-id0-scale-x-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="600.2" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">December</tspan></text><text x="158.95" y="342" id="myBookChart-graph-id0-scale_x-item_2" class="myBookChart-graph-id0-scale-x-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="158.95" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">March</tspan></text><text x="264.79" y="342" id="myBookChart-graph-id0-scale_x-item_4" class="myBookChart-graph-id0-scale-x-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="264.79" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">May</tspan></text><text x="365.95" y="342" id="myBookChart-graph-id0-scale_x-item_6" class="myBookChart-graph-id0-scale-x-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="365.95" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">July</tspan></text><text x="447.77" y="342" id="myBookChart-graph-id0-scale_x-item_8" class="myBookChart-graph-id0-scale-x-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="447.77" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">September</tspan></text><text x="36.31" y="327.5" id="myBookChart-graph-id0-scale_y-item_0" class="myBookChart-graph-id0-scale-y-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="339.5" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">0</tspan></text><text x="29.64" y="52.5" id="myBookChart-graph-id0-scale_y-item_6" class="myBookChart-graph-id0-scale-y-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="29.64" y="64.5" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">12</tspan></text><text x="36.31" y="281.67" id="myBookChart-graph-id0-scale_y-item_1" class="myBookChart-graph-id0-scale-y-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="293.67" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">2</tspan></text><text x="36.31" y="235.83" id="myBookChart-graph-id0-scale_y-item_2" class="myBookChart-graph-id0-scale-y-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="247.83" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">4</tspan></text><text x="36.31" y="190" id="myBookChart-graph-id0-scale_y-item_3" class="myBookChart-graph-id0-scale-y-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="202" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">6</tspan></text><text x="36.31" y="144.17" id="myBookChart-graph-id0-scale_y-item_4" class="myBookChart-graph-id0-scale-y-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="156.17" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">8</tspan></text><text x="29.64" y="98.33" id="myBookChart-graph-id0-scale_y-item_5" class="myBookChart-graph-id0-scale-y-item myBookChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="29.64" y="110.33" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">10</tspan></text></g><g id="myBookChart-legend" class="zc-abs"></g><g id="myBookChart-tools" class="zc-abs"><g id="myBookChart-static-c" class="zc-abs zc-layer"></g><g id="myBookChart-guide-c" class="zc-abs zc-layer zc-guide-c"></g><g id="myBookChart-trigger-c" class="zc-abs zc-layer"></g><g id="myBookChart-print-c" class="zc-abs zc-layer"></g><g id="myBookChart-textprint-c" class="zc-abs zc-layer"></g></g><g id="myBookChart-text-top" class="zc-abs"></g></g><clippath id="myBookChart-graph-id0-clip"><polygon id="myBookChart-graph-id0-clip-shape" points="48,58 655,58 655,337 48,337 48,58"></polygon></clippath><clippath id="myBookChart-graph-id0-clip-hover"><polygon id="myBookChart-graph-id0-clip-hover-shape" points="44,54 659,54 659,341 44,341 44,54"></polygon></clippath></svg><img id="myBookChart-img" class="zc-img" usemap="#myBookChart-map" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" style="position: absolute; border-width: 0px; width: 703px; height: 400px; left: 0px; top: 0px; z-index: 0; opacity: 0; clip: rect(1px, 702px, 399px, 1px);"><map class="zc-map" id="myBookChart-map" name="myBookChart-map"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-0" coords="56,335,95,336"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-1" coords="106,313,145,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-2" coords="156,290,195,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-3" coords="206,267,246,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-4" coords="257,244,296,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-5" coords="307,221,346,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-6" coords="357,198,396,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-7" coords="407,175,447,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-8" coords="458,152,497,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-9" coords="508,129,547,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-10" coords="558,106,597,335"><area style="cursor:auto" shape="rect" class="myBookChart-graph-id0-node-area myBookChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myBookChart-graph-id0-plotset-plot-0-node-11" coords="608,83,648,335"></map></div></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-chart-bar mr-1"></i>Reader Chart</div>
+                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                    <div id="myReaderChart" style="overflow: hidden;"><div id="myReaderChart-wrapper" style="white-space: nowrap; position: relative; height: 400px; width: 100%;"><div id="myReaderChart-top" class="zc-rel zc-top" style="white-space: nowrap; width: 743px; height: 400px; position: absolute; overflow: hidden;"><svg xlink="http://www.w3.org/1999/xlink" version="1.1" id="myReaderChart-svg" class="zc-svg" width="743" height="400" display="block"><defs id="myReaderChart-defs"></defs><g id="myReaderChart-main" class="zc-rel zc-main"><g id="myReaderChart-main-c" class="zc-abs"></g><g id="myReaderChart-objects-bottom" class="zc-abs"></g><g id="myReaderChart-graphset" class="zc-abs"><g id="myReaderChart-graph-id0" class="zc-abs"><g id="myReaderChart-graph-id0-c" class="zc-abs zc-layer zc-persistent"><path id="myReaderChart-graph-id0-path" d="M 0 0 L 743 0 L 743 400 L 0 400 L 0 0 L 0 0" fill="#ffffff" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path></g><g id="myReaderChart-graph-id0-plotarea"><g id="myReaderChart-graph-id0-plotarea-c" class="zc-abs zc-layer"></g></g><g id="myReaderChart-graph-id0-scales-bl" clip-path="url(#myReaderChart-graph-id0-clip)"><g id="myReaderChart-graph-id0-scales-bl-0-c" class="zc-abs zc-layer"><path id="myReaderChart-graph-id0-scale-y-guide-6-path" d="M 49.5 334.5 L 692.5 334.5 M 49.5 288.5 L 692.5 288.5 M 49.5 242.5 L 692.5 242.5 M 49.5 197.5 L 692.5 197.5 M 49.5 151.5 L 692.5 151.5 M 49.5 105.5 L 692.5 105.5 M 49.5 59.5 L 692.5 59.5" fill="none" stroke-linecap="butt" stroke-linejoin="round" stroke="#DCDCDC" stroke-width="1" stroke-opacity="1"></path></g></g><g id="myReaderChart-graph-id0-plots-bl-0" clip-path="url(#myReaderChart-graph-id0-clip)"><g id="myReaderChart-graph-id0-plot-0-bl-0-c" class="zc-abs zc-layer zc-bl" data-clip="48,58,647,279" style="display: block;"></g></g><g id="myReaderChart-graph-id0-plots-bl-1" clip-path="url(#myReaderChart-graph-id0-clip)"><g id="myReaderChart-graph-id0-plot-0-bl-1-c" class="zc-abs zc-layer zc-bl" data-clip="48,58,647,279" style="display: block;"><path id="myReaderChart-graph-id0-plotset-plot-0-node-0-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 55 335 L 99 335 L 99 335 L 55 335 L 55 335 L 55 335" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-1-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 109 312 L 152 312 L 152 335 L 109 335 L 109 312 L 109 312" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-2-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 162 289 L 206 289 L 206 335 L 162 335 L 162 289 L 162 289" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-3-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 216 266 L 259 266 L 259 335 L 216 335 L 216 266 L 216 266" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-4-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 269 243 L 313 243 L 313 335 L 269 335 L 269 243 L 269 243" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-5-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 323 220 L 367 220 L 367 335 L 323 335 L 323 220 L 323 220" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-6-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 377 198 L 420 198 L 420 335 L 377 335 L 377 198 L 377 198" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-7-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 430 175 L 474 175 L 474 335 L 430 335 L 430 175 L 430 175" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-8-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 484 152 L 527 152 L 527 335 L 484 335 L 484 152 L 484 152" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-9-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 537 129 L 581 129 L 581 335 L 537 335 L 537 129 L 537 129" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-10-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 591 106 L 634 106 L 634 335 L 591 335 L 591 106 L 591 106" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path><path id="myReaderChart-graph-id0-plotset-plot-0-node-11-path" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" d="M 644 83 L 688 83 L 688 335 L 644 335 L 644 83 L 645 83" fill="#29A2CC" fill-opacity="1" stroke-linecap="square" stroke-linejoin="miter"></path></g></g><g id="myReaderChart-graph-id0-plots-bl-2" clip-path="url(#myReaderChart-graph-id0-clip)"><g id="myReaderChart-graph-id0-plot-0-bl-2-c" class="zc-abs zc-layer zc-bl" data-clip="48,58,647,279" style="display: block;"></g></g><g id="myReaderChart-graph-id0-scales-ml-0-c" class="zc-abs zc-layer"><path id="myReaderChart-graph-id0-scale-x-path" d="M 48.5 334.5 L 693.5 334.5 M 49.5 334.5 L 49.5 339.5 M 156.5 334.5 L 156.5 339.5 M 263.5 334.5 L 263.5 339.5 M 371.5 334.5 L 371.5 339.5 M 478.5 334.5 L 478.5 339.5 M 585.5 334.5 L 585.5 339.5 M 692.5 334.5 L 692.5 339.5" fill="none" stroke-linecap="butt" stroke-linejoin="round" stroke="#8C8C8C" stroke-width="1" stroke-opacity="1"></path><path id="myReaderChart-graph-id0-scale-y-path" d="M 49.5 334.5 L 49.5 59.5" fill="none" stroke-linecap="butt" stroke-linejoin="round" stroke="#8C8C8C" stroke-width="1" stroke-opacity="1"></path><path id="myReaderChart-graph-id0-scale-y-tick-6-path" d="M 49.5 334.5 L 44.5 334.5 M 49.5 288.5 L 44.5 288.5 M 49.5 242.5 L 44.5 242.5 M 49.5 197.5 L 44.5 197.5 M 49.5 151.5 L 44.5 151.5 M 49.5 105.5 L 44.5 105.5 M 49.5 59.5 L 44.5 59.5" fill="none" stroke-linecap="butt" stroke-linejoin="round" stroke="#8C8C8C" stroke-width="1" stroke-opacity="1"></path></g><g id="myReaderChart-graph-id0-plots-fl-0"><g id="myReaderChart-graph-id0-plot-0-fl-0-c" class="zc-abs zc-layer zc-fl" data-clip="44,54,655,287" style="display: block;"></g></g><g id="myReaderChart-graph-id0-scales-fl" clip-path="url(#myReaderChart-graph-id0-clip)"><g id="myReaderChart-graph-id0-scales-fl-0-c" class="zc-abs zc-layer"></g></g><g id="myReaderChart-graph-id0-scroll"></g><g id="myReaderChart-graph-id0-plots-vb"><g id="myReaderChart-graph-id0-plot-0-vb-c" class="zc-abs zc-layer zc-vb"></g></g><g id="myReaderChart-graph-id0-titles"><g id="myReaderChart-graph-id0-titles-c" class="zc-abs zc-layer"></g><text x="6" y="6" id="myReaderChart-graph-id0-title" class="" opacity="1"><tspan x="285.16" y="27" color="#414042" fill="#414042" dy="0" style="font-weight: bold; font-style: normal; text-decoration: none; font-size: 21px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">Reader By Month</tspan></text></g></g></g><g id="myReaderChart-objects-maps" class="zc-abs"></g><g id="myReaderChart-objects-top" class="zc-abs"></g><g id="myReaderChart-hover" class="zc-abs"><g id="myReaderChart-graph-id0-hover" class="zc-abs" clip-path="url(#myReaderChart-graph-id0-clip-hover)"><g id="myReaderChart-graph-id0-hover-c" class="zc-abs zc-layer"></g></g></g><g id="myReaderChart-objects-front" class="zc-abs"></g><g id="myReaderChart-text" class="zc-abs zc-text"><text x="55.44" y="342" id="myReaderChart-graph-id0-scale_x-item_0" class="myReaderChart-graph-id0-scale-x-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="55.44" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">January</tspan></text><text x="638.53" y="342" id="myReaderChart-graph-id0-scale_x-item_11" class="myReaderChart-graph-id0-scale-x-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="638.53" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">December</tspan></text><text x="167.29" y="342" id="myReaderChart-graph-id0-scale_x-item_2" class="myReaderChart-graph-id0-scale-x-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="167.29" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">March</tspan></text><text x="279.79" y="342" id="myReaderChart-graph-id0-scale_x-item_4" class="myReaderChart-graph-id0-scale-x-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="279.79" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">May</tspan></text><text x="387.62" y="342" id="myReaderChart-graph-id0-scale_x-item_6" class="myReaderChart-graph-id0-scale-x-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="387.62" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">July</tspan></text><text x="476.11" y="342" id="myReaderChart-graph-id0-scale_x-item_8" class="myReaderChart-graph-id0-scale-x-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="476.11" y="354" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">September</tspan></text><text x="36.31" y="327.5" id="myReaderChart-graph-id0-scale_y-item_0" class="myReaderChart-graph-id0-scale-y-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="339.5" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">0</tspan></text><text x="29.64" y="52.5" id="myReaderChart-graph-id0-scale_y-item_6" class="myReaderChart-graph-id0-scale-y-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="29.64" y="64.5" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">12</tspan></text><text x="36.31" y="281.67" id="myReaderChart-graph-id0-scale_y-item_1" class="myReaderChart-graph-id0-scale-y-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="293.67" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">2</tspan></text><text x="36.31" y="235.83" id="myReaderChart-graph-id0-scale_y-item_2" class="myReaderChart-graph-id0-scale-y-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="247.83" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">4</tspan></text><text x="36.31" y="190" id="myReaderChart-graph-id0-scale_y-item_3" class="myReaderChart-graph-id0-scale-y-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="202" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">6</tspan></text><text x="36.31" y="144.17" id="myReaderChart-graph-id0-scale_y-item_4" class="myReaderChart-graph-id0-scale-y-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="36.31" y="156.17" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">8</tspan></text><text x="29.64" y="98.33" id="myReaderChart-graph-id0-scale_y-item_5" class="myReaderChart-graph-id0-scale-y-item myReaderChart-graph-id0-scale-item zc-scale-item" opacity="1"><tspan x="29.64" y="110.33" color="#808285" fill="#808285" dy="0" style="font-weight: normal; font-style: normal; text-decoration: none; font-size: 12px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; dominant-baseline: auto;">10</tspan></text></g><g id="myReaderChart-legend" class="zc-abs"></g><g id="myReaderChart-tools" class="zc-abs"><g id="myReaderChart-static-c" class="zc-abs zc-layer"></g><g id="myReaderChart-guide-c" class="zc-abs zc-layer zc-guide-c"></g><g id="myReaderChart-trigger-c" class="zc-abs zc-layer"></g><g id="myReaderChart-print-c" class="zc-abs zc-layer"></g><g id="myReaderChart-textprint-c" class="zc-abs zc-layer"></g></g><g id="myReaderChart-text-top" class="zc-abs"></g></g><clippath id="myReaderChart-graph-id0-clip"><polygon id="myReaderChart-graph-id0-clip-shape" points="48,58 695,58 695,337 48,337 48,58"></polygon></clippath><clippath id="myReaderChart-graph-id0-clip-hover"><polygon id="myReaderChart-graph-id0-clip-hover-shape" points="44,54 699,54 699,341 44,341 44,54"></polygon></clippath></svg><img id="myReaderChart-img" class="zc-img" usemap="#myReaderChart-map" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" style="position: absolute; border-width: 0px; width: 743px; height: 400px; left: 0px; top: 0px; z-index: 0; opacity: 0; clip: rect(1px, 742px, 399px, 1px);"><map class="zc-map" id="myReaderChart-map" name="myReaderChart-map"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-0" coords="56,335,98,336"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-1" coords="109,313,152,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-2" coords="163,290,205,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-3" coords="216,267,259,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-4" coords="270,244,312,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-5" coords="323,221,366,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-6" coords="377,198,420,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-7" coords="431,175,473,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-8" coords="484,152,527,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-9" coords="538,129,580,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-10" coords="591,106,634,335"><area style="cursor:auto" shape="rect" class="myReaderChart-graph-id0-node-area myReaderChart-graph-id0-plotset-plot-0-node-area zc-node-area" id="myReaderChart-graph-id0-plotset-plot-0-node-11" coords="645,83,688,335"></map></div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1"></i>Books Information</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>BookId</th>
+                            <th>Book Name</th>
+                            <th>Type Of Book</th>
+                            <th>Author Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Language</th>
+                            <th>Status</th>
+                            <th>Situation</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>BookId</th>
+                            <th>Book Name</th>
+                            <th>Type Of Book</th>
+                            <th>Author Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Language</th>
+                            <th>Status</th>
+                            <th>Situation</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+
+                        
+                            <tr>
+                                <td>1</td>
+                                <td>Python</td>
+                                <td>Techology</td>
+                                <td>Vu Hoang Nam</td>
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>Old</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>2</td>
+                                <td>Java</td>
+                                <td>Techology</td>
+                                <td>Hoang Dai</td>
+                                <td>1</td>
+                                <td>20000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>3</td>
+                                <td>PHP</td>
+                                <td>Techology</td>
+                                <td>Hoang Trung</td>
+                                <td>1</td>
+                                <td>30000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>4</td>
+                                <td>Rubi</td>
+                                <td>Techology</td>
+                                <td>Thanh Hoang</td>
+                                <td>1</td>
+                                <td>40000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>5</td>
+                                <td>Bootstrap</td>
+                                <td>Techology</td>
+                                <td>Hoang Son</td>
+                                <td>1</td>
+                                <td>50000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>6</td>
+                                <td>Python</td>
+                                <td>Techology</td>
+                                <td>Vu Hoang Nam</td>
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>7</td>
+                                <td>Java</td>
+                                <td>Techology</td>
+                                <td>Hoang Dai</td>
+                                <td>1</td>
+                                <td>20000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>8</td>
+                                <td>PHP</td>
+                                <td>Techology</td>
+                                <td>Hoang Trung</td>
+                                <td>1</td>
+                                <td>30000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>9</td>
+                                <td>Rubi</td>
+                                <td>Techology</td>
+                                <td>Thanh Hoang</td>
+                                <td>1</td>
+                                <td>40000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>10</td>
+                                <td>Bootstrap</td>
+                                <td>Techology</td>
+                                <td>Hoang Son</td>
+                                <td>1</td>
+                                <td>50000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>11</td>
+                                <td>Marketing</td>
+                                <td>Finance</td>
+                                <td>Thanh Sang</td>
+                                <td>1</td>
+                                <td>60000</td>
+                                <td>Vietnamese</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>12</td>
+                                <td>To be rich</td>
+                                <td>Finance</td>
+                                <td>Hoang Cam</td>
+                                <td>1</td>
+                                <td>70000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>13</td>
+                                <td>Critical thinking</td>
+                                <td>Finance</td>
+                                <td>Thanh Tu</td>
+                                <td>1</td>
+                                <td>80000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>14</td>
+                                <td>Adminitrtion skill</td>
+                                <td>Finance</td>
+                                <td>Quang Khai</td>
+                                <td>1</td>
+                                <td>90000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>15</td>
+                                <td>world History</td>
+                                <td>History</td>
+                                <td>Song Uyen</td>
+                                <td>1</td>
+                                <td>120000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>16</td>
+                                <td>French History</td>
+                                <td>History</td>
+                                <td>Thanh Son</td>
+                                <td>1</td>
+                                <td>150000</td>
+                                <td>French</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>17</td>
+                                <td>Vietnam History</td>
+                                <td>History</td>
+                                <td>Pham Vui</td>
+                                <td>1</td>
+                                <td>200000</td>
+                                <td>Vietnamese</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>18</td>
+                                <td>Germany History</td>
+                                <td>History</td>
+                                <td>Vu Quyen</td>
+                                <td>1</td>
+                                <td>300000</td>
+                                <td>Germany</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>19</td>
+                                <td>American History</td>
+                                <td>History</td>
+                                <td>Dinh Thanh Nam</td>
+                                <td>1</td>
+                                <td>350000</td>
+                                <td>English</td>
+                                <td>false</td>
+                                <td>new</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-4 bg-light mt-auto" style="clear: both">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright © Your Website 2019</div>
+            <div>
+                <a href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#">Privacy Policy</a>
+                ·
+                <a href="http://localhost:8080/CaseStudyModule3_GOURP1_war_exploded/tables.html#">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    window.onload = function() {
+        zingchart.render({
+            id: "myBookChart",
+            width: "100%",
+            height: 400,
+            background: "cyan",
+            data: {
+                "type": "bar",
+                "title": {
+                    "text": "Loaned Book by Month"
+                },
+                "scale-x": {
+                    "labels": monthData1
+                },
+                "plot": {
+                    "line-width": 1
+                },
+                "series": [{
+                    "values": userData1
+                }]
+            }
+        });
+        zingchart.render({
+            id: "myReaderChart",
+            width: "100%",
+            height: 400,
+            data: {
+                "type": "bar",
+                "title": {
+                    "text": "Reader By Month"
+                },
+                "scale-x": {
+                    "labels": monthData2
+                },
+                "plot": {
+                    "line-width": 1
+                },
+                "series": [{
+                    "values": userData2
+                }]
+            }
+        });
+    };
+
+</script>
+
+
+
+
+
+<div id="myBookChart-text-ruler" class="zc-text-ruler" style="white-space: nowrap; top: -9999px; left: -9999px; position: absolute; font-size: 11px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; font-weight: normal; line-height: 130%;">11</div><div id="myBookChart-menu" class="zc-menu zc-style" style="white-space: nowrap; top: 0px; left: 0px; border-bottom: 0px solid rgb(89, 89, 89); background: none rgb(89, 89, 89); padding: 5px 0px; display: none;"><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-reload">Reload</div><div id="myBookChart-menu-sep-reload" class="zc-menu-sep" style="background-color:#595959;background-image:none repeat-x 50% 0%;border-bottom-width:1;border-bottom-color:#969696;">&nbsp;</div><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-viewaspng">View As PNG</div><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-viewaspng">View As PNG</div><div id="myBookChart-menu-sep-export" class="zc-menu-sep" style="background-color:#595959;background-image:none repeat-x 50% 0%;border-bottom-width:1;border-bottom-color:#969696;">&nbsp;</div><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-downloadpdf">Download PDF</div><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-downloadsvg">Download SVG</div><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-downloadcsv">Download CSV</div><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-downloadxls">Download XLS</div><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-viewdatatable">View Data Table</div><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-print">Print Chart</div><div id="myBookChart-menu-sep-print" class="zc-menu-sep" style="background-color:#595959;background-image:none repeat-x 50% 0%;border-bottom-width:1;border-bottom-color:#969696;">&nbsp;</div><div class="myBookChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myBookChart-menu-item-viewsource">View Source</div></div><div id="myReaderChart-text-ruler" class="zc-text-ruler" style="white-space: nowrap; top: -9999px; left: -9999px; position: absolute; font-size: 21px; font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans&quot;, Helvetica, Arial, sans-serif; font-weight: bold; line-height: 130%;">Reader By Month</div><div id="myReaderChart-menu" class="zc-menu zc-style" style="white-space: nowrap; top: 0px; left: 0px; border-bottom: 0px solid rgb(89, 89, 89); background: none rgb(89, 89, 89); padding: 5px 0px; display: none;"><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-reload">Reload</div><div id="myReaderChart-menu-sep-reload" class="zc-menu-sep" style="background-color:#595959;background-image:none repeat-x 50% 0%;border-bottom-width:1;border-bottom-color:#969696;">&nbsp;</div><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-viewaspng">View As PNG</div><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-viewaspng">View As PNG</div><div id="myReaderChart-menu-sep-export" class="zc-menu-sep" style="background-color:#595959;background-image:none repeat-x 50% 0%;border-bottom-width:1;border-bottom-color:#969696;">&nbsp;</div><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-downloadpdf">Download PDF</div><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-downloadsvg">Download SVG</div><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-downloadcsv">Download CSV</div><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-downloadxls">Download XLS</div><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-viewdatatable">View Data Table</div><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-print">Print Chart</div><div id="myReaderChart-menu-sep-print" class="zc-menu-sep" style="background-color:#595959;background-image:none repeat-x 50% 0%;border-bottom-width:1;border-bottom-color:#969696;">&nbsp;</div><div class="myReaderChart-menu-item" style="width:125px;color:#ffffff;font-family:Lucida Sans Unicode,Lucida Grande,Lucida Sans,Helvetica,Arial,sans-serif;font-size:12px;background-color:#595959;background-image:none repeat-x 50% 0%;border-top:1px solid #595959;border-left:0px solid #595959;border-right:0px solid #595959;padding:4px 20px 4px 15px;text-align:left;" id="myReaderChart-menu-item-viewsource">View Source</div></div></body></html>

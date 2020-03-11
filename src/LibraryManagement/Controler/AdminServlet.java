@@ -62,7 +62,8 @@ public class AdminServlet extends HttpServlet {
             case "addForm":
                 showAddForm(request,response);
                 break;
-            case "view":
+            case "viewLoanedBooks":
+                viewLoanedBook(request,response);
                 break;
             case "editPage":
                 showEditPage(request,response);
@@ -178,9 +179,7 @@ public class AdminServlet extends HttpServlet {
         String language = request.getParameter("language");
         boolean status = Boolean.getBoolean(request.getParameter("status"));
         String situation = request.getParameter("situation");
-        Date loanDate = (new SimpleDateFormat("yyyy-mm-dd")).parse(request.getParameter("loanDate"));
-        Date receiveDate = (new SimpleDateFormat("yyyy-mm-dd")).parse(request.getParameter("receiveDate"));
-        Book book = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation, loanDate,receiveDate);
+        Book book = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation);
 
         RequestDispatcher dispatcher;
 
@@ -189,8 +188,6 @@ public class AdminServlet extends HttpServlet {
         } else {
             boolean check = bookService.saveBook(book);
             bookList=bookService.selectAllBook();
-            bookService.setLoanDate(loanDate);
-            bookService.setReceiveDate(receiveDate);
             if (check) {
                 request.setAttribute("message", "Book information was updated");
                 request.setAttribute("bookList", bookList);
@@ -269,6 +266,8 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("bookList", bookList);
             dispatcher.forward(request, response);
         }
+    }
+    public void viewLoanedBook(HttpServletRequest request, HttpServletResponse response){
 
     }
 }

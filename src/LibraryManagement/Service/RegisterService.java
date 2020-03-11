@@ -33,13 +33,14 @@ public class RegisterService {
                 int bookTypeId = rs.getInt("bookTypeId");
                 int bookTitleId = rs.getInt("bookTitleId");
                 int bookId = rs.getInt("bookId");
-                Date loanDate = rs.getDate("loanDate");
+                String loanDate = rs.getString("loanDate");
                 String loanSituation = rs.getString("loanSituation");
-                Date receiveDate = rs.getDate("receiveDate");
+                String dueDate = rs.getString("dueDate");
+                String returnedDate = rs.getString("returnedDate");
                 String receiveSituation = rs.getString("receiveSituation");
                 int quantity = rs.getInt("quantity");
                 registerList.add(new RegisterForm(registerId,readerId,bookTypeId,bookTitleId,bookId,loanDate,
-                        loanSituation,receiveDate,receiveSituation,quantity));
+                        loanSituation,dueDate,returnedDate,receiveSituation,quantity));
             }
         } catch (SQLException e) {
             e.printStackTrace();
