@@ -118,15 +118,16 @@
                         <a class="nav-link" href="${pageContext.request.contextPath}?action=deletePage">Delete</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+            </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts"
                 ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Manage Readers
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
                     ></a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="layout-static.html">Add</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Edit</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}?action=editReaderPage">Edit</a>
                         <a class="nav-link" href="layout-sidenav-light.html">Delete</a></nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
@@ -136,37 +137,35 @@
                     ></a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth"
-                           aria-expanded="false" aria-controls="pagesCollapseAuth">
 
+                        <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
+                           aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
                             All Books</a>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth"
-                           aria-expanded="false" aria-controls="pagesCollapseAuth">
 
-                            Issued Books</a>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError"
-                           aria-expanded="false" aria-controls="pagesCollapseError">
+                        <a class="nav-link collapsed"
+                           data-toggle="collapse" data-target="#pagesCollapseAuth"
+                           aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
+                            Loaned Books</a>
 
+                        <a class="nav-link collapsed" data-toggle="collapse" data-target="#pagesCollapseError"
+                           aria-expanded="false" aria-controls="pagesCollapseError" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
                             Received Books</a>
                     </nav>
-                </div>
 
-                <div class="collapse" >
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#viewAllReaders" aria-expanded="false" aria-controls="collapsePages"
-                ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                    View All Readers
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                    ></a>
-                <div class="collapse" id="viewAllReaders" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavViewAllReaders">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth"
-                        >Authentication
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                            ></a>
-                    </nav>
                 </div>
-                </div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+            ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                View Readers
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                ></a>
+            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="${pageContext.request.contextPath}?action=viewAllReaders">All Readers</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}?action=viewBorrowedReaders">Borrowed Readers</a>
+                </nav>
             </div>
+
+
             <a class="nav-link" href="charts.html"
             ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                 Charts</a

@@ -18,6 +18,15 @@ public class Book {
     public Book() {
     }
 
+    public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, String language) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.typeOfBook = typeOfBook;
+        Author = author;
+        this.quantity = quantity;
+        this.language = language;
+    }
+
     public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, int price, String language, boolean status, String situation) {
         this.bookId = bookId;
         this.bookName = bookName;

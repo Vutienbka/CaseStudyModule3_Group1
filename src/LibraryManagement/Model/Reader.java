@@ -6,13 +6,25 @@ public class Reader {
     private int readerId;
     private String readerName;
     private String identificationId;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String gender;
     private String address;
     private String occupation;
     private String email;
 
     public Reader() {
+    }
+
+    public Reader(int readerId, String readerName, String identificationId, String dateOfBirth,
+                  String gender, String address, String occupation, String email) {
+        this.readerId = readerId;
+        this.readerName = readerName;
+        this.identificationId = identificationId;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.address = address;
+        this.occupation = occupation;
+        this.email = email;
     }
 
     public int getReaderId() {
@@ -39,11 +51,11 @@ public class Reader {
         this.identificationId = identificationId;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

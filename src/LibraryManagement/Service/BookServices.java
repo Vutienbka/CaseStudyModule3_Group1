@@ -1,6 +1,7 @@
 package LibraryManagement.Service;
 
 import LibraryManagement.Model.Book;
+import LibraryManagement.Model.LoanedBook;
 import LibraryManagement.Model.RegisterForm;
 
 import javax.servlet.RequestDispatcher;
@@ -239,5 +240,44 @@ public class BookServices implements I_BookService{
             e.printStackTrace();
         }
         return count;
+    }
+    public ArrayList<LoanedBook> viewLoanedBookInfo(){
+        ArrayList<Book> bookList = selectAllBook();
+        ArrayList<LoanedBook> loanedBookList = new ArrayList<>();
+        ArrayList<RegisterForm> registerList = registerService.initRegisterList();
+        int bookId;
+        String bookName;
+        String typeOfBook;
+        String loanedDate;
+        String loanSituation;
+        String dueDate;
+        String author;
+        String language;
+        int quantity;
+
+        for(RegisterForm register : registerList){
+            if((register.getReturnedDate()).equals("")){
+                bookId = register.getBookId();
+                loanSituation = register.getLoanSituation();
+                loanedDate = register.getLoanDate();
+                dueDate = register.getDueDate();
+                quantity = register.getQuantity();
+
+                for(Book book : bookList){
+                    if(book.getBookId() == register.getBookId()){
+                        bookName = book.getBookName();
+                        typeOfBook = book.getTypeOfBook();
+                        author = book.getAuthor();
+                        language = book.getLanguage();
+                        loanedBookList.add(new LoanedBook(bookId,bookName,typeOfBook,author,quantity,language,loanedDate,loanSituation,dueDate));
+                        break;
+                    }else
+                        break;
+                }
+
+            }
+        }
+
+        return loanedBookList;
     }
 }
