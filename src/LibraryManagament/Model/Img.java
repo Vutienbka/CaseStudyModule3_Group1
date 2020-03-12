@@ -1,4 +1,4 @@
-package com.codegym.Model;
+package LibraryManagament.Model;
 
 public class Img {
     private int imageId;

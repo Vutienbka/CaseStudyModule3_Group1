@@ -1,7 +1,7 @@
-package com.codegym.Controller;
+package LibraryManagament.Controller;
 
-import com.codegym.Model.Reader;
-import com.codegym.UserService.UserServiceImp;
+import LibraryManagament.Model.Reader;
+import LibraryManagament.UserService.UserServiceImp;
 
 
 import javax.servlet.RequestDispatcher;

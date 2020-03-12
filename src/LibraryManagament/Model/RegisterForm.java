@@ -1,4 +1,4 @@
-package com.codegym.Model;
+package LibraryManagament.Model;
 
 import java.util.Date;
 

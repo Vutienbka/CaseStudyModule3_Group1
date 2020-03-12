@@ -1,7 +1,7 @@
-package com.codegym.UserService;
+package LibraryManagament.UserService;
 
-import com.codegym.Model.Img;
-import com.codegym.Model.Reader;
+import LibraryManagament.Model.Img;
+import LibraryManagament.Model.Reader;
 
 import java.sql.*;
 import java.util.ArrayList;

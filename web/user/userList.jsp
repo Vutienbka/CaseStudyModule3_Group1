@@ -1,5 +1,5 @@
-<%@ page import="com.codegym.UserService.UserServiceImp" %>
-<%@ page import="com.codegym.Model.Img" %>
+<%@ page import="LibraryManagament.UserService.UserServiceImp" %>
+<%@ page import="LibraryManagament.Model.Img" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
