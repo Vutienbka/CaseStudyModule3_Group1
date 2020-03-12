@@ -24,6 +24,24 @@ public class Reader {
         this.occupation = occupation;
         this.email = email;
     }
+    public Reader(String readerName, String identificationId, String dateOfBirth, String address, String occupation, String email) {
+        this.readerName = readerName;
+        this.identificationId = identificationId;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.occupation = occupation;
+        this.email = email;
+    }
+
+    public Reader(int readerId, String readerName, String identificationId, String dateOfBirth, String address, String occupation, String email) {
+        this.readerId = readerId;
+        this.readerName = readerName;
+        this.identificationId = identificationId;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.occupation = occupation;
+        this.email = email;
+    }
 
     public int getReaderId() {
         return readerId;

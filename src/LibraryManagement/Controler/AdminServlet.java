@@ -119,7 +119,7 @@ public class AdminServlet extends HttpServlet {
         request.setAttribute("loanedBookQuantity", loanedBookQuantity);
         request.setAttribute("availableBookQuantity", availableBookQuantity);
         request.setAttribute("readerQuantity", readerQuantity);
-        request.setAttribute("bookList", bookList);
+        //request.setAttribute("bookList", bookList);
         dispatcher.forward(request, response);
     }
 

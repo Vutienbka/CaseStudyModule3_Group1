@@ -9,6 +9,11 @@
 <%@ page import="LibraryManagement.Service.RegisterService" %>
 <%@ page import="LibraryManagement.Model.BorrowedReaders" %>
 <%@ page import="LibraryManagement.Service.ReaderService" %>
+<%@ page import="LibraryManagement.Model.Book" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="LibraryManagement.Service.SQLConnection" %>
+<%@ page import="java.sql.Connection" %>
 
 <%!
     // --- String Join Function converts from Java array to javascript string.
@@ -93,7 +98,7 @@
         footer {
             clear: both;
             display: flex;
-          flex-direction: row;
+            flex-direction: row;
             align-content: center;
             -webkit-flex-wrap: nowrap; /* Safari 8 */
             justify-content: center;
@@ -170,9 +175,9 @@
 ><!-- Navbar Search-->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
-            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+            <input class="form-control" type="text" name = "search" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
             <div class="input-group-append">
-                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                <button class="btn btn-primary " type="submit"><i class="fas fa-search"></i></button>
             </div>
         </div>
     </form>
@@ -211,39 +216,39 @@
                     </nav>
                 </div>
             </div>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts"
-                ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                    Manage Readers
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                    ></a>
-                <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Add</a>
-                        <a class="nav-link" href="${pageContext.request.contextPath}?action=editReaderPage">Edit</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Delete</a></nav>
-                </div>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
-                ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                    View  Books
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                    ></a>
-                <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts"
+            ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                Manage Readers
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                ></a>
+            <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="layout-static.html">Add</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}?action=editReaderPage">Edit</a>
+                    <a class="nav-link" href="layout-sidenav-light.html">Delete</a></nav>
+            </div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
+            ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                View  Books
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                ></a>
+            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
 
-                        <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
-                           aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewAllBooks">
-                            All Books </a>
+                    <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
+                       aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewAllBooks">
+                        All Books </a>
 
-                        <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
-                           aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
-                            Loaned Books </a>
+                    <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
+                       aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
+                        Loaned Books </a>
 
-                        <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
-                           aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewReturnedBooks">
-                            returned Books</a>
-                    </nav>
+                    <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
+                       aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewReturnedBooks">
+                        returned Books</a>
+                </nav>
 
-                </div>
+            </div>
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
             ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                 View Readers
@@ -367,20 +372,40 @@
                         </tr>
                         </tfoot>
                         <tbody>
-
-                        <c:forEach items="${bookList}" var="book">
-                            <tr class="contentPage">
-                                <td><c:out value="${book.getBookId()}"></c:out></td>
-                                <td><c:out value="${book.getBookName()}"></c:out></td>
-                                <td><c:out value="${book.getTypeOfBook()}"></c:out></td>
-                                <td><c:out value="${book.getAuthor()}"></c:out></td>
-                                <td><c:out value="${book.getQuantity()}"></c:out></td>
-                                <td><c:out value="${book.getPrice()}"></c:out></td>
-                                <td><c:out value="${book.getLanguage()}"></c:out></td>
-                                <td><c:out value="${book.getStatus()}"></c:out></td>
-                                <td><c:out value="${book.getSituation()}"></c:out></td>
-                            </tr>
-                        </c:forEach>
+                        <%
+                            SQLConnection connection = new SQLConnection();
+                            BookServices bookService = new BookServices();
+                            ArrayList<Book> bookList = bookService.selectAllBook();
+                            Connection conn = connection.getConnection();
+                            Statement stat = null;
+                            ResultSet rs = null;
+                            stat = conn.createStatement();
+                            String data;
+                            String searchQuery = request.getParameter("search");
+                            if(searchQuery!=null){
+                                data = "SELECT * FROM bookDetail WHERE bookName like '%"+searchQuery+"%' OR typeOfBook like '%"+searchQuery+"%' " +
+                                        "OR author like '%"+searchQuery+"%' OR language like '%"+searchQuery+"%' OR status like '%"+searchQuery+"%'";
+                            }else
+                            {
+                                data = "SELECT * FROM bookDetail ORDER BY bookId ASC";
+                            }
+                            rs = stat.executeQuery(data);
+                            while (rs.next()){
+                        %>
+                        <tr class="contentPage">
+                            <td><%= rs.getInt("bookId")%></td>
+                            <td><%= rs.getString("bookName")%></td>
+                            <td><%= rs.getString("typeOfBook")%></td>
+                            <td><%= rs.getString("author")%></td>
+                            <td><%= rs.getInt("quantity")%></td>
+                            <td><%= rs.getInt("price")%></td>
+                            <td><%= rs.getString("language")%></td>
+                            <td><%= rs.getBoolean("status")%></td>
+                            <td><%= rs.getString("situation")%></td>
+                        </tr>
+                        <%
+                            };
+                        %>
                         </tbody>
                     </table>
                 </div>
@@ -392,14 +417,14 @@
 
 <footer class="py-4 bg-light mt-auto" >
 
-        <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted" style="position: relative; left: 200px">Copyright &copy; Your Website 2019</div>
-            <div>
-                <a href="#">Privacy Policy</a>
-                &middot;
-                <a href="#">Terms &amp; Conditions</a>
-            </div>
+    <div class="d-flex align-items-center justify-content-between small">
+        <div class="text-muted" style="position: relative; left: 200px">Copyright &copy; Your Website 2019</div>
+        <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
         </div>
+    </div>
 
 </footer>
 <script>
@@ -452,5 +477,4 @@
 
 
 </body>
-
 </html>
