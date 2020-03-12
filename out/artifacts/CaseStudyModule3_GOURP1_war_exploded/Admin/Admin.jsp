@@ -2,6 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.io.*" %>
 <%@ page import="java.util.*" %>
+<%@ page import="LibraryManagement.Model.LoanedBook" %>
+<%@ page import="LibraryManagement.Service.BookServices" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="LibraryManagement.Model.RegisterForm" %>
+<%@ page import="LibraryManagement.Service.RegisterService" %>
+<%@ page import="LibraryManagement.Model.BorrowedReaders" %>
+<%@ page import="LibraryManagement.Service.ReaderService" %>
 
 <%!
     // --- String Join Function converts from Java array to javascript string.
@@ -20,7 +27,6 @@
             output.append(arr.get(i));
             if (arr.get(i) instanceof String) output.append("\"");
         }
-
         return output.toString();
     }
 %>
@@ -56,21 +62,58 @@
 <body class="sb-nav-fixed">
 <script>
     <%
-       // --- Create two Java Arrays
+       /*VE BANG SACH DA DUOC CHO MUON THEO CAC THANG*/
+
+        ReaderService readerService = new ReaderService();
+       ArrayList<BorrowedReaders> borrowedReaderList = readerService.viewBorrowedReaders();
+
+        ArrayList<String> months1 = new ArrayList<String>();
+        ArrayList<Integer> readerQuantityList = new ArrayList<Integer>();
+        String[] monthName1 = {"Jan", "Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"};
+        for(int i = 0; i<monthName1.length;i++){
+            int readerQuantity = 0;
+            for(BorrowedReaders reader : borrowedReaderList){
+                Date borrowedDate = new SimpleDateFormat("yyyy-MM-dd").parse(reader.getBorrowedDate());
+                System.out.println(borrowedDate);
+                int month = borrowedDate.getMonth();
+                System.out.println("Thang so: " + month);
+                if(month == (i+1)){
+                    readerQuantity +=1;
+                }
+            }
+            months1.add(monthName1[i]);
+            readerQuantityList.add(readerQuantity);
+        }
+
+            /*VE BANG READER DA MUON SACH THEO CAC THANG*/
+
+        RegisterService registerService = new RegisterService();
+       ArrayList<RegisterForm> loanedBookList = registerService.initRegisterList();
+
         ArrayList<String> months = new ArrayList<String>();
-        ArrayList<Integer> users = new ArrayList<Integer>();
-        String[] monthName = {"January", "February","March","April","May","June","July","August","September","October","November","December"};
+        ArrayList<Integer> quantityList = new ArrayList<Integer>();
+        String[] monthName = {"Jan", "Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"};
         for(int i = 0; i<monthName.length;i++){
+            int quantity = 0;
+            for(RegisterForm book : loanedBookList){
+                Date loanedDate = new SimpleDateFormat("yyyy-MM-dd").parse(book.getLoanDate());
+                System.out.println(loanedDate);
+                int month = loanedDate.getMonth();
+                System.out.println("Thang so: " + month);
+                if(month == (i+1)){
+                    quantity +=1;
+                }
+            }
             months.add(monthName[i]);
-            users.add(i);
+            quantityList.add(quantity);
         }
     %>
-
     // --- add a comma after each value in the array and convert to javascript string representing an array
     var monthData1 = [<%= join(months, ",") %>];
-    var userData1 = [<%= join(users, ",") %>];
-    var monthData2 = [<%= join(months, ",") %>];
-    var userData2 = [<%= join(users, ",") %>];
+    var userData1 = [<%= join(quantityList, ",") %>];
+
+    var monthData2 = [<%= join(months1, ",") %>];
+    var userData2 = [<%= join(readerQuantityList, ",") %>];
 
 </script>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -314,7 +357,7 @@
             id: "myBookChart",
             width: "100%",
             height: 400,
-            background: "cyan",
+            background: "#3295a8",
             data: {
                 "type": "bar",
                 "title": {
@@ -335,6 +378,7 @@
             id: "myReaderChart",
             width: "100%",
             height: 400,
+            background: "#32a852",
             data: {
                 "type": "bar",
                 "title": {

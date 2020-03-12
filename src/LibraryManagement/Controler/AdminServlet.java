@@ -16,79 +16,85 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 
-@WebServlet(name = "AdminServlet",urlPatterns = {"/"})
+@WebServlet(name = "AdminServlet", urlPatterns = {"/"})
 public class AdminServlet extends HttpServlet {
     SQLConnection connection = new SQLConnection();
     BookServices bookService = new BookServices();
     ReaderService readerService = new ReaderService();
     ArrayList<Book> bookList = bookService.selectAllBook();
     ArrayList<Reader> readerList = readerService.selectAllReader();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        if(action==null)
-        {
-            action="";
+        if (action == null) {
+            action = "";
         }
         switch (action) {
             /*----------------BOOK---------------------*/
             case "addForm":
-                addBook(request,response);
+                addBook(request, response);
                 break;
             case "view":
                 break;
             case "editForm":
                 try {
-                    editBook(request,response);
+                    editBook(request, response);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
                 break;
             case "deleteForm":
-                deleteBook(request,response);
+                deleteBook(request, response);
                 break;
             /*----------------READER---------------------*/
-            default:showHomePage(request,response);
+            default:
+                showHomePage(request, response);
                 break;
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        if(action==null)
-        {
-            action="";
+        if (action == null) {
+            action = "";
         }
         switch (action) {
             /*----------------BOOK---------------------*/
             case "addPage":
-                showAddPage(request,response);
+                showAddPage(request, response);
                 break;
             case "addForm":
-                showAddForm(request,response);
+                showAddForm(request, response);
                 break;
             case "viewLoanedBooks":
-                viewLoanedBook(request,response);
+                viewLoanedBook(request, response);
                 break;
             case "viewReturnedBooks":
-                viewReturnedBooks(request,response);
+                viewReturnedBooks(request, response);
                 break;
             case "viewAllBooks":
-                viewAllBooks(request,response);
+                viewAllBooks(request, response);
             case "editPage":
-                showEditPage(request,response);
+                showEditPage(request, response);
                 break;
             case "editForm":
-                showEditForm(request,response);
+                showEditForm(request, response);
                 break;
             case "deletePage":
-                showDeletePage(request,response);
+                showDeletePage(request, response);
                 break;
             case "deleteForm":
-                showDeleteForm(request,response);
+                showDeleteForm(request, response);
                 break;
             /*----------------READER---------------------*/
             case "editReaderPage":
-                showEditReaderPage(request,response);
+                showEditReaderPage(request, response);
+                break;
+            case "viewAllReaders":
+                viewAllReaders(request, response);
+                break;
+            case "viewBorrowedReaders":
+                viewBorrowedReaders(request, response);
                 break;
             default: {
                 showHomePage(request, response);
@@ -96,10 +102,12 @@ public class AdminServlet extends HttpServlet {
             }
         }
     }
-    public void loginForm(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+
+    public void loginForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/LoginForm.jsp");
-        dispatcher.forward(request,response);
+        dispatcher.forward(request, response);
     }
+
     /*-------------------------------------BOOK------------------------------------------------------------------------------*/
     public void showHomePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int issuedBookQuantity = bookService.viewIssuedBookQuantity();
@@ -107,21 +115,22 @@ public class AdminServlet extends HttpServlet {
         int readerQuantity = readerService.viewReaderQuantity();
         int availableBookQuantity = issuedBookQuantity - loanedBookQuantity;
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/Admin.jsp");
-        request.setAttribute("issuedBookQuantity",issuedBookQuantity);
-        request.setAttribute("loanedBookQuantity",loanedBookQuantity);
-        request.setAttribute("availableBookQuantity",availableBookQuantity);
-        request.setAttribute("readerQuantity",readerQuantity);
-        request.setAttribute("bookList",bookList);
-        dispatcher.forward(request,response);
+        request.setAttribute("issuedBookQuantity", issuedBookQuantity);
+        request.setAttribute("loanedBookQuantity", loanedBookQuantity);
+        request.setAttribute("availableBookQuantity", availableBookQuantity);
+        request.setAttribute("readerQuantity", readerQuantity);
+        request.setAttribute("bookList", bookList);
+        dispatcher.forward(request, response);
     }
 
-    public void showAddPage(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    public void showAddPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Book> bookList = bookService.selectAllBook();
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/Book/AddBookPage.jsp");
-        request.setAttribute("bookList",bookList);
-        dispatcher.forward(request,response);
+        request.setAttribute("bookList", bookList);
+        dispatcher.forward(request, response);
     }
-    public void addBook(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+
+    public void addBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int bookId = Integer.parseInt(request.getParameter("bookId"));
         String bookName = request.getParameter("bookName");
         String typeOfBook = request.getParameter("typeOfBook");
@@ -133,31 +142,31 @@ public class AdminServlet extends HttpServlet {
         String situation = request.getParameter("situation");
         RequestDispatcher dispatcher;
         try {
-            if ((bookId<0) || (bookName == "")
-                    || (typeOfBook == "") || (author == "") || (quantitys=="") || (prices=="")
+            if ((bookId < 0) || (bookName == "")
+                    || (typeOfBook == "") || (author == "") || (quantitys == "") || (prices == "")
                     || (request.getParameter("status") == "") || (request.getParameter("situation") == "")) {
                 String message = ">> Inputted information still not enough <<";
                 dispatcher = request.getRequestDispatcher("Admin/Book/addForm.jsp");
                 request.setAttribute("message", message);
                 dispatcher.forward(request, response);
             }
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             e.printStackTrace();
         }
         int quantity = Integer.parseInt(request.getParameter("quality"));
         int price = Integer.parseInt(request.getParameter("price"));
-        Book book = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation);
+        Book book = new Book(bookId, bookName, typeOfBook, author, quantity, price, language, status, situation);
         if (book == null) {
             System.out.println("sach dang rong");
             dispatcher = request.getRequestDispatcher("Admin/404_Error.jsp");
         } else {
             System.out.println("Sach van khac null");
             boolean check = bookService.addNewBook(book);
-            bookList= bookService.selectAllBook();
+            bookList = bookService.selectAllBook();
             if (check) {
                 request.setAttribute("message", "New book was Added");
                 request.setAttribute("bookList", bookList);
-            } else{
+            } else {
                 request.setAttribute("message", "New Book not Added");
                 request.setAttribute("bookList", bookList);
             }
@@ -170,7 +179,8 @@ public class AdminServlet extends HttpServlet {
             }
         }
     }
-    public void showAddForm(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+
+    public void showAddForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher;
         dispatcher = request.getRequestDispatcher("Admin/Book/addForm.jsp");
         try {
@@ -181,12 +191,14 @@ public class AdminServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    public void showEditPage(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+
+    public void showEditPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Book> bookList = bookService.selectAllBook();
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/Book/EditBookPage.jsp");
-        request.setAttribute("bookList",bookList);
-        dispatcher.forward(request,response);
+        request.setAttribute("bookList", bookList);
+        dispatcher.forward(request, response);
     }
+
     public void editBook(HttpServletRequest request, HttpServletResponse response) throws ParseException {
         int bookId = Integer.parseInt(request.getParameter("Id"));
         String bookName = request.getParameter("bookName");
@@ -197,7 +209,7 @@ public class AdminServlet extends HttpServlet {
         String language = request.getParameter("language");
         boolean status = Boolean.getBoolean(request.getParameter("status"));
         String situation = request.getParameter("situation");
-        Book book = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation);
+        Book book = new Book(bookId, bookName, typeOfBook, author, quantity, price, language, status, situation);
 
         RequestDispatcher dispatcher;
 
@@ -205,7 +217,7 @@ public class AdminServlet extends HttpServlet {
             dispatcher = request.getRequestDispatcher("Admin/Book/404_Error.jsp");
         } else {
             boolean check = bookService.saveBook(book);
-            bookList=bookService.selectAllBook();
+            bookList = bookService.selectAllBook();
             if (check) {
                 request.setAttribute("message", "Book information was updated");
                 request.setAttribute("bookList", bookList);
@@ -220,11 +232,11 @@ public class AdminServlet extends HttpServlet {
         }
     }
 
-    public void showEditForm(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    public void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int bookId = Integer.parseInt(request.getParameter("Id"));
         Book book = this.bookService.findById(bookId);
         RequestDispatcher dispatcher;
-        if(book == null){
+        if (book == null) {
             dispatcher = request.getRequestDispatcher("Admin/404_Error.jsp");
         } else {
             request.setAttribute("book", book);
@@ -238,22 +250,24 @@ public class AdminServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    public void showDeletePage(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+
+    public void showDeletePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Book> bookList = bookService.selectAllBook();
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/Book/DeleteBookPage.jsp");
-        request.setAttribute("bookList",bookList);
-        dispatcher.forward(request,response);
+        request.setAttribute("bookList", bookList);
+        dispatcher.forward(request, response);
     }
-    public void showDeleteForm(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+
+    public void showDeleteForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int bookId = Integer.parseInt(request.getParameter("Id"));
         Book book = this.bookService.findById(bookId);
         RequestDispatcher dispatcher;
-        if(book == null){
+        if (book == null) {
             dispatcher = request.getRequestDispatcher("Admin/404_Error.jsp");
         } else {
             dispatcher = request.getRequestDispatcher("Admin/Book/deleteForm.jsp");
             request.setAttribute("book", book);
-            dispatcher.forward(request,response);
+            dispatcher.forward(request, response);
         }
         try {
             dispatcher.forward(request, response);
@@ -263,7 +277,8 @@ public class AdminServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    public void deleteBook(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+
+    public void deleteBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int bookId = Integer.parseInt(request.getParameter("Id"));
         boolean check = bookService.removeBook(bookId);
         ArrayList<Book> bookList = bookService.selectAllBook();
@@ -286,49 +301,49 @@ public class AdminServlet extends HttpServlet {
             dispatcher.forward(request, response);
         }
     }
+
     public void viewLoanedBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<LoanedBook> loanedBookList = bookService.viewLoanedBookInfo();
         RequestDispatcher dispatcher;
-        if(loanedBookList==null){
+        if (loanedBookList == null) {
             String message = "Loaned Books is empty";
             dispatcher = request.getRequestDispatcher("Admin/Book/LoanedBookPage.jsp");
             request.setAttribute("message", message);
             dispatcher.forward(request, response);
-        }
-        else {
+        } else {
             dispatcher = request.getRequestDispatcher("Admin/Book/LoanedBookPage.jsp");
             request.setAttribute("loanedBookList", loanedBookList);
             dispatcher.forward(request, response);
         }
 
     }
+
     public void viewReturnedBooks(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<ReturnedBook> returnedBookList = bookService.viewReturnedBookInfo();
         RequestDispatcher dispatcher;
-        if(returnedBookList==null){
+        if (returnedBookList == null) {
             String message = "Returned Book List is empty";
             dispatcher = request.getRequestDispatcher("Admin/Book/ReturnedBookPage.jsp");
             request.setAttribute("message", message);
             dispatcher.forward(request, response);
-        }
-        else {
+        } else {
             dispatcher = request.getRequestDispatcher("Admin/Book/ReturnedBookPage.jsp");
             request.setAttribute("returnedBookList", returnedBookList);
             dispatcher.forward(request, response);
         }
 
     }
+
     public void viewAllBooks(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<BookView> bookList = bookService.viewAllBook();
         RequestDispatcher dispatcher;
 
-        if(bookList==null){
+        if (bookList == null) {
             String message = "Book List is empty";
             dispatcher = request.getRequestDispatcher("Admin/Book/viewAllBooks.jsp");
             request.setAttribute("message", message);
             dispatcher.forward(request, response);
-        }
-        else {
+        } else {
             dispatcher = request.getRequestDispatcher("Admin/Book/viewAllBooks.jsp");
             request.setAttribute("bookList", bookList);
             dispatcher.forward(request, response);
@@ -337,11 +352,44 @@ public class AdminServlet extends HttpServlet {
     }
 
     /*-----------------------------------------------READER--------------------------------------------------------------------*/
-    public void showEditReaderPage(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    public void showEditReaderPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Reader> readerList = readerService.selectAllReader();
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/Reader/EditReaderPage.jsp");
-        request.setAttribute("readerList",readerList);
-        dispatcher.forward(request,response);
+        request.setAttribute("readerList", readerList);
+        dispatcher.forward(request, response);
+    }
+    public void viewAllReaders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ArrayList<Reader> readerList = readerService.selectAllReader();
+        RequestDispatcher dispatcher;
+
+        if (readerList == null) {
+            String message = "Reader List is empty";
+            dispatcher = request.getRequestDispatcher("Admin/Reader/viewAllReaders.jsp");
+            request.setAttribute("message", message);
+            dispatcher.forward(request, response);
+        } else {
+            dispatcher = request.getRequestDispatcher("Admin/Reader/viewAllReaders.jsp");
+            request.setAttribute("readerList", readerList);
+            dispatcher.forward(request, response);
+        }
 
     }
+
+    public void viewBorrowedReaders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ArrayList<BorrowedReaders> borrowedReaderList = readerService.viewBorrowedReaders();
+        System.out.println("So luong: " + borrowedReaderList.size());
+        RequestDispatcher dispatcher;
+        if (borrowedReaderList == null) {
+            String message = "Reader List is empty";
+            dispatcher = request.getRequestDispatcher("Admin/Reader/viewBorrwedReaders.jsp");
+            request.setAttribute("message", message);
+            dispatcher.forward(request, response);
+        } else {
+            dispatcher = request.getRequestDispatcher("Admin/Reader/viewBorrwedReaders.jsp");
+            request.setAttribute("borrowedReaderList", borrowedReaderList);
+            dispatcher.forward(request, response);
+        }
+
+    }
+
 }

@@ -245,13 +245,10 @@ public class BookServices implements I_BookService{
         return loanedBookList;
     }
 
-
     public ArrayList<ReturnedBook> viewReturnedBookInfo(){
         ArrayList<Book> bookList = selectAllBook();
         ArrayList<ReturnedBook> returnedBookList = new ArrayList<>();
         ArrayList<RegisterForm> registerList = registerService.initRegisterList();
-        System.out.println("register: "+ registerList.size());
-
         for(RegisterForm register : registerList) {
             if (!((register.getReturnedDate()).equals(""))) {
                 for (Book book : bookList) {
@@ -264,7 +261,6 @@ public class BookServices implements I_BookService{
                 }
             }
         }
-        System.out.println("so phan tu: loaned"+returnedBookList.size());
         return returnedBookList;
     }
 }

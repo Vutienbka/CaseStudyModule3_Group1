@@ -1,7 +1,5 @@
 package LibraryManagement.Model;
 
-import java.util.Date;
-
 public class Reader {
     private int readerId;
     private String readerName;
