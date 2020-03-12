@@ -30,6 +30,15 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "history":
+                listImageHistory(request,response);
+                break;
+            case "econome":
+                listImageEconomy(request,response);
+                break;
+            case "affection":
+                listImageAffection(request,response);
+                break;
             case "listReader":
                 try {
                     listUser(request, response);
@@ -73,6 +82,15 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "history":
+                listImageHistory(request,response);
+                break;
+            case "econome":
+                listImageEconomy(request,response);
+                break;
+            case "affection":
+                listImageAffection(request,response);
+                break;
             case "listReader":
                 try {
                     listUser(request, response);
@@ -226,11 +244,68 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void detail(HttpServletRequest request, HttpServletResponse response) {
-        int imageId = Integer.parseInt(request.getParameter("imageId"));
-        Img existingReader = userServiceImp.selectImg(imageId);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/view.jsp");
-        request.setAttribute("img", existingReader);
+//    private void detail(HttpServletRequest request, HttpServletResponse response) {
+//        int imageId = Integer.parseInt(request.getParameter("imageId"));
+//        Img existingReader = userServiceImp.selectImg(imageId);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("view/view.jsp");
+//        request.setAttribute("img", existingReader);
+//        try {
+//            dispatcher.forward(request, response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    private void listImageAffection(HttpServletRequest request, HttpServletResponse response)
+    {
+        List<Img> listImageAffection = null;
+        try {
+            listImageAffection = userServiceImp.selectAllImgsAffection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        request.setAttribute("listImageAffection", listImageAffection);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/affection.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void listImageEconomy(HttpServletRequest request, HttpServletResponse response)
+    {
+        List<Img> listImageEconome = null;
+        try {
+            listImageEconome = userServiceImp.selectAllImgsEconomy();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        request.setAttribute("listImageEconome", listImageEconome);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/econome.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void listImageHistory(HttpServletRequest request, HttpServletResponse response)
+    {
+        List<Img> listImageHistory = null;
+        try {
+            listImageHistory = userServiceImp.selectAllImgsHistory();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        request.setAttribute("listImageHistory", listImageHistory);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/history.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

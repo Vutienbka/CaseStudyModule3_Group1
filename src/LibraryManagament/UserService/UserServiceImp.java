@@ -21,6 +21,9 @@ public class UserServiceImp implements UserService {
     private static final String UPDATE_USERS_SQL = "update Reader set readerName = ?,identificationId= ?, dateOfBirth =?, address =?, occupation =?, email =? where readerId = ?;";
     private static final String SELECT_ALL_IMGS = "select * from image;";
     private static final String SELECT_IMG_BY_ID = "select imageId,img,nameBook,imageType from image where imageId =?";
+    private static final String SELECT_ALL_IMGS_AFFECTION = "select * from image where imageType = 'Tình Cảm';";
+    private static final String SELECT_ALL_IMGS_ECONOMY = "select * from image where imageType = 'Kinh Tế';";
+    private static final String SELECT_ALL_IMGS_HISTORY = "select * from image where imageType = 'Lịch Sử';";
 
 
     public UserServiceImp() {
@@ -201,6 +204,96 @@ public class UserServiceImp implements UserService {
             e.printStackTrace();
         }
         return img;
+    }
+
+    @Override
+    public List<Img> selectAllImgsAffection() throws SQLException {
+        List<Img> imgs = new ArrayList<>();
+        // Step 1: Establishing a Connection
+        try (Connection connection = getConnection();
+
+             // Step 2:Create a statement using connection object
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_IMGS_AFFECTION);) {
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            ResultSet rs = preparedStatement.executeQuery();
+
+            // Step 4: Process the ResultSet object.
+            while (rs.next()) {
+//                int id = rs.getInt("id");
+//                String name = rs.getString("name");
+//                String email = rs.getString("email");
+//                String country = rs.getString("country");
+                int imageId = rs.getInt("imageId");
+                String img = rs.getString("img");
+                String nameBook = rs.getString("nameBook");
+                String imageType = rs.getString("imageType");
+                imgs.add(new Img(imageId, img, nameBook,imageType));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return imgs;
+    }
+
+    @Override
+    public List<Img> selectAllImgsEconomy() throws SQLException {
+        List<Img> imgs = new ArrayList<>();
+        // Step 1: Establishing a Connection
+        try (Connection connection = getConnection();
+
+             // Step 2:Create a statement using connection object
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_IMGS_ECONOMY);) {
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            ResultSet rs = preparedStatement.executeQuery();
+
+            // Step 4: Process the ResultSet object.
+            while (rs.next()) {
+//                int id = rs.getInt("id");
+//                String name = rs.getString("name");
+//                String email = rs.getString("email");
+//                String country = rs.getString("country");
+                int imageId = rs.getInt("imageId");
+                String img = rs.getString("img");
+                String nameBook = rs.getString("nameBook");
+                String imageType = rs.getString("imageType");
+                imgs.add(new Img(imageId, img, nameBook,imageType));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return imgs;
+    }
+
+    @Override
+    public List<Img> selectAllImgsHistory() throws SQLException {
+        List<Img> imgs = new ArrayList<>();
+        // Step 1: Establishing a Connection
+        try (Connection connection = getConnection();
+
+             // Step 2:Create a statement using connection object
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_IMGS_HISTORY);) {
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            ResultSet rs = preparedStatement.executeQuery();
+
+            // Step 4: Process the ResultSet object.
+            while (rs.next()) {
+//                int id = rs.getInt("id");
+//                String name = rs.getString("name");
+//                String email = rs.getString("email");
+//                String country = rs.getString("country");
+                int imageId = rs.getInt("imageId");
+                String img = rs.getString("img");
+                String nameBook = rs.getString("nameBook");
+                String imageType = rs.getString("imageType");
+                imgs.add(new Img(imageId, img, nameBook,imageType));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return imgs;
     }
 }
 

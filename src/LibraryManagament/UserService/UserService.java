@@ -20,4 +20,10 @@ public interface UserService {
     public List<Img> selectAllImgs() throws SQLException;
 
     public Img selectImg(int imageId);
+
+    public List<Img> selectAllImgsAffection() throws SQLException;
+
+    public List<Img> selectAllImgsEconomy() throws SQLException;
+
+    public List<Img> selectAllImgsHistory() throws SQLException;
 }

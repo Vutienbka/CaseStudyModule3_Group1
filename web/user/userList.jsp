@@ -1,13 +1,6 @@
 <%@ page import="LibraryManagament.UserService.UserServiceImp" %>
 <%@ page import="LibraryManagament.Model.Img" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: lam
-  Date: 08/03/2020
-  Time: 01:24
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -33,7 +26,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Library Online</a>
+        <a class="navbar-brand" href="/users?action=customer">Library Online</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,11 +37,10 @@
                         Thể Loại
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.html">Tâm lý - Tình Cảm</a>
-                        <a class="dropdown-item" href="homepage-2.html">Kinh dị</a>
-                        <a class="dropdown-item" href="index.html"> Văn học </a>
-                        <a class="dropdown-item" href="homepage-2.html">Khoa học tự nhiên</a>
-                        <a class="dropdown-item" href="homepage-2.html">Ngụ Ngôn</a>
+                        <a class="dropdown-item" href="/users?action=affection">Tình Cảm</a>
+                        <a class="dropdown-item" href="/users?action=econome">Kinh Tế</a>
+                        <a class="dropdown-item" href="/users?action=history"> Lịch Sử </a>
+
                     </div>
                 </li>
                 <!--        <li class="nav-item">-->

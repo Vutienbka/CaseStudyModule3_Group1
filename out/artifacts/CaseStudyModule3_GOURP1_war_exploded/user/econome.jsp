@@ -1,6 +1,13 @@
 <%@ page import="LibraryManagament.UserService.UserServiceImp" %>
 <%@ page import="LibraryManagament.Model.Img" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: lam
+  Date: 08/03/2020
+  Time: 01:24
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -55,7 +62,7 @@
             </ul>
             <form class="form-inline position-relative ml-lg-4">
                 <input class="form-control px-0 w-100" type="search" placeholder="Search">
-                <button class="search-icon" type="submit"><i class="ti-search text-dark"></i> sear</button>
+                <button class="search-icon" type="submit"><i class="ti-search text-dark"></i></button>
             </form>
         </div>
     </div>
@@ -71,25 +78,25 @@
         <h5 class="display-5" style="color: #1c7430">Should copy, should not be commercialized</h5></header>
 
     <div class="row text-center">
-        <c:forEach var="image" items="${listImage}">
-        <div class="col-lg-3 col-md-6 mb-4">
+        <c:forEach var="image" items="${listImageEconome}">
+            <div class="col-lg-3 col-md-6 mb-4">
 
-            <div class="card h-100">
-                <img class="card-img-top" src="${image.img}"
-                     alt="">
-                <div class="card-body">
-                    <h5 class="card-title">${image.nameBook}</h5>
-                </div>
-                <div class="card-footer">
-                    <p class="card-title">Thể Loại : ${image.imageType}</p>
+                <div class="card h-100">
+                    <img class="card-img-top" src="${image.img}"
+                         alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">${image.nameBook}</h5>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-title">Thể Loại : ${image.imageType}</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="/users?action=view&imageId=${image.imageId}" class="btn btn-primary">View</a>
+                    </div>
                 </div>
 
-                <div class="card-footer">
-                    <a href="/users?action=view&imageId=${image.imageId}" class="btn btn-primary">View</a>
-                </div>
             </div>
-
-        </div>
         </c:forEach>
     </div>
 
