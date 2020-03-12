@@ -50,13 +50,53 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.twbsPagination.js"></script>
+    <!-- JS tạo nút bấm di chuyển trang start -->
+    <script src="http://1892.yn.lt/blogger/JQuery/Pagging/js/jquery.twbsPagination.js" type="text/javascript"></script>
+    <!-- JS tạo nút bấm di chuyển trang end -->
+    <script type="text/javascript">
+        $(function () {
+            var pageSize = 10; // Hiển thị 6 sản phẩm trên 1 trang
+            showPage = function (page) {
+                $(".contentPage").hide();
+                $(".contentPage").each(function (n) {
+                    if (n >= pageSize * (page - 1) && n < pageSize * page)
+                        $(this).show();
+                });
+            }
+            showPage(1);
+            ///** Cần truyền giá trị vào đây **///
+            var totalRows = 19; // Tổng số sản phẩm hiển thị
+            var btnPage = 5; // Số nút bấm hiển thị di chuyển trang
+            var iTotalPages = Math.ceil(totalRows / pageSize);
+
+            var obj = $('#pagination').twbsPagination({
+                totalPages: iTotalPages,
+                visiblePages: btnPage,
+                onPageClick: function (event, page) {
+                    console.info(page);
+                    showPage(page);
+                }
+            });
+            console.info(obj.data());
+        });
+    </script>
     <style>
+        #pagination {
+            display: flex;
+            display: -webkit-flex; /* Safari 8 */
+            flex-wrap: wrap;
+            -webkit-flex-wrap: wrap; /* Safari 8 */
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
         a{
             color: white;
         }
         a:hover{
             color: lightcyan;
         }
+
     </style>
 </head>
 <body class="sb-nav-fixed">
@@ -289,6 +329,7 @@
             <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1" ></i>Books Information</div>
             <div class="card-body">
                 <div class="table-responsive">
+
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
@@ -319,7 +360,7 @@
                         <tbody>
 
                         <c:forEach items="${bookList}" var="book">
-                            <tr>
+                            <tr class="contentPage">
                                 <td><c:out value="${book.getBookId()}"></c:out></td>
                                 <td><c:out value="${book.getBookName()}"></c:out></td>
                                 <td><c:out value="${book.getTypeOfBook()}"></c:out></td>
@@ -337,6 +378,7 @@
             </div>
         </div>
     </div>
+    <ul id="pagination"></ul>
 </section>
 
 <footer class="py-4 bg-light mt-auto" style="clear: both">
