@@ -56,7 +56,7 @@
     <!-- JS tạo nút bấm di chuyển trang end -->
     <script type="text/javascript">
         $(function () {
-            var pageSize = 10; // Hiển thị 6 sản phẩm trên 1 trang
+            var pageSize = 9; // Hiển thị 6 sản phẩm trên 1 trang
             showPage = function (page) {
                 $(".contentPage").hide();
                 $(".contentPage").each(function (n) {
@@ -85,8 +85,17 @@
         #pagination {
             display: flex;
             display: -webkit-flex; /* Safari 8 */
-            flex-wrap: wrap;
-            -webkit-flex-wrap: wrap; /* Safari 8 */
+            flex-wrap: nowrap;
+            -webkit-flex-wrap: nowrap; /* Safari 8 */
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+        footer {
+            clear: both;
+            display: flex;
+          flex-direction: row;
+            align-content: center;
+            -webkit-flex-wrap: nowrap; /* Safari 8 */
             justify-content: center;
             -webkit-justify-content: center;
         }
@@ -381,17 +390,17 @@
     <ul id="pagination"></ul>
 </section>
 
-<footer class="py-4 bg-light mt-auto" style="clear: both">
-    <div class="container-fluid">
+<footer class="py-4 bg-light mt-auto" >
+
         <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Your Website 2019</div>
+            <div class="text-muted" style="position: relative; left: 200px">Copyright &copy; Your Website 2019</div>
             <div>
                 <a href="#">Privacy Policy</a>
                 &middot;
                 <a href="#">Terms &amp; Conditions</a>
             </div>
         </div>
-    </div>
+
 </footer>
 <script>
     window.onload = function() {
