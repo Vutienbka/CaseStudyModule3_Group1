@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<decorators defaultdir="/decorators">
+
+    <decorators name="trang-chu" page="web.xml">
+        <pattern>/trang-chu</pattern>
+    </decorators>
+
+    <decorators name="home" page="admin.xml">
+        <pattern>/home</pattern>
+    </decorators>
+
+</decorators>

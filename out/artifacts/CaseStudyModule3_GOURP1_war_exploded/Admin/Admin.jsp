@@ -192,10 +192,10 @@
 <aside style="width: 270px; height: 1500px; border:1px solid black; float: left; margin: 0; background: #323e52; color: white">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
-            <div style="text-align: center; font-size: 25px">Manage</div>
+            <div style="text-align: center; font-size: 25px">Manage Panel</div>
             <a class="nav-link" href="index.html"
             ><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                Profile</a
+                Admin Profile</a
             >
             <div class="nav">
                 <a class="nav-link collapsed" style="display: block" href="#" data-toggle="collapse" data-target="#manageBooks" aria-expanded="false" aria-controls="collapseLayouts"

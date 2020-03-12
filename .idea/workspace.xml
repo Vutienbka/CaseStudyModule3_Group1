@@ -6,9 +6,115 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e63de133-eb25-4588-aa8f-c5e49de9be91" name="Default Changelist" comment="">
+    <list default="true" id="009acbe1-d521-4831-b587-5f5dbcf7cfd2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/decorators.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/admin/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/views/web/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/decorators/admin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/decorators/web.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/401.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/demo/chart-area-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/demo/chart-bar-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/demo/chart-pie-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/demo/datatables-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/assets/img/error-404-monochrome.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/charts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/layout-sidenav-light.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/layout-static.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/dist/tables.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/build-assets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/build-pug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/build-scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/build-scss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/clean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/render-assets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/render-pug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/render-scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/render-scss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/sb-watch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/start-debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/scripts/start.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/demo/chart-area-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/demo/chart-bar-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/demo/chart-pie-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/demo/datatables-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/assets/img/error-404-monochrome.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/authentication.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/dashboard.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/error.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/footer.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/head/css.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/head/icons.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/head/meta.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/head/title.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/navigation/sidenav.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/navigation/topnav.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/layouts/includes/scripts.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/401.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/404.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/500.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/charts.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/includes/datatable.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/includes/page-header.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/index.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/layout-sidenav-light.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/layout-static.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/login.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/password.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/register.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/pug/pages/tables.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/_global.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/layout/_authentication.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/layout/_dashboard-default.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/layout/_dashboard-fixed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/layout/_error.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/_topnav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/sidenav/_sidenav-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/sidenav/_sidenav-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/navigation/sidenav/_sidenav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/variables/_navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/admin/src/scss/variables/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/css/small-business.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/temple/web/vendor/jquery/jquery.slim.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Admin/Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Admin/Admin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +149,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="TienCG" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -71,27 +172,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/js" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.2075" />
-    <property name="project.structure.side.proportion" value="0.46677214" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/Admin/Book" />
-      <recent name="$PROJECT_DIR$/web/Admin" />
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/web/Theme" />
-      <recent name="$PROJECT_DIR$/web/WEB-INF" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/js" />
       <recent name="$PROJECT_DIR$/web/Admin/Reader" />
       <recent name="$PROJECT_DIR$/src/com/google/gson" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/Admin/Book" />
+      <recent name="$PROJECT_DIR$/web/Admin" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/Theme" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.31">
@@ -213,7 +312,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -293,10 +392,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="214" width="800" height="677" key="#Inspections/67.27.1853.1053@67.27.1853.1053" timestamp="1583727314712" />
-    <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1583544029971">
+    <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1583996983129">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="214" width="800" height="677" key="#Project_Structure/67.27.1853.1053@67.27.1853.1053" timestamp="1583544029971" />
+    <state x="588" y="214" width="800" height="677" key="#Project_Structure/67.27.1853.1053@67.27.1853.1053" timestamp="1583996983129" />
     <state x="588" y="214" width="800" height="677" key="#Template_Data_Languages" timestamp="1583563102680">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -325,54 +424,54 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="615" y="296" width="735" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583896640167" />
-    <state width="1244" height="650" key="GridCell.Tab.0.bottom" timestamp="1583995781134">
+    <state width="1244" height="650" key="GridCell.Tab.0.bottom" timestamp="1583997019315">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781134" />
-    <state width="1244" height="650" key="GridCell.Tab.0.center" timestamp="1583995781134">
+    <state width="1244" height="650" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019315" />
+    <state width="1244" height="650" key="GridCell.Tab.0.center" timestamp="1583997019315">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781134" />
-    <state width="1244" height="650" key="GridCell.Tab.0.left" timestamp="1583995781134">
+    <state width="1244" height="650" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019315" />
+    <state width="1244" height="650" key="GridCell.Tab.0.left" timestamp="1583997019314">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781134" />
-    <state width="1244" height="650" key="GridCell.Tab.0.right" timestamp="1583995781134">
+    <state width="1244" height="650" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019314" />
+    <state width="1244" height="650" key="GridCell.Tab.0.right" timestamp="1583997019315">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781134" />
-    <state width="1244" height="650" key="GridCell.Tab.1.bottom" timestamp="1583995781137">
+    <state width="1244" height="650" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019315" />
+    <state width="1244" height="650" key="GridCell.Tab.1.bottom" timestamp="1583997019127">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781137" />
-    <state width="1244" height="650" key="GridCell.Tab.1.center" timestamp="1583995781136">
+    <state width="1244" height="650" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019127" />
+    <state width="1244" height="650" key="GridCell.Tab.1.center" timestamp="1583997019126">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781136" />
-    <state width="1244" height="650" key="GridCell.Tab.1.left" timestamp="1583995781136">
+    <state width="1244" height="650" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019126" />
+    <state width="1244" height="650" key="GridCell.Tab.1.left" timestamp="1583997019126">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781136" />
-    <state width="1244" height="650" key="GridCell.Tab.1.right" timestamp="1583995781136">
+    <state width="1244" height="650" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019126" />
+    <state width="1244" height="650" key="GridCell.Tab.1.right" timestamp="1583997019126">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781136" />
-    <state width="1244" height="650" key="GridCell.Tab.2.bottom" timestamp="1583995781136">
+    <state width="1244" height="650" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019126" />
+    <state width="1244" height="650" key="GridCell.Tab.2.bottom" timestamp="1583997019126">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781136" />
-    <state width="1244" height="650" key="GridCell.Tab.2.center" timestamp="1583995781135">
+    <state width="1244" height="650" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019126" />
+    <state width="1244" height="650" key="GridCell.Tab.2.center" timestamp="1583997019125">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781135" />
-    <state width="1244" height="650" key="GridCell.Tab.2.left" timestamp="1583995781134">
+    <state width="1244" height="650" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019125" />
+    <state width="1244" height="650" key="GridCell.Tab.2.left" timestamp="1583997019125">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781134" />
-    <state width="1244" height="650" key="GridCell.Tab.2.right" timestamp="1583995781135">
+    <state width="1244" height="650" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019125" />
+    <state width="1244" height="650" key="GridCell.Tab.2.right" timestamp="1583997019125">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="650" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583995781135" />
+    <state width="1244" height="650" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583997019125" />
     <state x="242" y="116" width="1482" height="872" key="MergeDialog" timestamp="1583662093510">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
