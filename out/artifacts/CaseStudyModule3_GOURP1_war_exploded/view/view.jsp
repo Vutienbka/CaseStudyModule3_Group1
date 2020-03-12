@@ -1,3 +1,6 @@
+<%@ page import="java.awt.*" %>
+<%@ page import="LibraryManagament.UserService.UserServiceImp" %>
+<%@ page import="LibraryManagament.Model.Img" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en"><head>
@@ -59,18 +62,22 @@
 </nav>
 
 <!-- Page Content -->
-<div class="container">
 
+<div class="container">
     <!-- Heading Row -->
+    <%
+        UserServiceImp userServiceImp = new UserServiceImp();
+        Img img = userServiceImp.selectImg(Integer.parseInt(request.getParameter("imageId")));
+    %>
     <div class="row align-items-center my-5">
         <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" alt="" src="http://placehold.it/400x300">
+            <img class="img-fluid rounded mb-4 mb-lg-0" alt="" src="<%=img.getImg()%>">
         </div>
         <!-- /.col-lg-8 -->
         <div class="col-lg-5">
-            <h1 class="font-weight-light">Tên S</h1>
-            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-            <a class="btn btn-primary" href="#">Call to Action!</a>
+            <h1 class="font-weight-light"><%=img.getNameBook()%></h1>
+            <p>Thể Loại : <%=img.getImageType()%></p>
+            <a class="btn btn-primary" href="#">Mượn Sách</a>
         </div>
         <!-- /.col-md-4 -->
     </div>

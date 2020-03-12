@@ -17,5 +17,7 @@ public interface UserService {
 
     public boolean updateUser(Reader reader) throws SQLException;
 
-    public List<Img> selectAllImgs();
+    public List<Img> selectAllImgs() throws SQLException;
+
+    public Img selectImg(int imageId);
 }

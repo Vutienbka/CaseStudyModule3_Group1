@@ -1,5 +1,6 @@
 package LibraryManagament.Controller;
 
+import LibraryManagament.Model.Img;
 import LibraryManagament.Model.Reader;
 import LibraryManagament.UserService.UserServiceImp;
 
@@ -37,7 +38,7 @@ public class UserServlet extends HttpServlet {
                 }
                 break;
             case "customer":
-                showListBook(request, response);
+                listImage(request,response);
                 break;
             case "registration":
                 try {
@@ -80,7 +81,7 @@ public class UserServlet extends HttpServlet {
                 }
                 break;
             case "customer":
-                showListBook(request, response);
+                listImage(request, response);
                 break;
             case "registration":
                 registrationForm(request, response);
@@ -111,19 +112,19 @@ public class UserServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    public void showListBook(HttpServletRequest request, HttpServletResponse response) {
-//        List<Img> imgList = userServiceImp.selectAllImgs();
-//        request.setAttribute("listReader", imgList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/userList.jsp");
-//        request.setAttribute("imgList",imgList);
-        try {
-            dispatcher.forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void showListBook(HttpServletRequest request, HttpServletResponse response) {
+////        List<Img> imgList = userServiceImp.selectAllImgs();
+////        request.setAttribute("listReader", imgList);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("user/userList.jsp");
+////        request.setAttribute("imgList",imgList);
+//        try {
+//            dispatcher.forward(request, response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void registrationForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //
@@ -197,6 +198,39 @@ public class UserServlet extends HttpServlet {
             e.printStackTrace();
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher("edit/edit.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void listImage(HttpServletRequest request, HttpServletResponse response)
+    {
+        List<Img> listImage = null;
+        try {
+            listImage = userServiceImp.selectAllImgs();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        request.setAttribute("listImage", listImage);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/userList.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void detail(HttpServletRequest request, HttpServletResponse response) {
+        int imageId = Integer.parseInt(request.getParameter("imageId"));
+        Img existingReader = userServiceImp.selectImg(imageId);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/view.jsp");
+        request.setAttribute("img", existingReader);
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

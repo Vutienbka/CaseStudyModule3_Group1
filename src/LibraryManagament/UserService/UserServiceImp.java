@@ -19,6 +19,9 @@ public class UserServiceImp implements UserService {
     private static final String SELECT_ALL_USERS = "select * from Reader;";
     private static final String DELETE_USERS_SQL = "delete from Reader where readerId = ?;";
     private static final String UPDATE_USERS_SQL = "update Reader set readerName = ?,identificationId= ?, dateOfBirth =?, address =?, occupation =?, email =? where readerId = ?;";
+    private static final String SELECT_ALL_IMGS = "select * from image;";
+    private static final String SELECT_IMG_BY_ID = "select imageId,img,nameBook,imageType from image where imageId =?";
+
 
     public UserServiceImp() {
     }
@@ -78,10 +81,10 @@ public class UserServiceImp implements UserService {
                 String address = rs.getString("address");
                 String occupation = rs.getString("occupation");
                 String email = rs.getString("email");
-                reader = new Reader(readerId, readerName, identificationId, dateOfBirth,address,occupation,email);
+                reader = new Reader(readerId, readerName, identificationId, dateOfBirth, address, occupation, email);
             }
         } catch (SQLException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
         return reader;
     }
@@ -111,10 +114,10 @@ public class UserServiceImp implements UserService {
                 String address = rs.getString("address");
                 String occupation = rs.getString("occupation");
                 String email = rs.getString("email");
-                readers.add(new Reader(readerId,readerName,identificationId,dateOfBirth,address,occupation,email));
+                readers.add(new Reader(readerId, readerName, identificationId, dateOfBirth, address, occupation, email));
             }
         } catch (SQLException e) {
-          e.printStackTrace();
+            e.printStackTrace();
         }
         return readers;
     }
@@ -146,35 +149,58 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public List<Img> selectAllImgs() {
+    public List<Img> selectAllImgs() throws SQLException {
         List<Img> imgs = new ArrayList<>();
         // Step 1: Establishing a Connection
         try (Connection connection = getConnection();
 
              // Step 2:Create a statement using connection object
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);) {
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_IMGS);) {
             System.out.println(preparedStatement);
             // Step 3: Execute the query or update query
             ResultSet rs = preparedStatement.executeQuery();
 
             // Step 4: Process the ResultSet object.
             while (rs.next()) {
-                int imageId = rs.getInt("imageId");
-                String img = rs.getString("name");
-                String nameBook = rs.getString("nameBook");
-//                String country = rs.getString("country");
-//                int readerId = rs.getInt("readerId");
-//                String readerName = rs.getString("readerName");
-//                String identificationId = rs.getString("identificationId");
-//                String dateOfBirth = rs.getString("dateOfBirth");
-//                String address = rs.getString("address");
-//                String occupation = rs.getString("occupation");
+//                int id = rs.getInt("id");
+//                String name = rs.getString("name");
 //                String email = rs.getString("email");
-                imgs.add(new Img(imageId,img,nameBook));
+//                String country = rs.getString("country");
+                int imageId = rs.getInt("imageId");
+                String img = rs.getString("img");
+                String nameBook = rs.getString("nameBook");
+                String imageType = rs.getString("imageType");
+                imgs.add(new Img(imageId, img, nameBook,imageType));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return imgs;
     }
+
+    @Override
+    public Img selectImg(int imageId) {
+        Img img = null;
+        // Step 1: Establishing a Connection
+        try (Connection connection = getConnection();
+             // Step 2:Create a statement using connection object
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_IMG_BY_ID);) {
+            preparedStatement.setInt(1, imageId);
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            ResultSet rs = preparedStatement.executeQuery();
+
+            // Step 4: Process the ResultSet object.
+            while (rs.next()) {
+                String imgd = rs.getString("img");
+                String nameBook = rs.getString("nameBook");
+                String imageType = rs.getString("imageType");
+                img = new Img(imageId, imgd, nameBook,imageType);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return img;
+    }
 }
+
