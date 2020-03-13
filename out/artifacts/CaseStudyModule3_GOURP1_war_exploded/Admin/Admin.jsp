@@ -375,7 +375,6 @@
                         <%
                             SQLConnection connection = new SQLConnection();
                             BookServices bookService = new BookServices();
-                            ArrayList<Book> bookList = bookService.selectAllBook();
                             Connection conn = connection.getConnection();
                             Statement stat = null;
                             ResultSet rs = null;

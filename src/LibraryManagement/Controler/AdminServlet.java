@@ -90,6 +90,9 @@ public class AdminServlet extends HttpServlet {
             case "editReaderPage":
                 showEditReaderPage(request, response);
                 break;
+            case "typeOfBook=Techology":
+                showEditReaderPage(request, response);
+                break;
             case "viewAllReaders":
                 viewAllReaders(request, response);
                 break;
@@ -193,7 +196,7 @@ public class AdminServlet extends HttpServlet {
     }
 
     public void showEditPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<Book> bookList = bookService.selectAllBook();
+        //ArrayList<Book> bookList = bookService.selectAllBook();
         RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/Book/EditBookPage.jsp");
         request.setAttribute("bookList", bookList);
         dispatcher.forward(request, response);
