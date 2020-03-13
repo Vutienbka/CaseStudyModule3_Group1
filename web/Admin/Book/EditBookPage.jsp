@@ -28,6 +28,10 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
         #editForm{
             display: none;
         }
@@ -38,6 +42,25 @@
             -webkit-flex-wrap: nowrap; /* Safari 8 */
             justify-content: center;
             -webkit-justify-content: center;
+        }
+        form{
+            display: inline-table;
+            border: 1px solid #cccccc;
+            margin-right: 40px;
+        }
+        select {
+            margin-left: 0px;
+            height: 30px;
+            width: 120px;
+        }
+        table{
+            text-align: center;
+        }
+        td{
+            line-height: 37px;
+        }
+        a{
+            display: block;
         }
     </style>
 
@@ -140,58 +163,66 @@
         <span style="color: green; font-size: 20px" id="message" onclick="hideMessage()">
             ${message}
         </span>
-        <a href="${pageContext.request.contextPath}?action=editPage"> Back to Edit Home Page << </a>
+        <a href="${pageContext.request.contextPath}?action=editPage" style="font-size: 20px"> Back to Edit Home Page << </a>
     </p>
     <div class="card mb-4">
         <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1"></i >Books Information</div>
         <div class="card-body">
             <div class="table-responsive">
+                <span>
+                <form action="editPage" method="post">
+                    <select value = "bookName"  name = "bookName">
+                        <option value="Select">Select</option>
+                        <%
+                            SQLConnection connection = new SQLConnection();
+                            //BookServices bookService = new BookServices();
+                            // ArrayList<Book> bookList = bookService.selectAllBook();
+                            Connection conn = connection.getConnection();
+                            Statement stat = null;
+                            ResultSet rs = null;
+                            stat = conn.createStatement();
+                            String data;
+                            data = "SELECT bookName FROM BookTitle";
+                            rs = stat.executeQuery(data);
+                            while (rs.next()){
+                        %>
+                        <option value="<%= rs.getString("bookName")%>"> <%= rs.getString("bookName")%></option>
+                        <%
+                            }
+                        %>
+                    </select>
+                    <button type="submit" class="btn-primary">Search by bookName</button>
+                </form>
+                    </span>
+                <span>
+                <form action="editPage" method="post">
+                    <select value = "typeOfBook" name = "typeOfBook">
+                        <option value="Select">Select</option>
+                        <%
+                            data = "SELECT typeOfBook FROM BookType";
+                            rs = stat.executeQuery(data);
+                            while (rs.next()){
+                        %>
+                        <option value="<%= rs.getString("typeOfBook")%>"> <%= rs.getString("typeOfBook")%></option>
+                        <%
+                            }
+                        %>
+                    </select>
+                    <button type="submit" class="btn-primary">Search by bookType</button>
+                </form>
+
+                <form action="editPage" method="post">
+                        <input type="text" style="width: 150px; height: 30px" name="language">
+                    <button type="submit" class="btn-primary">Search by language</button>
+                </form>
+                </span>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>BookId</th>
                         <th>Book Name
-                            <form action="editPage" method="post">
-                                <select value = "bookName"  name = "bookName" style="margin-left: 15px; height: 25px; width: 120px">
-                                    <option value="All">All</option>
-                                    <%
-                                        SQLConnection connection = new SQLConnection();
-                                        //BookServices bookService = new BookServices();
-                                        // ArrayList<Book> bookList = bookService.selectAllBook();
-                                        Connection conn = connection.getConnection();
-                                        Statement stat = null;
-                                        ResultSet rs = null;
-                                        stat = conn.createStatement();
-                                        String data;
-                                        data = "SELECT bookName FROM BookTitle";
-                                        rs = stat.executeQuery(data);
-                                        while (rs.next()){
-                                    %>
-                                    <option value="<%= rs.getString("bookName")%>"> <%= rs.getString("bookName")%></option>
-                                    <%
-                                        }
-                                    %>
-                                </select>
-                                <button type="submit">Search</button>
-                            </form>
                         </th>
                         <th>Type Of Book
-                            <form action="editPage" method="post">
-                                <select value = "typeOfBook" name = "typeOfBook" style="margin-left: 15px; height: 25px; width: 120px">
-                                    <option value="All">All</option>
-                                    <%
-                                        data = "SELECT typeOfBook FROM BookType";
-                                        rs = stat.executeQuery(data);
-                                        while (rs.next()){
-                                    %>
-                                    <option value="<%= rs.getString("typeOfBook")%>"> <%= rs.getString("typeOfBook")%></option>
-                                    <%
-                                        }
-                                    %>
-                                </select>
-                                <button type="submit">Search</button>
-                            </form>
-
                         </th>
                         <th>Author Name</th>
                         <th>Quantity</th>
@@ -225,13 +256,14 @@
                         String dataTable;
                         String searchQuery1 = request.getParameter("bookName");
                         String searchQuery2 = request.getParameter("typeOfBook");
-
+                        String searchQuery3 = request.getParameter("language");
                         if(searchQuery2!=null){
                             dataTable = " SELECT * FROM bookDetail WHERE typeOfBook like '%"+searchQuery2+"%' ";
                         }else if(searchQuery1!=null){
                             dataTable = " SELECT * FROM bookDetail WHERE bookName like '%"+searchQuery1+"%' ";
-                        }else
-                        {
+                        }else if(searchQuery3!=null) {
+                            dataTable = " SELECT * FROM bookDetail WHERE language like '%"+searchQuery3+"%' ";
+                        }else {
                             dataTable = "SELECT * FROM bookDetail ORDER BY bookId ASC";
                         }
                         rs = stat.executeQuery(dataTable);
