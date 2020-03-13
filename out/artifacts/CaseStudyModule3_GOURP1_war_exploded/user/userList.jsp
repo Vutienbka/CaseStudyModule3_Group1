@@ -25,6 +25,16 @@
     <!-- Custom styles for this template -->
     <link href="user/css/heroic-features.css" rel="stylesheet" type="text/css" media="all">
     <link rel=" stylesheet" href="user/Style.css>" type="text/css" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
 
 </head>
 
@@ -92,7 +102,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/view/view1.jsp" data-wpel-link="internal">View</a>
+                    <a href="${pageContext.request.contextPath}/view/view1.jsp" data-wpel-link="internal">View</a>
 <%--                    <a href="view/view1.jsp" class="btn btn-primary">View</a>--%>
 
                 </div>
@@ -108,7 +118,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -122,7 +132,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -136,7 +146,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view&Id" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view&Id" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -152,7 +162,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -165,7 +175,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -179,7 +189,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -193,7 +203,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -211,7 +221,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -224,7 +234,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -238,7 +248,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -251,7 +261,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -268,7 +278,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -281,7 +291,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -294,7 +304,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -308,7 +318,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/users?action=view" class="btn btn-primary">View</a>
+                    <a href="${pageContext.request.contextPath}/users?action=view" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
@@ -328,8 +338,8 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="<c:url value=' user/vendor/jquery/jquery.min.js'/>" type="text/javascript"></script>
-<script src="<c:url value=' user/vendor/bootstrap/js/bootstrap.bundle.min.js'/>" type="text/javascript"></script>
+<script src="user/vendor/jquery/jquery.min.js>" type="text/javascript"></script>
+<script src="user/vendor/bootstrap/js/bootstrap.bundle.min.js>" type="text/javascript"></script>
 
 
 </body>

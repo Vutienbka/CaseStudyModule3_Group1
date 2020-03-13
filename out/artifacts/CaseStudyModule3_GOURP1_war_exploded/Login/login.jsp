@@ -6,13 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="../web/Login/vendor/animate/animate.css">
-    <link rel="stylesheet" href="../web/Login/vendor/animsition/css/animsition.css">
-    <link rel="stylesheet" href="../web/Login/vendor/select2/select2.min.css">
-    <link rel="stylesheet" href="../web/Login/vendor/daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="../web/Login/css/main.css">
-    <link rel="stylesheet" href="../web/Login/css/util.css">
-    <link rel="stylesheet" href="../web/Login/Style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/animsition.css">
+    <link rel="stylesheet" href="css/select2.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/util.css">
+    <link rel="stylesheet" href="css/Style.css">
     <!--===============================================================================================-->
 </head>
 <body>
@@ -53,15 +63,15 @@
 
 <div id="dropDownSelect1"></div>
 
-<script src="../web/Login/vendor/jquery/jquery-3.2.1.min.js"></script>
-<script src="../web/Login/vendor/animsition/js/animsition.js"></script>
-<script src="../web/Login/vendor/bootstrap/js/bootstrap.js"></script>
-<script src="../web/Login/vendor/bootstrap/js/popper.js"></script>
-<script src="../web/Login/vendor/select2/select2.js"></script>
-<script src="../web/Login/vendor/daterangepicker/daterangepicker.js"></script>
-<script src="../web/Login/vendor/daterangepicker/moment.js"></script>
-<script src="../web/Login/vendor/countdowntime/countdowntime.js"></script>
-<script src="../web/Login/js/main.js"></script>
+<script src="Login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="Login/vendor/animsition/js/animsition.js"></script>
+<script src="Login/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="Login/vendor/bootstrap/js/popper.js"></script>
+<script src="Login/vendor/select2/select2.js"></script>
+<script src="Login/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="Login/vendor/daterangepicker/moment.js"></script>
+<script src="Login/vendor/countdowntime/countdowntime.js"></script>
+<script src="Login/js/main.js"></script>
 
 </body>
 </html>
