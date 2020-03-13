@@ -81,7 +81,7 @@
                     if (n >= pageSize * (page - 1) && n < pageSize * page)
                         $(this).show();
                 });
-            }
+            };
             showPage(1);
             ///** Cần truyền giá trị vào đây **///
             var totalRows = 19; // Tổng số sản phẩm hiển thị
@@ -175,8 +175,6 @@
                         <option value="Select">Select</option>
                         <%
                             SQLConnection connection = new SQLConnection();
-                            //BookServices bookService = new BookServices();
-                            // ArrayList<Book> bookList = bookService.selectAllBook();
                             Connection conn = connection.getConnection();
                             Statement stat = null;
                             ResultSet rs = null;
@@ -191,7 +189,7 @@
                             }
                         %>
                     </select>
-                    <button type="submit" class="btn-primary">Search by bookName</button>
+                    <button type="submit" class="btn-secondary">Search by bookName</button>
                 </form>
                     </span>
                 <span>
@@ -208,12 +206,12 @@
                             }
                         %>
                     </select>
-                    <button type="submit" class="btn-primary">Search by bookType</button>
+                    <button type="submit" class="btn-secondary">Search by bookType</button>
                 </form>
 
                 <form action="editPage" method="post">
                         <input type="text" style="width: 150px; height: 30px" name="language">
-                    <button type="submit" class="btn-primary">Search by language</button>
+                    <button type="submit" class="btn-secondary">Search by language</button>
                 </form>
                 </span>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

@@ -19,14 +19,10 @@
     // --- String Join Function converts from Java array to javascript string.
     public String join(ArrayList<?> arr, String del)
     {
-
         StringBuilder output = new StringBuilder();
-
         for (int i = 0; i < arr.size(); i++)
         {
-
             if (i > 0) output.append(del);
-
             // --- Quote strings, only, for JS syntax
             if (arr.get(i) instanceof String) output.append("\"");
             output.append(arr.get(i));
@@ -74,7 +70,6 @@
             var totalRows = 19; // Tổng số sản phẩm hiển thị
             var btnPage = 5; // Số nút bấm hiển thị di chuyển trang
             var iTotalPages = Math.ceil(totalRows / pageSize);
-
             var obj = $('#pagination').twbsPagination({
                 totalPages: iTotalPages,
                 visiblePages: btnPage,
@@ -110,17 +105,14 @@
         a:hover{
             color: lightcyan;
         }
-
     </style>
 </head>
 <body class="sb-nav-fixed">
 <script>
     <%
        /*VE BANG SACH DA DUOC CHO MUON THEO CAC THANG*/
-
         ReaderService readerService = new ReaderService();
        ArrayList<BorrowedReaders> borrowedReaderList = readerService.viewBorrowedReaders();
-
         ArrayList<String> months1 = new ArrayList<String>();
         ArrayList<Integer> readerQuantityList = new ArrayList<Integer>();
         String[] monthName1 = {"Jan", "Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"};
@@ -138,12 +130,9 @@
             months1.add(monthName1[i]);
             readerQuantityList.add(readerQuantity);
         }
-
             /*VE BANG READER DA MUON SACH THEO CAC THANG*/
-
         RegisterService registerService = new RegisterService();
        ArrayList<RegisterForm> loanedBookList = registerService.initRegisterList();
-
         ArrayList<String> months = new ArrayList<String>();
         ArrayList<Integer> quantityList = new ArrayList<Integer>();
         String[] monthName = {"Jan", "Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"};
@@ -165,10 +154,8 @@
     // --- add a comma after each value in the array and convert to javascript string representing an array
     var monthData1 = [<%= join(months, ",") %>];
     var userData1 = [<%= join(quantityList, ",") %>];
-
     var monthData2 = [<%= join(months1, ",") %>];
     var userData2 = [<%= join(readerQuantityList, ",") %>];
-
 </script>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html">Library Online</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
@@ -238,7 +225,6 @@
                     <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
                        aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewAllBooks">
                         All Books </a>
-
                     <a class="nav-link collapsed"  data-toggle= collapse" data-target="#pagesCollapseAuth"
                        aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewLoanedBooks">
                         Loaned Books </a>
@@ -247,7 +233,6 @@
                        aria-expanded="false" aria-controls="pagesCollapseAuth" href="${pageContext.request.contextPath}?action=viewReturnedBooks">
                         returned Books</a>
                 </nav>
-
             </div>
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
             ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -260,8 +245,6 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}?action=viewBorrowedReaders">Borrowed Readers</a>
                 </nav>
             </div>
-
-
             <a class="nav-link" href="charts.html"
             ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                 Charts</a
@@ -270,14 +253,12 @@
             Tables</a
         >
         </div>
-
         <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
             Start Bootstrap
         </div>
     </nav>
 </aside>
-
 <section style="float: right; width: 1550px;height: 1500px; margin: 0; padding: 0" >
     <div class="container-fluid">
         <ol class="breadcrumb mb-4">
@@ -343,7 +324,6 @@
             <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1" ></i>Books Information</div>
             <div class="card-body">
                 <div class="table-responsive">
-
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
@@ -375,7 +355,6 @@
                         <%
                             SQLConnection connection = new SQLConnection();
                             BookServices bookService = new BookServices();
-                            ArrayList<Book> bookList = bookService.selectAllBook();
                             Connection conn = connection.getConnection();
                             Statement stat = null;
                             ResultSet rs = null;
@@ -414,9 +393,7 @@
     </div>
     <ul id="pagination"></ul>
 </section>
-
 <footer class="py-4 bg-light mt-auto" >
-
     <div class="d-flex align-items-center justify-content-between small">
         <div class="text-muted" style="position: relative; left: 200px">Copyright &copy; Your Website 2019</div>
         <div>
@@ -425,7 +402,6 @@
             <a href="#">Terms &amp; Conditions</a>
         </div>
     </div>
-
 </footer>
 <script>
     window.onload = function() {
@@ -472,9 +448,6 @@
             }
         });
     };
-
 </script>
-
-
 </body>
 </html>
