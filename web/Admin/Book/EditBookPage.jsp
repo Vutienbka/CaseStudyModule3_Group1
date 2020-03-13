@@ -150,7 +150,6 @@
                     <tr>
                         <th>BookId</th>
                         <th>Book Name
-                            <form action = "editPage">
                                 <select value = "bookName"  name = "bookName" style="margin-left: 15px; height: 25px; width: 120px">
                                     <option value="All">All</option>
                                     <%
@@ -171,11 +170,9 @@
                                         }
                                     %>
                                 </select>
-                            </form>
                         </th>
                         <th>Type Of Book
-                            <form>
-                                <select value = "typeOfBook" name = "typeOfBook" style="margin-left: 15px; height: 25px; width: 120px">
+                                <select> value = "typeOfBook" name = "typeOfBook" style="margin-left: 15px; height: 25px; width: 120px">
                                     <option value="All">All</option>
                                     <%
                                         data = "SELECT typeOfBook FROM BookType";
@@ -187,8 +184,7 @@
                                         }
                                     %>
                                 </select>
-                                <button type="submit">search</button>
-                            </form>
+
                         </th>
                         <th>Author Name</th>
                         <th>Quantity</th>
@@ -224,7 +220,7 @@
                         String searchQuery2 = request.getParameter("typeOfBook");
                         String search = "%"+searchQuery2+"%";
                         if(searchQuery2!=null){
-                            dataTable = " SELECT * FROM bookDetail WHERE typeOfBook like "+search+"";
+                            dataTable = " SELECT * FROM bookDetail WHERE typeOfBook like '%"+searchQuery2+"%' ";
                         }else
                         {
                             dataTable = "SELECT * FROM bookDetail ORDER BY bookId ASC";
@@ -244,7 +240,7 @@
                         <td><%= rs.getString("situation")%></td>
                         <td>
                             <button class="btn btn-primary"><a style="color: white"
-                                                               href="${pageContext.request.contextPath}?action=editForm&Id=<%= rs.getInt("bookId")%>" >Edit Infor</a></button>
+                                                               href="${pageContext.request.contextPath}?action=editForm&Id=<%=rs.getInt("bookId")%>" >Edit Infor</a></button>
                         </td>
                     </tr>
                     <%

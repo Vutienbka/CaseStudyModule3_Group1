@@ -209,8 +209,8 @@ public class AdminServlet extends HttpServlet {
         String language = request.getParameter("language");
         boolean status = Boolean.getBoolean(request.getParameter("status"));
         String situation = request.getParameter("situation");
-        Book book = new Book(bookId, bookName, typeOfBook, author, quantity, price, language, status, situation);
 
+        Book book = new Book(bookId, bookName, typeOfBook, author, quantity, price, language, status, situation);
         RequestDispatcher dispatcher;
 
         if (book == null) {
