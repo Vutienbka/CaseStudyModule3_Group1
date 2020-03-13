@@ -77,6 +77,9 @@ public class AdminServlet extends HttpServlet {
             case "editPage":
                 showEditPage(request, response);
                 break;
+            case "?action=editPage":
+                showEditPage(request, response);
+                break;
             case "editForm":
                 showEditForm(request, response);
                 break;

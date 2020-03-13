@@ -140,6 +140,7 @@
         <span style="color: green; font-size: 20px" id="message" onclick="hideMessage()">
             ${message}
         </span>
+        <a href="${pageContext.request.contextPath}?action=editPage"> Back to Edit Home Page << </a>
     </p>
     <div class="card mb-4">
         <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1"></i >Books Information</div>
@@ -150,6 +151,7 @@
                     <tr>
                         <th>BookId</th>
                         <th>Book Name
+                            <form action="editPage" method="post">
                                 <select value = "bookName"  name = "bookName" style="margin-left: 15px; height: 25px; width: 120px">
                                     <option value="All">All</option>
                                     <%
@@ -170,9 +172,12 @@
                                         }
                                     %>
                                 </select>
+                                <button type="submit">Search</button>
+                            </form>
                         </th>
                         <th>Type Of Book
-                                <select> value = "typeOfBook" name = "typeOfBook" style="margin-left: 15px; height: 25px; width: 120px">
+                            <form action="editPage" method="post">
+                                <select value = "typeOfBook" name = "typeOfBook" style="margin-left: 15px; height: 25px; width: 120px">
                                     <option value="All">All</option>
                                     <%
                                         data = "SELECT typeOfBook FROM BookType";
@@ -184,6 +189,8 @@
                                         }
                                     %>
                                 </select>
+                                <button type="submit">Search</button>
+                            </form>
 
                         </th>
                         <th>Author Name</th>
@@ -218,9 +225,11 @@
                         String dataTable;
                         String searchQuery1 = request.getParameter("bookName");
                         String searchQuery2 = request.getParameter("typeOfBook");
-                        String search = "%"+searchQuery2+"%";
+
                         if(searchQuery2!=null){
                             dataTable = " SELECT * FROM bookDetail WHERE typeOfBook like '%"+searchQuery2+"%' ";
+                        }else if(searchQuery1!=null){
+                            dataTable = " SELECT * FROM bookDetail WHERE bookName like '%"+searchQuery1+"%' ";
                         }else
                         {
                             dataTable = "SELECT * FROM bookDetail ORDER BY bookId ASC";
