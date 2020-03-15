@@ -62,7 +62,7 @@ public class ReaderService {
                     }
                 }
         }
-        System.out.println("Soluong reader: "+ borrowedReaderList.size());
+        //System.out.println("Soluong reader: "+ borrowedReaderList.size());
         return borrowedReaderList;
     }
 }
