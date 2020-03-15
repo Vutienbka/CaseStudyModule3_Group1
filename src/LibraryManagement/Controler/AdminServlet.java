@@ -360,7 +360,6 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("bookList", bookList);
             dispatcher.forward(request, response);
         }
-
     }
 
     /*-----------------------------------------------READER--------------------------------------------------------------------*/

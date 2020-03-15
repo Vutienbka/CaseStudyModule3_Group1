@@ -13,8 +13,8 @@ import java.util.List;
 public class BookServices implements I_BookService{
     RegisterService registerService = new RegisterService();
     SQLConnection connection = new SQLConnection();
-    final static String SELECT_ALL_BOOKS = "SELECT * FROM bookDetail";
-    final static String SELECT_ALL_BOOK_FOR_VIEWING = "SELECT * FROM BookOverview";
+    final static String SELECT_ALL_BOOKS = "SELECT * FROM bookDetail ORDER  BY bookId ASC";
+    final static String SELECT_ALL_BOOK_FOR_VIEWING = "SELECT * FROM BookOverview ORDER BY bookTypeId";
     final static String VIEW_READER_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
     final static String SELECT_ONE_BOOK = "SELECT * FROM bookDetail WHERE bookId=?";
 
@@ -34,7 +34,7 @@ public class BookServices implements I_BookService{
 
     /*-------------------------------------UPDATE----------------------------------------------*/
     final static String VIEW_ISSUED_BOOK_QUANTITY = "SELECT quantity FROM bookDetail";
-    final static String ADD_NEW_BOOK = "INSERT INTO bookDetail VALUES (?,?,?,?,?,?,?,?,?)";
+    final static String ADD_NEW_BOOK = "INSERT INTO bookDetail VALUES (?,?,?,?,?,?,?,?,?,?)";
     final static String DELETE_BOOK = "DELETE FROM bookDetail WHERE bookId= ?";
 
     /*-------------------------------------------------------------------------------------------*/
@@ -182,6 +182,7 @@ public class BookServices implements I_BookService{
         updateBookDetail(bookList,registerList,conn);
         return bookList;
     }
+    /*----------------------------UPDATE WHEN EDIT-------------------------------*/
     public void updateBookTitleTable(Book book, Connection conn) {
         String getBookTitleId = "SELECT bookTitleId FROM Book WHERE bookId=?";
         int bookTitleId=0;
@@ -329,7 +330,7 @@ public class BookServices implements I_BookService{
         }
         return false;
     }
-
+    /*----------------------------UPDATE WHEN EDIT-------------------------------*/
     @Override
     public Book findById(int bookId) {
         Connection conn = connection.getConnection();
@@ -356,11 +357,111 @@ public class BookServices implements I_BookService{
         }
         return null;
     }
+    /*----------------------------UPDATE WHEN ADD NEW BOOK-------------------------------*/
+    public int updateBookTypeTable_Add(Book book, Connection conn) {
+        String CHECK_CONDITION  = "SELECT typeOfBook, bookTypeId FROM BookType";
+        String INSERT_BOOK_TYPE = "INSERT INTO BookType (typeOfBook) VALUES(?)";
+        String GET_BOOKTYPE_ID = "SELECT bookTypeId FROM BookType";
+        int bookTypeId = 0;
+        try {
+            PreparedStatement ps= conn.prepareStatement(CHECK_CONDITION);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                String typeOfBook =rs.getString("typeOfBook");
+                if(typeOfBook.equalsIgnoreCase(book.getTypeOfBook())) {
+                    bookTypeId = rs.getInt("bookTypeId");
+                    return bookTypeId;
+                }
+                if(!rs.next()){
+                    ps=conn.prepareStatement(INSERT_BOOK_TYPE);
+                    ps.setString(1,book.getTypeOfBook());
+                    ps.executeUpdate();
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            PreparedStatement ps = conn.prepareStatement(GET_BOOKTYPE_ID);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                if(!(rs.next())){
+                    bookTypeId = rs.getInt("bookTypeId");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       return bookTypeId;
+    }
+    public int updateBookTypeTitle_Add(Book book, Connection conn) {
+        String CHECK_CONDITION_BOOkTYPE  = "SELECT bookTypeId, typeOfBook FROM BookType";
+        String CHECK_CONDITION_BOOkTITLE  = "SELECT bookName, quantity, bookTitleId FROM BookTitle";
+        String GET_BOOKTITLE_ID = "SELECT bookTitleId FROM BookTitle";
+        String UPDATE_QUANTITY_BOOkTITLE = "UPDATE BookTitle SET quantity = ? WHERE bookName = ?";
+        String INSERT_BOOK_TITLE = "INSERT INTO BookTitle (bookTypeId, bookName, author, quantity, price, language, description, image) VALUES(?,?,?,?,?,?,?,?)";
+        int bookTypeId = 0;
+        int bookTiTleId = 0;
+        try {
+            PreparedStatement ps= conn.prepareStatement(CHECK_CONDITION_BOOkTYPE);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                String typeOfBook =rs.getString("typeOfBook");
+                if(typeOfBook.equalsIgnoreCase(book.getTypeOfBook())) {
+                    bookTypeId = rs.getInt("bookTypeId");
+                    PreparedStatement ps2= conn.prepareStatement(CHECK_CONDITION_BOOkTITLE);
+                    ResultSet rs2 = ps2.executeQuery();
+                    while(rs2.next()){
+                    if(rs2.getString("bookName").equalsIgnoreCase(book.getBookName())) {
+                        PreparedStatement ps1 = conn.prepareStatement(UPDATE_QUANTITY_BOOkTITLE);
+                        ps1.setInt(1, rs2.getInt("quantity") + 1);
+                        ps1.setString(2, book.getBookName());
+                        ps1.executeUpdate();
+                        return rs2.getInt("bookTitleId");
+                    }
+                    }
+                    ps = conn.prepareStatement(INSERT_BOOK_TITLE);
+                    ps.setInt(1,bookTypeId);
+                    ps.setString(2,book.getBookName());
+                    ps.setString(3,book.getAuthor());
+                    ps.setInt(4,book.getQuantity());
+                    ps.setInt(5,book.getPrice());
+                    ps.setString(6,book.getLanguage());
+                    ps.setString(7,"Good Book");
+                    ps.setString(8,book.getImage());
+                    ps.executeUpdate();
+                    break;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        try {
+            PreparedStatement ps = conn.prepareStatement(GET_BOOKTITLE_ID);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                if(!(rs.next())){
+                    bookTiTleId = rs.getInt("bookTitleId");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bookTiTleId;
+
+    }
+    public void updateBookOverviewTable_Add(Book book, Connection conn, int bookTypeId, int bookTitleId){
+        String  INSERT_BOOK_OVERVIEW = "INSERT INTO BookOverview VALUES (?,?,?,?,?,?,?,?,?,?)";
+        String  GET_QUANTITY_OF_BOOKTITLE = "SELECT quantity FROM BookTitle WHERE bookTypeId = ? AND bookTitleId = ?";
+        /*lay quantity cua sach co bookTitleId tren*/
+        /**/
+    }
     @Override
     public boolean addNewBook(Book book) {
         Connection conn = connection.getConnection();
-
+       int bookTypeId =  updateBookTypeTable_Add(book,conn);
+        int bookTitleId = updateBookTypeTitle_Add(book,conn);
         try {
             PreparedStatement ps = conn.prepareStatement(ADD_NEW_BOOK);
             ps.setInt(1,book.getBookId());
@@ -372,7 +473,7 @@ public class BookServices implements I_BookService{
             ps.setString(7,book.getLanguage());
             ps.setBoolean(8,book.getStatus());
             ps.setString(9,book.getSituation());
-
+            ps.setString(10,book.getImage());
             int rows = ps.executeUpdate();
             System.out.println("row" + rows);
             if(rows>0)
@@ -382,7 +483,7 @@ public class BookServices implements I_BookService{
         }
         return false;
     }
-
+    /*----------------------------UPDATE WHEN ADD NEW BOOK-------------------------------*/
     @Override
     public boolean removeBook(int Id) {
         Connection conn = connection.getConnection();

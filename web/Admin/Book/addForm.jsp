@@ -69,6 +69,10 @@
                         <input type="text" name="situation" class="form-control" placeholder="Situation" >
                     </div>
                     <div class="form-group">
+                        <label class="control-label">Image</label>
+                        <input type="text" name="image" class="form-control" placeholder="Image" >
+                    </div>
+                    <div class="form-group">
                         <button type="submit" id="save" class="btn btn-success" style="width: 120px">Save</button>
                         <span><a href="book">Back to home page << </a></span>
                         <span style="margin: 0 10px">OR</span>
