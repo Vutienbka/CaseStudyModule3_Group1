@@ -33,7 +33,7 @@
                 <form class="form-horizontal" method="post">
                     <div class="form-group">
                         <label class="control-label"  >BookId:</label>
-                        <input type="text" name="bookId"  class="form-control"  placeholder="BookId">
+                        <input type="text" name="bookId"  class="form-control"  value="0" placeholder="BookId">
                     </div>
                     <div class="form-group">
                         <label class="control-label">BookName</label>
@@ -58,7 +58,7 @@
 
                     <div class="form-group">
                         <label class="control-label">Language</label>
-                        <input type="text"  name="language" class="form-control" placeholder="Price" >
+                        <input type="text"  name="language" class="form-control" placeholder="Language" >
                     </div>
                     <div class="form-group">
                         <label class="control-label">Status</label>

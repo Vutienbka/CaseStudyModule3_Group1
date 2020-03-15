@@ -46,6 +46,7 @@ public class ReaderService {
         ArrayList<BorrowedReaders> borrowedReaderList = new ArrayList<>();
         ArrayList<RegisterForm> registerList = registerService.initRegisterList();
         ArrayList<Book> bookList = bookServices.selectAllBook();
+
         for(RegisterForm register : registerList) {
                 for (Reader reader : readerList) {
                     if (reader.getReaderId() == register.getReaderId()) {

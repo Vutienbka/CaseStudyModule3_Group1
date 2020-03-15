@@ -143,11 +143,12 @@ public class AdminServlet extends HttpServlet {
         String language = request.getParameter("language");
         boolean status = Boolean.getBoolean(request.getParameter("status"));
         String situation = request.getParameter("situation");
+        String image = request.getParameter("image");
         RequestDispatcher dispatcher;
         try {
-            if ((bookId < 0) || (bookName == "")
+            if ((bookId <= 0) || (bookName == "")
                     || (typeOfBook == "") || (author == "") || (quantitys == "") || (prices == "")
-                    || (request.getParameter("status") == "") || (request.getParameter("situation") == "")) {
+                    || (request.getParameter("status") == "") || (request.getParameter("situation") == "") || (request.getParameter("image") == "")) {
                 String message = ">> Inputted information still not enough <<";
                 dispatcher = request.getRequestDispatcher("Admin/Book/addForm.jsp");
                 request.setAttribute("message", message);
@@ -158,12 +159,10 @@ public class AdminServlet extends HttpServlet {
         }
         int quantity = Integer.parseInt(request.getParameter("quality"));
         int price = Integer.parseInt(request.getParameter("price"));
-        Book book = new Book(bookId, bookName, typeOfBook, author, quantity, price, language, status, situation);
+        Book book = new Book(bookId, bookName, typeOfBook, author, quantity, price, language, status, situation, image);
         if (book == null) {
-            System.out.println("sach dang rong");
             dispatcher = request.getRequestDispatcher("Admin/404_Error.jsp");
         } else {
-            System.out.println("Sach van khac null");
             boolean check = bookService.addNewBook(book);
             bookList = bookService.selectAllBook();
             if (check) {
@@ -202,7 +201,8 @@ public class AdminServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    public void editBook(HttpServletRequest request, HttpServletResponse response) throws ParseException {
+    public void editBook(HttpServletRequest request, HttpServletResponse response) throws ParseException, ServletException, IOException {
+        bookList = bookService.selectAllBook();
         int bookId = Integer.parseInt(request.getParameter("Id"));
         String bookName = request.getParameter("bookName");
         String typeOfBook = request.getParameter("typeOfBook");
@@ -212,12 +212,21 @@ public class AdminServlet extends HttpServlet {
         String language = request.getParameter("language");
         boolean status = Boolean.getBoolean(request.getParameter("status"));
         String situation = request.getParameter("situation");
-
-        Book book = new Book(bookId, bookName, typeOfBook, author, quantity, price, language, status, situation);
+        String image = request.getParameter("image");
+        String message=null;
+        Book book = new Book(bookId, bookName, typeOfBook, author, quantity, price, language, status, situation,image);
         RequestDispatcher dispatcher;
-
+                if (status==true ){
+                    message = "You cannot change Default Status of the book";
+                    dispatcher = request.getRequestDispatcher("Admin/Book/editForm.jsp");
+                    request.setAttribute("message", message);
+                    request.setAttribute("book", book);
+                    dispatcher.forward(request, response);
+                    return;
+                }
         if (book == null) {
             dispatcher = request.getRequestDispatcher("Admin/Book/404_Error.jsp");
+            request.setAttribute("message", message);
         } else {
             boolean check = bookService.saveBook(book);
             bookList = bookService.selectAllBook();

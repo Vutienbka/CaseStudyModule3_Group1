@@ -57,7 +57,7 @@
     <!-- JS tạo nút bấm di chuyển trang end -->
     <script type="text/javascript">
         $(function () {
-            var pageSize = 9; // Hiển thị 6 sản phẩm trên 1 trang
+            var pageSize = 6; // Hiển thị 6 sản phẩm trên 1 trang
             showPage = function (page) {
                 $(".contentPage").hide();
                 $(".contentPage").each(function (n) {
@@ -67,7 +67,7 @@
             }
             showPage(1);
             ///** Cần truyền giá trị vào đây **///
-            var totalRows = 19; // Tổng số sản phẩm hiển thị
+            var totalRows = 30; // Tổng số sản phẩm hiển thị
             var btnPage = 5; // Số nút bấm hiển thị di chuyển trang
             var iTotalPages = Math.ceil(totalRows / pageSize);
             var obj = $('#pagination').twbsPagination({
@@ -105,6 +105,9 @@
         a:hover{
             color: lightcyan;
         }
+        td{
+            line-height: 37px;
+        }
     </style>
 </head>
 <body class="sb-nav-fixed">
@@ -121,7 +124,7 @@
             for(BorrowedReaders reader : borrowedReaderList){
                 Date borrowedDate = new SimpleDateFormat("yyyy-MM-dd").parse(reader.getBorrowedDate());
                 System.out.println(borrowedDate);
-                int month = borrowedDate.getMonth();
+                int month = borrowedDate.getMonth()+1;
                 System.out.println("Thang so: " + month);
                 if(month == (i+1)){
                     readerQuantity +=1;
@@ -141,7 +144,7 @@
             for(RegisterForm book : loanedBookList){
                 Date loanedDate = new SimpleDateFormat("yyyy-MM-dd").parse(book.getLoanDate());
                 System.out.println(loanedDate);
-                int month = loanedDate.getMonth();
+                int month = loanedDate.getMonth()+1;
                 System.out.println("Thang so: " + month);
                 if(month == (i+1)){
                     quantity +=1;
@@ -324,7 +327,7 @@
             <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1" ></i>Books Information</div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align: center">
                         <thead>
                         <tr>
                             <th>BookId</th>
@@ -336,6 +339,7 @@
                             <th>Language</th>
                             <th>Status</th>
                             <th>Situation</th>
+                            <th>Image</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -349,6 +353,7 @@
                             <th>Language</th>
                             <th>Status</th>
                             <th>Situation</th>
+                            <th>Image</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -379,8 +384,23 @@
                             <td><%= rs.getInt("quantity")%></td>
                             <td><%= rs.getInt("price")%></td>
                             <td><%= rs.getString("language")%></td>
-                            <td><%= rs.getBoolean("status")%></td>
+                            <%
+                                if((rs.getBoolean("status")==false))
+                                {
+                            %>
+
+                            <td><button class="btn-secondary">Inactive</button> </td>
+                            <%
+                            }else
+                            {
+                            %>
+                            <td><button class="btn-success">Active</button> </td>
+                            <%
+                                }
+                            %>
+
                             <td><%= rs.getString("situation")%></td>
+                            <td ><img src="<%= rs.getString("image")%>" style="height: 50px; width: 50px"></td>
                         </tr>
                         <%
                             };

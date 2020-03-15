@@ -15,6 +15,7 @@ public class Book {
     private Date loanDate;
     private Date receiveDate;
     private String place;
+    private String image;
     public Book() {
     }
 
@@ -27,7 +28,7 @@ public class Book {
         this.language = language;
     }
 
-    public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, int price, String language, boolean status, String situation) {
+    public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, int price, String language, boolean status, String situation , String image) {
         this.bookId = bookId;
         this.bookName = bookName;
         this.typeOfBook = typeOfBook;
@@ -37,9 +38,10 @@ public class Book {
         this.language = language;
         this.status = status;
         this.situation = situation;
+        this.image = image;
     }
 
-    public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, int price, String language, boolean status, String situation, String place) {
+    public Book(int bookId, String bookName, String typeOfBook, String author, int quantity, int price, String language, boolean status, String situation) {
         this.bookId = bookId;
         this.bookName = bookName;
         this.typeOfBook = typeOfBook;
@@ -49,7 +51,6 @@ public class Book {
         this.language = language;
         this.status = status;
         this.situation = situation;
-        this.place = place;
     }
 
     public Book(int bookId, String bookName, int quantity) {
@@ -179,5 +180,12 @@ public class Book {
 
     public void setPlace(String place) {
         this.place = place;
+    }
+
+    public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
     }
 }

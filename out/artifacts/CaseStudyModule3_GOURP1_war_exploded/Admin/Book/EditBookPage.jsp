@@ -62,6 +62,9 @@
         a{
             display: block;
         }
+        td{
+            line-height: 37px;
+        }
     </style>
 
     <script src="js/jquery.twbsPagination.js"></script>
@@ -74,7 +77,7 @@
             hide.style.display="none";
         }
         $(function () {
-            var pageSize = 9; // Hiển thị 6 sản phẩm trên 1 trang
+            var pageSize = 6; // Hiển thị 6 sản phẩm trên 1 trang
             showPage = function (page) {
                 $(".contentPage").hide();
                 $(".contentPage").each(function (n) {
@@ -84,7 +87,7 @@
             };
             showPage(1);
             ///** Cần truyền giá trị vào đây **///
-            var totalRows = 19; // Tổng số sản phẩm hiển thị
+            var totalRows = 30; // Tổng số sản phẩm hiển thị
             var btnPage = 5; // Số nút bấm hiển thị di chuyển trang
             var iTotalPages = Math.ceil(totalRows / pageSize);
             var obj = $('#pagination').twbsPagination({
@@ -145,6 +148,10 @@
                     <div class="form-group">
                         <label class="control-label">Situation</label>
                         <input type="text"  id="situation" class="form-control" placeholder="Situation" >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Situation</label>
+                        <input type="text"  id="image" class="form-control" placeholder="Image" >
                     </div>
                     <div class="form-group">
                         <button id ="save" type="submit" class="btn btn-success" style="width: 120px"> Save </button>
@@ -228,6 +235,7 @@
                         <th>Language</th>
                         <th>Status</th>
                         <th>Situation</th>
+                        <th>Image</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -242,6 +250,7 @@
                         <th>Language</th>
                         <th>Status</th>
                         <th>Situation</th>
+                        <th>Image</th>
                         <th>Action</th>
                     </tr>
                     </tfoot>
@@ -275,8 +284,23 @@
                         <td><%= rs.getInt("quantity")%></td>
                         <td><%= rs.getInt("price")%></td>
                         <td><%= rs.getString("language")%></td>
-                        <td><%= rs.getBoolean("status")%></td>
+                        <%
+                            if((rs.getBoolean("status")==false))
+                            {
+                        %>
+
+                        <td><button class="btn-secondary">Inactive</button> </td>
+                        <%
+                        }else
+                        {
+                        %>
+                        <td><button class="btn-success">Active</button> </td>
+                        <%
+                            }
+                        %>
+
                         <td><%= rs.getString("situation")%></td>
+                        <td ><img src="<%= rs.getString("image")%>" style="height: 50px; width: 50px"></td>
                         <td>
                             <button class="btn btn-primary"><a style="color: white"
                                                                href="${pageContext.request.contextPath}?action=editForm&Id=<%=rs.getInt("bookId")%>" >Edit Infor</a></button>

@@ -1,6 +1,5 @@
 package LibraryManagement.Model;
 
-import java.util.Date;
 
 public class RegisterForm {
     private int registerId;

@@ -14,7 +14,6 @@ import java.util.List;
 public class RegisterService {
     SQLConnection connection = new SQLConnection();
     final static String SELECT_ALL_REGISTER = "SELECT * FROM registerDetail";
-    private static ArrayList<RegisterForm> registerList;
 
     public ArrayList<RegisterForm> initRegisterList(){
         ArrayList<RegisterForm> registerList = new ArrayList<>();

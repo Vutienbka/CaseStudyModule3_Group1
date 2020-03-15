@@ -27,6 +27,7 @@
         <div class="panel panel-primary"  >
             <div class="panel-heading" >
                 <h3 class="panel-title" style="text-align: center; margin-top: 20px; color: blue">Edit Form</h3>
+                <p style="color: red; font-size: 20px"> ${message}</p>
             </div>
             <div class="panel-body">
                 <form class="form-horizontal" method="post">
@@ -66,6 +67,10 @@
                     <div class="form-group">
                         <label class="control-label">Situation</label>
                         <input type="text" name="situation" id = "${book.getSituation()}" value="${book.getSituation()}" class="form-control" placeholder="Situation" >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Image</label>
+                        <input type="text" name="image" id = "${book.getImage()}" value="${book.getImage()}" class="form-control" placeholder="Image Link" >
                     </div>
                     <div class="form-group">
                         <button type="submit" id="save" class="btn btn-success" style="width: 120px">Save</button>

@@ -4,14 +4,16 @@ public class Img {
     private int imageId;
     private String img;
     private String nameBook;
-
-    public Img() {
-    }
+    private String imageType;
 
     public Img(int imageId, String img, String nameBook) {
+    }
+
+    public Img(int imageId, String img, String nameBook,String imageType) {
         this.imageId = imageId;
         this.img = img;
         this.nameBook = nameBook;
+        this.imageType = imageType;
     }
 
     public int getImageId() {
@@ -36,5 +38,13 @@ public class Img {
 
     public void setNameBook(String nameBook) {
         this.nameBook = nameBook;
+    }
+
+    public String getImageType() {
+        return imageType;
+    }
+
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
     }
 }

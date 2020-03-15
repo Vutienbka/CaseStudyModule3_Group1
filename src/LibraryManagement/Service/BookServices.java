@@ -14,17 +14,31 @@ public class BookServices implements I_BookService{
     RegisterService registerService = new RegisterService();
     SQLConnection connection = new SQLConnection();
     final static String SELECT_ALL_BOOKS = "SELECT * FROM bookDetail";
-    final static String SELECT_ALL_BOOK_FOR_VIEWING = "SELECT * FROM bookOverview";
+    final static String SELECT_ALL_BOOK_FOR_VIEWING = "SELECT * FROM BookOverview";
     final static String VIEW_READER_QUANTITY = "SELECT quantity FROM Book WHERE status = true";
     final static String SELECT_ONE_BOOK = "SELECT * FROM bookDetail WHERE bookId=?";
-    final static String UPDATE_BOOK = "UPDATE  bookDetail SET bookName=? ,typeOfBook=?,author=?, quantity=?, " +
-            "price=?, language=?, status=?, situation=? WHERE bookId=?";
+
+    /*-------------------------------------EDIT----------------------------------------------*/
+    final static String EDIT_BOOK_DETAIL = "UPDATE  bookDetail SET bookName=? ,typeOfBook=?,author=?, quantity=?, " +
+            "price=?, language=?, status=?, situation=?, image= ? WHERE bookId=?";
+    final static String EDIT_BOOK_TITLE_TABLE ="UPDATE BookTitle SET bookName=? ,author=?," +
+            "price=?, language=? WHERE bookTitleId=?";
+    final static String EDIT_BOOK_TYPE_TABLE ="UPDATE BookType SET typeOfBook=? WHERE bookTypeId=?";
+    final static String EDIT_BOOK_TABLE ="UPDATE Book SET situation=? WHERE bookId=?";
+    final static String EDIT_BOOK_OVERVIEW_TABLE = "UPDATE  BookOverview SET bookName=? ,typeOfBook=?,author=?, " +
+            "price=?, language=?, situation=? WHERE bookTitleId=? AND bookTypeId=?";
+    /*-------------------------------------UPDATE----------------------------------------------*/
+
+    final static String UPDATE_BOOK_DETAIL = "UPDATE  bookDetail SET bookName=? ,typeOfBook=?,author=?, quantity=?, " +
+            "price=?, language=?, status=?, situation=?, image= ? WHERE bookId=?";
+
+    /*-------------------------------------UPDATE----------------------------------------------*/
     final static String VIEW_ISSUED_BOOK_QUANTITY = "SELECT quantity FROM bookDetail";
     final static String ADD_NEW_BOOK = "INSERT INTO bookDetail VALUES (?,?,?,?,?,?,?,?,?)";
     final static String DELETE_BOOK = "DELETE FROM bookDetail WHERE bookId= ?";
-    private static List<Book> bookList ;
 
-    List<RegisterForm> registerList = registerService.initRegisterList();
+    /*-------------------------------------------------------------------------------------------*/
+    private static List<Book> bookList ;
     static {
         bookList = new ArrayList<>();
     }
@@ -47,16 +61,17 @@ public class BookServices implements I_BookService{
                 String language = rs.getString("language");
                 boolean status = rs.getBoolean("status");
                 String situation = rs.getString("situation");
-                bookList.add(new Book(Id,bookName,typeOfBook,author,quantity,price,language,status,situation));
+                String image = rs.getString("image");
+                bookList.add(new Book(Id,bookName,typeOfBook,author,quantity,price,language,status,situation, image));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
     public ArrayList<BookView> viewAllBook() {
         ArrayList<BookView> bookList = new ArrayList<>();
         ArrayList<LoanedBook> loanedBookList = viewLoanedBookInfo();
-
         Connection conn = connection.getConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(SELECT_ALL_BOOK_FOR_VIEWING);
@@ -77,7 +92,6 @@ public class BookServices implements I_BookService{
                     }
                 }
                 availableQuantity = quantity - loanedQuantity;
-
                 bookList.add(new BookView(bookName,typeOfBook,author,quantity,price,language,loanedQuantity,availableQuantity));
             }
         } catch (SQLException e) {
@@ -85,14 +99,71 @@ public class BookServices implements I_BookService{
         }
         return bookList;
     }
+    public void updateBookDetail(ArrayList<Book> bookList, ArrayList<RegisterForm> registerList,Connection conn) {
+        //kiem tra trang thai book trong danh sach da cho muon khi duoc tra lai
+        for (Book book : bookList) {
+            try {
+            PreparedStatement ps = conn.prepareStatement(UPDATE_BOOK_DETAIL);
+            for (RegisterForm registerForm : registerList) {
+                if (book.getBookId()==registerForm.getBookId()) {
+                        if (!(registerForm.getReturnedDate().equalsIgnoreCase(""))){
+                            book.setSituation(registerForm.getReceiveSituation());
+                            try {
+                                ps.setString(1,book.getBookName());
+                                ps.setString(2,book.getTypeOfBook());
+                                ps.setString(3,book.getAuthor());
+                                ps.setInt(4,book.getQuantity());
+                                ps.setInt(5,book.getPrice());
+                                ps.setString(6,book.getLanguage());
+                                ps.setBoolean(7,book.getStatus());
+                                ps.setString(8,registerForm.getReceiveSituation());
+                                ps.setString(9,book.getImage());
+                                ps.setInt(10,book.getBookId());
+                                int rows = ps.executeUpdate();
+                                if((rows>0))
+                                    System.out.println("Update book detail thanh cong");
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        else if (registerForm.getReturnedDate().equalsIgnoreCase("")) {
+                            try {
+                                ps.setString(1,book.getBookName());
+                                ps.setString(2,book.getTypeOfBook());
+                                ps.setString(3,book.getAuthor());
+                                ps.setInt(4,book.getQuantity());
+                                ps.setInt(5,book.getPrice());
+                                ps.setString(6,book.getLanguage());
+                                ps.setBoolean(7,true);
+                                ps.setString(8,book.getSituation());
+                                ps.setString(9,book.getImage());
+                                ps.setInt(10,book.getBookId());
+                                int rows = ps.executeUpdate();
+                                if((rows>0))
+                                    System.out.println("Update book detail thanh cong");
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+
+                }
+            }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
     @Override
     public ArrayList<Book> selectAllBook() {
         ArrayList<Book> bookList = new ArrayList<>();
+        ArrayList<RegisterForm> registerList = registerService.initRegisterList();
         Connection conn = connection.getConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(SELECT_ALL_BOOKS);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
                 int Id = rs.getInt("bookId");
                 String bookName = rs.getString("bookName");
                 String typeOfBook = rs.getString("typeOfBook");
@@ -102,26 +173,144 @@ public class BookServices implements I_BookService{
                 String language = rs.getString("language");
                 boolean status = rs.getBoolean("status");
                 String situation = rs.getString("situation");
-                bookList.add(new Book(Id,bookName,typeOfBook,author,quantity,price,language,status,situation));
+                String image = rs.getString("image");
+                bookList.add(new Book(Id, bookName, typeOfBook, author, quantity, price, language, status, situation, image));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        //kiem tra trang thai book trong danh sach da cho muon khi duoc tra lai
-        for(Book book : bookList){
-            for(RegisterForm registerForm : registerList){
-                if((book.getBookId() == registerForm.getBookId() && (registerForm.getReturnedDate().equalsIgnoreCase("")==false))){
-                    book.setSituation(registerForm.getReceiveSituation());
-                }
-            }
-        }
+        updateBookDetail(bookList,registerList,conn);
         return bookList;
     }
+    public void updateBookTitleTable(Book book, Connection conn) {
+        String getBookTitleId = "SELECT bookTitleId FROM Book WHERE bookId=?";
+        int bookTitleId=0;
+        try {
+            PreparedStatement ps= conn.prepareStatement(getBookTitleId);
+            ps.setInt(1,book.getBookId());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                bookTitleId =rs.getInt("bookTitleId");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("bookTitle: "+ bookTitleId);
+        try {
+            PreparedStatement ps = conn.prepareStatement(EDIT_BOOK_TITLE_TABLE);
+            ps.setString(1,book.getBookName());
+            ps.setString(2,book.getAuthor());
+            ps.setInt(3,book.getPrice());
+            ps.setString(4,book.getLanguage());
+            ps.setInt(5,bookTitleId);
+            int rows = ps.executeUpdate();
+            if((rows>0))
+                System.out.println("Update bookTitle Table thanh cong");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void updateBookTypeTable(Book book, Connection conn) {
+        String getBookTypeId = "SELECT bookTypeId FROM Book WHERE bookId=?";
+        int bookTypeId=0;
+        try {
+            PreparedStatement ps= conn.prepareStatement(getBookTypeId);
+            ps.setInt(1,book.getBookId());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                bookTypeId =rs.getInt("bookTypeId");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            PreparedStatement ps = conn.prepareStatement(EDIT_BOOK_TYPE_TABLE);
+            ps.setString(1,book.getTypeOfBook());
+            ps.setInt(2,bookTypeId);
+            int rows = ps.executeUpdate();
+            if((rows>0))
+                System.out.println("Update bookType Table thanh cong");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void updateBookTable(Book book, Connection conn) {
+        String getBookId = "SELECT bookId FROM Book WHERE bookId=?";
+        int bookId=0;
+        try {
+            PreparedStatement ps= conn.prepareStatement(getBookId);
+            ps.setInt(1,book.getBookId());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                bookId =rs.getInt("bookId");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            PreparedStatement ps = conn.prepareStatement(EDIT_BOOK_TABLE);
+            ps.setString(1,book.getSituation());
+            ps.setInt(2,bookId);
+            int rows = ps.executeUpdate();
+            if((rows>0))
+                System.out.println("Update book Table thanh cong");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void updateBookOverviewTable(Book book, Connection conn) {
+        String getBookId = "SELECT bookTitleId, bookTypeId FROM Book WHERE bookId=?";
+        System.out.println("bookId: " + book.getBookId());
+        int bookTitleId=0;
+        int bookTypeId=0;
+        try {
+            PreparedStatement ps= conn.prepareStatement(getBookId);
+            ps.setInt(1,book.getBookId());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                bookTitleId =rs.getInt("bookTitleId");
+                bookTypeId =rs.getInt("bookTypeId");
+                System.out.println("bookTitleId: "+ bookTitleId);
+                System.out.println("bookTypeId: "+ bookTypeId);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            PreparedStatement ps = conn.prepareStatement(EDIT_BOOK_OVERVIEW_TABLE);
+            ps.setString(1,book.getBookName());
+            ps.setString(2,book.getTypeOfBook());
+            ps.setString(3,book.getAuthor());
+            ps.setInt(4,book.getPrice());
+            ps.setString(5,book.getLanguage());
+            ps.setString(6,book.getSituation());
+            ps.setInt(7,bookTitleId);
+            ps.setInt(8,bookTypeId);
+            int rows = ps.executeUpdate();
+            if((rows>0))
+                System.out.println("Update BookOverView Table thanh cong");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public boolean saveBook(Book book) {
         Connection conn = connection.getConnection();
+        updateBookTitleTable(book,conn);
+        updateBookTypeTable(book,conn);
+        updateBookTable(book,conn);
+        updateBookOverviewTable(book,conn);
         try {
-            PreparedStatement ps = conn.prepareStatement(UPDATE_BOOK);
+            PreparedStatement ps = conn.prepareStatement(EDIT_BOOK_DETAIL);
             ps.setString(1,book.getBookName());
             ps.setString(2,book.getTypeOfBook());
             ps.setString(3,book.getAuthor());
@@ -130,16 +319,17 @@ public class BookServices implements I_BookService{
             ps.setString(6,book.getLanguage());
             ps.setBoolean(7,book.getStatus());
             ps.setString(8,book.getSituation());
-            ps.setInt(9,book.getBookId());
-
+            ps.setString(9,book.getImage());
+            ps.setInt(10,book.getBookId());
             int rows = ps.executeUpdate();
-            if(rows>0)
+            if((rows>0))
                 return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
+
     @Override
     public Book findById(int bookId) {
         Connection conn = connection.getConnection();
@@ -156,7 +346,8 @@ public class BookServices implements I_BookService{
                 String language = rs.getString("language");
                 boolean status = rs.getBoolean("status");
                 String situation = rs.getString("situation");
-                Book updatedBook = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation);
+                String image = rs.getString("image");
+                Book updatedBook = new Book(bookId,bookName,typeOfBook,author,quantity,price,language,status,situation, image);
                 if (updatedBook!= null)
                     return updatedBook;
             }
@@ -198,10 +389,10 @@ public class BookServices implements I_BookService{
         try {
             PreparedStatement ps = conn.prepareStatement(DELETE_BOOK);
             ps.setInt(1,Id);
-           int rows = ps.executeUpdate();
-           if(rows > 0)
-               System.out.println("Delete" + rows);
-               return true;
+            int rows = ps.executeUpdate();
+            if(rows > 0)
+                System.out.println("Delete" + rows);
+            return true;
         } catch(SQLException e){
             e.printStackTrace();
         }

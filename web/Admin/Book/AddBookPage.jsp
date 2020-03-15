@@ -106,8 +106,8 @@
         <a href="${pageContext.request.contextPath}?action=addPage" style="font-size: 20px"> Back to Add Home Page << </a>
     </p>
     <div><button class="btn btn-primary"><a style="color: white"
-                href="${pageContext.request.contextPath}?action=addForm&Id=${book.getBookId()}"> Add Book</a>
-   </button></div>
+                                            href="${pageContext.request.contextPath}?action=addForm&Id=${book.getBookId()}"> Add Book</a>
+    </button></div>
     <div class="card mb-4">
         <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1"></i >Books Information</div>
         <div class="card-body">
@@ -171,6 +171,7 @@
                         <th>Language</th>
                         <th>Status</th>
                         <th>Situation</th>
+                        <th>Image</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -184,6 +185,7 @@
                         <th>Language</th>
                         <th>Status</th>
                         <th>Situation</th>
+                        <th>Image</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -216,8 +218,23 @@
                         <td><%= rs.getInt("quantity")%></td>
                         <td><%= rs.getInt("price")%></td>
                         <td><%= rs.getString("language")%></td>
-                        <td><%= rs.getBoolean("status")%></td>
+                        <%
+                            if((rs.getBoolean("status")==false))
+                            {
+                        %>
+
+                        <td><button class="btn-secondary">Inactive</button> </td>
+                        <%
+                        }else
+                        {
+                        %>
+                        <td><button class="btn-success">Active</button> </td>
+                        <%
+                            }
+                        %>
+
                         <td><%= rs.getString("situation")%></td>
+                        <td ><img src="<%= rs.getString("image")%>" style="height: 50px; width: 50px"></td>
                     </tr>
                     <%
                         }

@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserServiceImp implements UserService {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/CaseStudy";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "Lamlam@95";
+    final static String URL = "jdbc:mysql://localhost:3306/CaseStudy";
+    final static String USERNAME = "root";
+    final static String PASSWORD = "123456";
 
     private static final String INSERT_USERS_SQL = "INSERT INTO Reader (readerName, identificationId, dateOfBirth,address,occupation,email) VALUES " +
             " (?, ?, ?, ?, ?, ?);";
@@ -27,7 +27,7 @@ public class UserServiceImp implements UserService {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+            connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
