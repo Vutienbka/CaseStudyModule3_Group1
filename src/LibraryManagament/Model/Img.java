@@ -16,6 +16,12 @@ public class Img {
         this.imageType = imageType;
     }
 
+    public Img(int imageId, String img, String imageType) {
+        this.imageId = imageId;
+        this.img = img;
+        this.imageType = imageType;
+    }
+
     public int getImageId() {
         return imageId;
     }

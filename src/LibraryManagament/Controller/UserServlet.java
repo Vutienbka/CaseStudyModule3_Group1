@@ -1,6 +1,8 @@
 package LibraryManagament.Controller;
 
 import LibraryManagament.Model.Img;
+import LibraryManagament.Model.Item;
+import LibraryManagament.Model.Order;
 import LibraryManagament.Model.Reader;
 import LibraryManagament.UserService.UserServiceImp;
 
@@ -11,9 +13,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @WebServlet(name = "UserServlet", urlPatterns = {"/users"})
 public class UserServlet extends HttpServlet {
@@ -30,14 +36,20 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "cart":
+                listCart(request, response);
+                break;
+            case "oder":
+                Order(request, response);
+                break;
             case "history":
-                listImageHistory(request,response);
+                listImageHistory(request, response);
                 break;
             case "econome":
-                listImageEconomy(request,response);
+                listImageEconomy(request, response);
                 break;
             case "affection":
-                listImageAffection(request,response);
+                listImageAffection(request, response);
                 break;
             case "listReader":
                 try {
@@ -47,7 +59,7 @@ public class UserServlet extends HttpServlet {
                 }
                 break;
             case "customer":
-                listImage(request,response);
+                listImage(request, response);
                 break;
             case "registration":
                 try {
@@ -60,7 +72,7 @@ public class UserServlet extends HttpServlet {
                 viewBook(request, response);
                 break;
             case "edit":
-                    updateReader(request,response);
+                updateReader(request, response);
                 break;
             case "delete":
                 try {
@@ -82,14 +94,20 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "cart":
+                listCart(request, response);
+                break;
+            case "oder":
+                Order(request, response);
+                break;
             case "history":
-                listImageHistory(request,response);
+                listImageHistory(request, response);
                 break;
             case "econome":
-                listImageEconomy(request,response);
+                listImageEconomy(request, response);
                 break;
             case "affection":
-                listImageAffection(request,response);
+                listImageAffection(request, response);
                 break;
             case "listReader":
                 try {
@@ -108,7 +126,7 @@ public class UserServlet extends HttpServlet {
                 viewBook(request, response);
                 break;
             case "edit":
-                    updateForm(request,response);
+                updateForm(request, response);
                 break;
             case "deletePage":
                 break;
@@ -225,8 +243,7 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void listImage(HttpServletRequest request, HttpServletResponse response)
-    {
+    private void listImage(HttpServletRequest request, HttpServletResponse response) {
         List<Img> listImage = null;
         try {
             listImage = userServiceImp.selectAllImgs();
@@ -258,8 +275,7 @@ public class UserServlet extends HttpServlet {
 //        }
 //    }
 
-    private void listImageAffection(HttpServletRequest request, HttpServletResponse response)
-    {
+    private void listImageAffection(HttpServletRequest request, HttpServletResponse response) {
         List<Img> listImageAffection = null;
         try {
             listImageAffection = userServiceImp.selectAllImgsAffection();
@@ -277,8 +293,7 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void listImageEconomy(HttpServletRequest request, HttpServletResponse response)
-    {
+    private void listImageEconomy(HttpServletRequest request, HttpServletResponse response) {
         List<Img> listImageEconome = null;
         try {
             listImageEconome = userServiceImp.selectAllImgsEconomy();
@@ -296,8 +311,7 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void listImageHistory(HttpServletRequest request, HttpServletResponse response)
-    {
+    private void listImageHistory(HttpServletRequest request, HttpServletResponse response) {
         List<Img> listImageHistory = null;
         try {
             listImageHistory = userServiceImp.selectAllImgsHistory();
@@ -315,4 +329,94 @@ public class UserServlet extends HttpServlet {
         }
     }
 
+
+
+    private void listFind(HttpServletRequest request, HttpServletResponse response) {
+        List<Img> listFind = null;
+        try {
+            String bookName = request.getParameter("find");
+            listFind = userServiceImp.listFind(bookName);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/listFind.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+//    private void listCart(HttpServletRequest request, HttpServletResponse response) {
+//        List<Img> listCart = null;
+//        try {
+//            listCart = userServiceImp.Cart();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        request.setAttribute("listCart", listCart);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("oder/oder.jsp");
+//        try {
+//            dispatcher.forward(request, response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    private void Order(HttpServletRequest request, HttpServletResponse response) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("oder/oder.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void oderForm(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("oder/oder.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void viewForm(HttpServletRequest request, HttpServletResponse response) {
+        Img img = userServiceImp.selectImg(Integer.parseInt(request.getParameter("imageId")));
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/view.jsp");
+        request.setAttribute("imgs", img);
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void listCart(HttpServletRequest request, HttpServletResponse response) {
+        List<Img> listCart = null;
+        try {
+            listCart = userServiceImp.listCart();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        request.setAttribute("listCart", listCart);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("Cart/cart.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

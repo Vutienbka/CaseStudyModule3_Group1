@@ -59,10 +59,14 @@
                 <li class="nav-item">
                     <a class="nav-link text-uppercase text-white" href="/users?action=registration">Đăng kí thành viên</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase text-white" href="/users?action=cart">Giỏ Hàng</a>
+                </li>
             </ul>
             <form class="form-inline position-relative ml-lg-4">
-                <input class="form-control px-0 w-100" type="search" placeholder="Search">
-                <button class="search-icon" type="submit"><i class="ti-search text-dark"></i></button>
+                <input class="form-control px-0 w-100" type="search" placeholder="Search" name="find">
+                <%--                <button class="search-icon" type="submit" href="/users?action=find"><i class="ti-search text-dark"></i></button>--%>
+                <a href="/users?action=find" class="search-icon">ser</a>
             </form>
         </div>
     </div>

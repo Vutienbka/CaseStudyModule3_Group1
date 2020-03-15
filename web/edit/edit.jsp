@@ -9,7 +9,7 @@
 <center>
     <h1>User Management</h1>
     <h2>
-        <a href="users?action=users">List All Readers</a>
+        <a href="/users?action=listReader">List All Readers</a>
     </h2>
 </center>
 <div align="center">
