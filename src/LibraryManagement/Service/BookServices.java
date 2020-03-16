@@ -36,8 +36,8 @@ public class BookServices implements I_BookService{
     final static String VIEW_ISSUED_BOOK_QUANTITY = "SELECT quantity FROM bookDetail";
     final static String ADD_NEW_BOOK = "INSERT INTO bookDetail VALUES (?,?,?,?,?,?,?,?,?,?)";
     final static String DELETE_BOOK = "DELETE FROM bookDetail WHERE bookId= ?";
-
     /*-------------------------------------------------------------------------------------------*/
+
     private static List<Book> bookList ;
     static {
         bookList = new ArrayList<>();
@@ -453,15 +453,51 @@ public class BookServices implements I_BookService{
     }
     public void updateBookOverviewTable_Add(Book book, Connection conn, int bookTypeId, int bookTitleId){
         String  INSERT_BOOK_OVERVIEW = "INSERT INTO BookOverview VALUES (?,?,?,?,?,?,?,?,?,?)";
-        String  GET_QUANTITY_OF_BOOKTITLE = "SELECT quantity FROM BookTitle WHERE bookTypeId = ? AND bookTitleId = ?";
-        /*lay quantity cua sach co bookTitleId tren*/
-        /**/
-    }
+        String UPDTAE_BOOK_OVERVIEW = "UPDATE BookOverview SET quantity = ? WHERE bookTypeId = ? AND bokTitleId = ?";
+        String  GET_QUANTITY_OF_BOOKTITLE = "SELECT quantity, bookTypeId, bookTitleId FROM BookTitle WHERE bookTypeId = ? AND bookTitleId = ?";
+        int quantity_bookTitle = 0;
+        try {
+            PreparedStatement ps = conn.prepareStatement(GET_QUANTITY_OF_BOOKTITLE);
+            ps.setInt(1,bookTypeId);
+            ps.setInt(2,bookTitleId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                if((bookTitleId==rs.getInt("bookTitleId")) && (bookTypeId==rs.getInt("bookTypeId"))) {
+                    quantity_bookTitle = rs.getInt("quantity");
+
+                    PreparedStatement ps_ud = conn.prepareStatement(UPDTAE_BOOK_OVERVIEW);
+                    ResultSet rs_ud= ps_ud.executeQuery();
+                    ps_ud.setInt(1, quantity_bookTitle);
+                    ps_ud.setInt(2, bookTypeId);
+                    ps_ud.setInt(3, bookTitleId);
+                    ps_ud.executeUpdate();
+                    break;
+                }
+                if(!(rs.next())) {
+                    ps = conn.prepareStatement(INSERT_BOOK_OVERVIEW);
+                    ps.setInt(1, bookTypeId);
+                    ps.setInt(2, bookTitleId);
+                    ps.setString(3, book.getBookName());
+                    ps.setString(4, book.getTypeOfBook());
+                    ps.setString(5, book.getAuthor());
+                    ps.setInt(6, book.getQuantity());
+                    ps.setInt(7, book.getPrice());
+                    ps.setString(8, book.getLanguage());
+                    ps.setBoolean(9, book.getStatus());
+                    ps.setString(10, book.getSituation());
+                    ps.executeUpdate();
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+         }
     @Override
     public boolean addNewBook(Book book) {
         Connection conn = connection.getConnection();
        int bookTypeId =  updateBookTypeTable_Add(book,conn);
         int bookTitleId = updateBookTypeTitle_Add(book,conn);
+        updateBookOverviewTable_Add(book,conn,bookTypeId,bookTitleId);
         try {
             PreparedStatement ps = conn.prepareStatement(ADD_NEW_BOOK);
             ps.setInt(1,book.getBookId());

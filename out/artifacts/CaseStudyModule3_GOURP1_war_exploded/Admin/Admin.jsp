@@ -143,9 +143,12 @@
 
             /*VE BANG SACH DA MUON SACH THEO CAC THANG*/
         RegisterService registerService = new RegisterService();
+
        ArrayList<RegisterForm> loanedBookList = registerService.initRegisterList();
+
         ArrayList<String> months = new ArrayList<String>();
         ArrayList<Integer> quantityList = new ArrayList<Integer>();
+
         String[] monthName = {"Jan", "Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"};
         for(int i = 0; i<monthName.length;i++){
             int bookQuantity = 0;
@@ -462,6 +465,7 @@
             </div>
         </div>
     </div>
+
     <ul id="pagination"></ul>
 </section>
 <footer class="py-4 bg-light mt-auto">
