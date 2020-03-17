@@ -36,6 +36,9 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "find":
+                listFind(request,response);
+                break;
             case "cart":
                 listCart(request, response);
                 break;
@@ -94,6 +97,9 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "find":
+                listFind(request,response);
+                break;
             case "cart":
                 listCart(request, response);
                 break;
@@ -331,23 +337,23 @@ public class UserServlet extends HttpServlet {
 
 
 
-    private void listFind(HttpServletRequest request, HttpServletResponse response) {
-        List<Img> listFind = null;
-        try {
-            String bookName = request.getParameter("find");
-            listFind = userServiceImp.listFind(bookName);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/listFind.jsp");
-        try {
-            dispatcher.forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    private void listFind(HttpServletRequest request, HttpServletResponse response) {
+//        List<Img> listFind = null;
+//        try {
+//            String bookName = request.getParameter("find");
+//            listFind = userServiceImp.listFind(bookName);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("user/listFind.jsp");
+//        try {
+//            dispatcher.forward(request, response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 //    private void listCart(HttpServletRequest request, HttpServletResponse response) {
 //        List<Img> listCart = null;
@@ -411,6 +417,26 @@ public class UserServlet extends HttpServlet {
         }
         request.setAttribute("listCart", listCart);
         RequestDispatcher dispatcher = request.getRequestDispatcher("Cart/cart.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void listFind(HttpServletRequest request, HttpServletResponse response) {
+        String  bookName = request.getParameter("nameBook");
+        List<Img> listFind = null;
+        try {
+            listFind = userServiceImp.listFind(bookName);
+            System.out.println(listFind.size());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        request.setAttribute("listFind", listFind);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/listFind.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

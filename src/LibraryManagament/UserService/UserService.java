@@ -27,12 +27,13 @@ public interface UserService {
 
     public List<Img> selectAllImgsHistory() throws SQLException;
 
-    public List<Img> listFind(String bookName) throws SQLException;
+//    public List<Img> listFind(String bookName) throws SQLException;
 
     public void insertOrder(Img img) throws SQLException;
 
     public List<Img> listCart( ) throws SQLException;
 
+    public List<Img> listFind(String bookName) throws SQLException;
 
 
 }

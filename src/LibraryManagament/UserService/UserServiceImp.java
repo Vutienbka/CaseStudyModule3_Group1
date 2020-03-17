@@ -30,6 +30,7 @@ public class UserServiceImp implements UserService {
     private static final String INSERT_ORDER_SQL = "INSERT INTO image (imageId,img,nameBook,imageType) VALUES " +
             " (?, ?, ?, ?);";
     private static final String SELECT_ALL_CART = "select * from image;";
+    private static final String SELECT_FIND = "select bookId,bookImage,bookName,typeOfBook from bookDetail where bookName like  ''%' + ? + '%''";
 
     public UserServiceImp() {
     }
@@ -301,36 +302,36 @@ public class UserServiceImp implements UserService {
         return imgs;
     }
 
-    @Override
-    public List<Img> listFind(String bookName) throws SQLException {
-        List<Img> finds = new ArrayList<>();
-        // Step 1: Establishing a Connection
-        try (Connection connection = getConnection();
-
-             // Step 2:Create a statement using connection object
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_IMGS_NAME);) {
-            preparedStatement.setString(1, bookName);
-            System.out.println(preparedStatement);
-            // Step 3: Execute the query or update query
-            ResultSet rs = preparedStatement.executeQuery();
-
-            // Step 4: Process the ResultSet object.
-            while (rs.next()) {
-//                int id = rs.getInt("id");
-//                String name = rs.getString("name");
-//                String email = rs.getString("email");
-//                String country = rs.getString("country");
-                int imageId = rs.getInt("bookId");
-                String img = rs.getString("bookImage");
-                String nameBook = rs.getString("bookName");
-                String imageType = rs.getString("typeOfBook");
-                finds.add(new Img(imageId, img, nameBook, imageType));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return finds;
-    }
+//    @Override
+//    public List<Img> listFind(String bookName) throws SQLException {
+//        List<Img> finds = new ArrayList<>();
+//        // Step 1: Establishing a Connection
+//        try (Connection connection = getConnection();
+//
+//             // Step 2:Create a statement using connection object
+//             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_IMGS_NAME);) {
+//            preparedStatement.setString(1, bookName);
+//            System.out.println(preparedStatement);
+//            // Step 3: Execute the query or update query
+//            ResultSet rs = preparedStatement.executeQuery();
+//
+//            // Step 4: Process the ResultSet object.
+//            while (rs.next()) {
+////                int id = rs.getInt("id");
+////                String name = rs.getString("name");
+////                String email = rs.getString("email");
+////                String country = rs.getString("country");
+//                int imageId = rs.getInt("bookId");
+//                String img = rs.getString("bookImage");
+//                String nameBook = rs.getString("bookName");
+//                String imageType = rs.getString("typeOfBook");
+//                finds.add(new Img(imageId, img, nameBook, imageType));
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return finds;
+//    }
 
     @Override
     public void insertOrder(Img img) throws SQLException {
@@ -378,6 +379,37 @@ public class UserServiceImp implements UserService {
         return listCarts;
     }
 
+    @Override
+    public List<Img> listFind(String bookName) throws SQLException {
+        List<Img> listFinds = new ArrayList<>();
+        // Step 1: Establishing a Connection
+        try (Connection connection = getConnection();
+
+             // Step 2:Create a statement using connection object
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FIND);) {
+            preparedStatement.setString(1, bookName);
+
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            ResultSet rs = preparedStatement.executeQuery();
+
+            // Step 4: Process the ResultSet object.
+            while (rs.next()) {
+//                int id = rs.getInt("id");
+//                String name = rs.getString("name");
+//                String email = rs.getString("email");
+//                String country = rs.getString("country");
+                int imageId = rs.getInt("bookId");
+                String img = rs.getString("bookImage");
+                String nameBook = rs.getString("bookName");
+                String imageType = rs.getString("typeOfBook");
+                listFinds.add(new Img(imageId, img, nameBook, imageType));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listFinds;
+    }
 
 }
 

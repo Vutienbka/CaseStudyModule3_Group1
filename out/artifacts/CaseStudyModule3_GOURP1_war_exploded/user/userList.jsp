@@ -57,10 +57,12 @@
                     <a class="nav-link text-uppercase text-white" href="/users?action=cart">Giỏ Hàng</a>
                 </li>
             </ul>
-            <form class="form-inline position-relative ml-lg-4">
-                <input class="form-control px-0 w-100" type="search" placeholder="Search" name="find">
-<%--                <button class="search-icon" type="submit" href="/users?action=find"><i class="ti-search text-dark"></i></button>--%>
-                <a href="/users?action=find" class="search-icon">ser</a>
+            <form action="/users?action=find" method="get" class="form-inline position-relative ml-lg-4">
+                <input class="form-control px-0 w-100" type="text" placeholder="Search" name="nameBook">
+<%--                <input type="hidden" placeholder="Search" name="action" value="find">--%>
+<%--&lt;%&ndash;                <button class="search-icon" type="submit" href="/users?action=find"><i class="ti-search text-dark"></i></button>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <a href="/users?action=find" class="search-icon">ser</a>&ndash;%&gt;--%>
+<%--                <button type="submit">Ser</button>--%>
             </form>
         </div>
     </div>
@@ -97,7 +99,6 @@
         </div>
         </c:forEach>
     </div>
-
 </div>
 <!-- /.container -->
 
